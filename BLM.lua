@@ -548,7 +548,7 @@ local sets = {
             Fast Cast: 
     --]]-----------------------------------------------------------------------------------
     FastCast = {
-		Ear1 = 'Loquac. Earring',
+		-- Ear1 = 'Loquac. Earring',
 		Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
@@ -865,7 +865,8 @@ profile.HandleCommand = function(args)
     --]]-----------------------------------------------------------------------------------
     if (args[1] == 'idle_standard') then
         Settings.Idle = 1;
-        gFunc.Message('Idle Standard');
+        Settings.RestSet = 1;
+        gFunc.Message('Idle Standard and Rest: hMP');
         gFunc.Message('Zone: ' .. environ.Area)
     elseif (args[1] == 'idle_mp') then
         Settings.Idle = 2;
@@ -1090,10 +1091,20 @@ profile.HandleMidcast = function()
 	local player = gData.GetPlayer();
 	local environ= gData.GetEnvironment();
 	
+    if ((player.MP <= 948) and (Settings.Idle == 2)) then
+        Settings.Idle = 1;
+        Settings.RestSet = 1;
+    end
+
+    --[[-----------------------------------------------------------------------------------
+        HandleMidcast: MaxMP - Keep equipset the same so you don't waste MP
+    --]]-----------------------------------------------------------------------------------
+    if (Settings.Idle == 2) then
+        -- Do nothing
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: Enfeebling Magic
     --]]-----------------------------------------------------------------------------------
-	if (action.Skill == 'Enfeebling Magic') then
+    elseif (action.Skill == 'Enfeebling Magic') then
         if	(MndDebuffs:contains(action.Name)) then
 			gFunc.EquipSet(sets.Enfeeb_Mind);
 			gFunc.Equip('main', ElementalStaff[action.Element]);
