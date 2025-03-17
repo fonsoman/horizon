@@ -202,6 +202,26 @@ local sets = {
         Feet = 'Sorcerer\'s Sabots', -- Emnity -1, DEF 14
     },
     --[[-----------------------------------------------------------------------------------
+        Equipsets: Engaged Scythe
+            EVA: 
+    --]]-----------------------------------------------------------------------------------
+    Engaged = {
+        Main = 'Ivory Sickle',
+        Ammo = 'Happy Egg', -- HP +1%
+		Head = 'Igqira Tiara', -- DEF 20, PEVA 10
+        Neck = 'Black Neckerchief', -- DEF 2
+        Ear1 = 'Abyssal Earring', -- Scythe +5
+        Ear2 = 'Static Earring', -- MDB 2, MND 2
+        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Hands = 'Scentless Armlets', -- DEF 4, EVA 5
+        Ring1 = 'Tamas Ring', --
+        Ring2 = 'San d\'Orian Ring', -- DEF 2, STR 1
+        Back = 'Hexerei Cape', -- DT -3%, DEF 5
+        Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
+        Legs = 'Wizard\'s Tonban', -- DEF 27, EVA 5
+        Feet = 'Wizard\'s Sabots', -- SpellInt 20%, DEF 11
+    },
+    --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Standard
             MAB: 23
             Magic Accuracy: 0
@@ -1020,6 +1040,8 @@ profile.HandleDefault = function()
         else
 		    gFunc.EquipSet(RestSet[Settings.RestSet]);
         end
+    elseif (player.Status == 'Engaged') then
+        gFunc.EquipSet('Engaged');
 	else
 		if (Settings.Helm == 1) then
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
