@@ -206,7 +206,7 @@ local sets = {
             EVA: 
     --]]-----------------------------------------------------------------------------------
     Engaged = {
-        Main = 'Ivory Sickle',
+        Main = 'Ivory Sickle +1',
         Ammo = 'Happy Egg', -- HP +1%
 		Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
@@ -597,7 +597,7 @@ local sets = {
             HP: -197
     --]]-----------------------------------------------------------------------------------
     HPDown = {
-		Main = 'Ivory Sickle', -- HP -10
+		Main = 'Ivory Sickle +1', -- HP -15
 		-- Sub = 'Astral Aspis', -- HP -25
 		Head = 'Faerie Hairpin', -- HP -20
 		Neck = 'Checkered Scarf', -- HP -12
