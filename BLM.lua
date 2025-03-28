@@ -514,7 +514,7 @@ local sets = {
             MP: 
             hMP:
     --]]-----------------------------------------------------------------------------------
-	Rest_MaxMP = {
+    Rest_MaxMP = {
         Main = 'Dark Staff',
         Ammo = 'Fortune Egg',
         Head = 'Faerie Hairpin', -- MP 55
