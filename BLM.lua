@@ -409,7 +409,7 @@ local sets = {
             TBD
     --]]-----------------------------------------------------------------------------------
     Healing = {
-		Main = 'Solid Wand', -- MND 5
+        Main = 'Solid Wand', -- MND 5
         Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Lgn. Circlet', -- MND 1
@@ -450,7 +450,7 @@ local sets = {
             Enhancing Magic Skill (1/3 as important as MND) - Base 200
     --]]-----------------------------------------------------------------------------------
     Stoneskin = {
-		Main = 'Chanter\'s Staff', -- MND 6
+        Main = 'Chanter\'s Staff', -- MND 6
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
@@ -594,8 +594,8 @@ local sets = {
             Fast Cast: 
     --]]-----------------------------------------------------------------------------------
     FastCast = {
-		-- Ear1 = 'Loquac. Earring',
-		Feet = 'Rostrum Pumps',
+        -- Ear1 = 'Loquac. Earring',
+        Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Conserve MP
@@ -651,62 +651,62 @@ local sets = {
         Feet = 'Worker Boots',
     },
     Chocobo = {
-		Body = 'Choc. Jack Coat',
+        Body = 'Choc. Jack Coat',
         Hands = 'Rider\'s Gloves',
-		Legs = 'Rider\'s Hose',
-		Feet = 'Rider\'s Boots',
+        Legs = 'Rider\'s Hose',
+        Feet = 'Rider\'s Boots',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Partial Gearset Pieces
     --]]-----------------------------------------------------------------------------------
-	Sneak = {
-		Feet = 'Dream Boots +1',
-		Back = 'Skulker\'s Cape', 
-	},
-	Invisible = {
-		Hands = 'Dream Mittens +1',
-		Back = 'Skulker\'s Cape',
-	},
-	MstCstBracelets = {
-		Hands = 'Mst.Cst. Bracelets',
-	},
-	DiabolosEarringL = {
-		-- Ear1 = 'Diabolos\'s Earring',
-	},
-	DiabolosEarringR = {
-		-- Ear2 = 'Diabolos\'s Earring',
-	},
-	DiabolosPole = {
-		-- Main = 'Diabolos\'s Pole',
-	},
-	ShivaRing = {
-		-- Ring2 = 'Ice Ring',
-	},
-	DarkRing = {
-		-- Ring2 = 'Diabolos\'s Ring',
-	},
-	UggPendant = {
-		Neck = 'Uggalepih Pendant',
-	},
-	FenrirTorque = {
-		-- Neck = 'Fenrir\'s Torque',
-	},
-	SorcRing = {
-		Ring2 = 'Sorcerer\'s Ring',
-	},
-	SorcPants = {
-		Legs = 'Sorcerer\'s Tonban',
-	},
-	MABHead = {
-		-- Head = 'Republic Circlet',
-	},
-	MagicBurst = {
-		Hands = 'Src. Gloves +1',
+    Sneak = {
+        Feet = 'Dream Boots +1',
+        Back = 'Skulker\'s Cape', 
+    },
+    Invisible = {
+        Hands = 'Dream Mittens +1',
+        Back = 'Skulker\'s Cape',
+    },
+    MstCstBracelets = {
+        Hands = 'Mst.Cst. Bracelets',
+    },
+    DiabolosEarringL = {
+        -- Ear1 = 'Diabolos\'s Earring',
+    },
+    DiabolosEarringR = {
+        -- Ear2 = 'Diabolos\'s Earring',
+    },
+    DiabolosPole = {
+        -- Main = 'Diabolos\'s Pole',
+    },
+    ShivaRing = {
+        -- Ring2 = 'Ice Ring',
+    },
+    DarkRing = {
+        -- Ring2 = 'Diabolos\'s Ring',
+    },
+    UggPendant = {
+        Neck = 'Uggalepih Pendant',
+    },
+    FenrirTorque = {
+        -- Neck = 'Fenrir\'s Torque',
+    },
+    SorcRing = {
+        Ring2 = 'Sorcerer\'s Ring',
+    },
+    SorcPants = {
+        Legs = 'Sorcerer\'s Tonban',
+    },
+    MABHead = {
+        -- Head = 'Republic Circlet',
+    },
+    MagicBurst = {
+        Hands = 'Src. Gloves +1',
         Ear2 = 'Static Earring', -- MDB 2, MND 2, Magic Burst
-	},
+    },
     DucalAketon = {
-		Body = 'Ducal Aketon',
-	},
+        Body = 'Ducal Aketon',
+    },
 };
 
 --[[-----------------------------------------------------------------------------------
