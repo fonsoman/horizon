@@ -26,7 +26,7 @@ local sets = {
     Idle_Standard = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-		Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
+        Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2
@@ -39,7 +39,7 @@ local sets = {
         Legs = 'Sorcerer\'s Tonban', -- MP 13, DEF 30, Emnity -2
         Feet = 'Rostrum Pumps', -- MP 30, DEF 20
     },
-        --[[-----------------------------------------------------------------------------------
+    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard
             Refresh:
             MP:
@@ -52,7 +52,7 @@ local sets = {
         Main = 'Solid Wand', -- 
         Sub  = 'Beater\'s Aspis', -- DEF 3
         Ammo = 'Sweet Satchet', -- 
-		Head = 'Gold Hairpin', -- MP 30
+        Head = 'Gold Hairpin', -- MP 30
         Neck = 'Black Neckerchief', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
@@ -66,13 +66,39 @@ local sets = {
         Feet = 'Seer\'s Pumps', --
     },
     --[[-----------------------------------------------------------------------------------
+        Equipsets: Idle Standard
+            Refresh:
+            MP:
+            PDT:
+            MDT:
+            DEF:
+            Emnity:
+    --]]-----------------------------------------------------------------------------------
+    Idle_Standard_20 = {
+        Main = 'Yew Wand +1', -- 
+        Sub  = 'She-Slime Shield', -- 
+        Ammo = 'Fortune Egg', -- 
+        -- Head = 'Gold Hairpin', --
+        Neck = 'Black Neckerchief', --
+        -- Ear1 = 'Shell Earring', -- 
+        -- Ear2 = 'Shell Earring', -- 
+        Body = 'Black Tunic', --
+        Hands = 'Scentless Armlets', --
+        Ring1 = 'Eremite\'s Ring', -- 
+        Ring2 = 'Eremite\'s Ring', -- 
+        Back = 'Cotton Cape', --
+        Waist = 'Friar\'s Rope', --
+        Legs = 'Baron\'s Slops', --
+        Feet = 'Light Soleas', --
+    },
+    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Max MP
             MP: 322
     --]]-----------------------------------------------------------------------------------
     Idle_MP = {
         Main = 'Earth Staff',
         Ammo = 'Fortune Egg', -- MP 1%
-		Head = 'Faerie Hairpin', -- MP 55
+        Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Geist Earring', -- MP 5
         Ear2 = 'Morion Earring', -- MP 4
@@ -97,7 +123,7 @@ local sets = {
     Idle_PDT = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Happy Egg', -- HP +1%
-		Head = 'Igqira Tiara', -- DEF 20, PEVA 10
+        Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Reraise Earring', -- PEVA 2
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -119,7 +145,7 @@ local sets = {
     Idle_MDT = {
         Main = 'Earth Staff',
         Ammo = 'Fortune Egg',
-		Head = 'Igqira Tiara', -- DEF 20, PEVA 10
+        Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -142,7 +168,7 @@ local sets = {
     Idle_MDT_Wind = {
         Main = 'Aquilo\'s Staff', -- Wind +20, INT +5
         Ammo = 'Fortune Egg',
-		Head = 'Blue Ribbon', -- Wind +6
+        Head = 'Blue Ribbon', -- Wind +6
         Neck = 'Elemental Torque', -- Wind +5
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -165,7 +191,7 @@ local sets = {
     Idle_MDT_Lightning = {
         Main = 'Earth Staff', -- Lightning +15
         Ammo = 'Fortune Egg',
-		Head = 'Wizard\'s Petasos', -- Lightning +10
+        Head = 'Wizard\'s Petasos', -- Lightning +10
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -188,7 +214,7 @@ local sets = {
     Idle_Emnity = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-		Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
+        Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -208,7 +234,7 @@ local sets = {
     Engaged = {
         Main = 'Ivory Sickle +1',
         Ammo = 'Happy Egg', -- HP +1%
-		Head = 'Igqira Tiara', -- DEF 20, PEVA 10
+        Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Abyssal Earring', -- Scythe +5
         Ear2 = 'Static Earring', -- MDB 2, MND 2
@@ -448,7 +474,7 @@ local sets = {
     Rest_hMP = {
         Main = 'Dark Staff',
         Ammo = 'Fortune Egg',
-		Head = 'Wizard\'s Petasos',
+        Head = 'Wizard\'s Petasos',
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
@@ -470,7 +496,7 @@ local sets = {
         Main = 'Pilgrim\'s Wand', -- hMP 2
         Sub = 'Beater\'s Aspis',
         Ammo = 'Fortune Egg', -- MP +1%
-		Head = 'Gold Hairpin', -- MP 30
+        Head = 'Gold Hairpin', -- MP 30
         Neck = 'Black Neckerchief',
         Ear1 = 'Geist Earring', -- MP 5
         Ear2 = 'Boroka Earring', -- hMP 1
@@ -491,7 +517,7 @@ local sets = {
 	Rest_MaxMP = {
         Main = 'Dark Staff',
         Ammo = 'Fortune Egg',
-		Head = 'Faerie Hairpin', -- MP 55
+        Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
@@ -599,7 +625,7 @@ local sets = {
     HPDown = {
 		Main = 'Ivory Sickle +1', -- HP -15
 		-- Sub = 'Astral Aspis', -- HP -25
-		Head = 'Faerie Hairpin', -- HP -20
+        Head = 'Faerie Hairpin', -- HP -20
 		Neck = 'Checkered Scarf', -- HP -12
 		Body = 'Black Cotehardie', -- HP -25
         Hands = 'Zenith Mitts', -- HP -50
@@ -1049,6 +1075,8 @@ profile.HandleDefault = function()
                 gFunc.EquipSet(sets.DucalAketon);
             elseif (player.MainJobSync <= 50) then
                 gFunc.EquipSet(sets.Idle_Standard_50)
+            elseif (player.MainJobSync < 30) then
+                gFunc.EquipSet(sets.Idle_Standard_20)
             end
         elseif (Settings.Helm == 2) then
             gFunc.EquipSet(sets.Fishing);
