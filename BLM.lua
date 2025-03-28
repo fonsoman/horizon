@@ -599,21 +599,14 @@ local sets = {
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Conserve MP
-            Conserve MP: 
+            Conserve MP: 9
     --]]-----------------------------------------------------------------------------------
 	ConserveMP = {
-        -- Ammo = 'Sweet Sachet',
-        -- Head = 'Wizard\'s Petasos',
-        -- Neck = 'Philomath Stole',
-        -- Ear1 = 'Morion Earring',
-        -- Ear2 = 'Abyssal Earring',
-        Body = 'Igqira Weskit', -- Conserve MP 2
-        -- Hands = 'Seer\'s Mitts +1',
-        -- Ring1 = 'Tamas Ring',
-        -- Ring2 = 'Zircon Ring',
-        -- Back = 'Rainbow Cape',
-        -- Waist = 'Sorcerer\'s Belt',
-        -- Legs = 'Errant Slops',
+        -- Ammo = 'Sack of Dream Sand',
+        -- Ear1 = 'Magnetic Earring',
+        Body = 'Duende Cotehardie', -- Conserve MP 4
+        -- Back = 'Maledictor\'s Shawl',
+        -- Legs = 'Aries Subligar',
         Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5
     },
     --[[-----------------------------------------------------------------------------------
