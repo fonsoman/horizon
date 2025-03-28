@@ -616,18 +616,18 @@ local sets = {
             HP: -197
     --]]-----------------------------------------------------------------------------------
     HPDown = {
-		Main = 'Ivory Sickle +1', -- HP -15
-		-- Sub = 'Astral Aspis', -- HP -25
+        Main = 'Ivory Sickle +1', -- HP -15
+        -- Sub = 'Astral Aspis', -- HP -25
         Head = 'Faerie Hairpin', -- HP -20
-		Neck = 'Checkered Scarf', -- HP -12
-		Body = 'Black Cotehardie', -- HP -25
+        Neck = 'Checkered Scarf', -- HP -12
+        Body = 'Black Cotehardie', -- HP -25
         Hands = 'Zenith Mitts', -- HP -50
-		Ring1 = 'Astral Ring', -- HP -25
-		Ring2 = 'Ether Ring', -- HP -30
-		Back = 'Blue Cape', -- HP -15
-		Waist = 'Penitent\'s Rope', -- HP -20
+        Ring1 = 'Astral Ring', -- HP -25
+        Ring2 = 'Ether Ring', -- HP -30
+        Back = 'Blue Cape', -- HP -15
+        Waist = 'Penitent\'s Rope', -- HP -20
         -- Legs = 'Zenith Slacks', -- HP -50
-		Feet = 'Rostrum Pumps', -- HP -30
+        Feet = 'Rostrum Pumps', -- HP -30
 	},
     --[[-----------------------------------------------------------------------------------
         Equipsets: HELM
@@ -635,20 +635,20 @@ local sets = {
     Fishing = {
         Range = 'Lu Shang\'s F. Rod',
         -- Ammo = 'Sinking Minnow',
-		Body = 'Angler\'s Tunica',
+        Body = 'Angler\'s Tunica',
         Hands = 'Fsh. Gloves',
-		Legs = 'Fisherman\'s Hose',
-		Feet = 'Fisherman\'s Boots',
+        Legs = 'Fisherman\'s Hose',
+        Feet = 'Fisherman\'s Boots',
     },
     Cooking = {
         Head = 'Chef\'s Hat',
-		Body = 'Culinarian\'s Apron',
+        Body = 'Culinarian\'s Apron',
     },
     Worker = {
-		Body = 'Field Tunica',
+        Body = 'Field Tunica',
         Hands = 'Worker Gloves',
-		-- Legs = '',
-		Feet = 'Worker Boots',
+        -- Legs = '',
+        Feet = 'Worker Boots',
     },
     Chocobo = {
 		Body = 'Choc. Jack Coat',
