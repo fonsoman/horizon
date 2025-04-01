@@ -1066,10 +1066,10 @@ profile.HandleDefault = function()
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
             if (CityZones:contains(environ.Area)) then
                 gFunc.EquipSet(sets.DucalAketon);
-            elseif (player.MainJobSync <= 50) then
-                gFunc.EquipSet(sets.Idle_Standard_50)
             elseif (player.MainJobSync < 30) then
                 gFunc.EquipSet(sets.Idle_Standard_20)
+            elseif (player.MainJobSync <= 50) then
+                gFunc.EquipSet(sets.Idle_Standard_50)
             end
         elseif (Settings.Helm == 2) then
             gFunc.EquipSet(sets.Fishing);
