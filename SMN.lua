@@ -35,6 +35,60 @@ local sets = {
         Legs = 'Wonder Braccae', --
         Feet = 'Seer\'s Pumps', --
 	},
+
+	Idle_40 =  {
+	    Main = 'Solid Wand', -- 
+        Sub  = 'Beater\'s Aspis', -- DEF 3
+        Ammo = 'Sweet Satchet', -- 
+		Head = 'Lgn. Circlet', -- MP 5
+        Neck = 'Black Neckerchief', --
+        Ear1 = 'Geist Earring', -- MP 5, MND 1
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Ryl.Sqr. Robe', --
+        Hands = 'Carbuncle Mitts', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Ether Ring', -- MP 30
+        Back = 'Black Cape +1', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = 'Wonder Braccae', --
+        Feet = 'Seer\'s Pumps', --
+	},
+
+	Idle_30 =  {
+	    Main = '', -- 
+        Sub  = 'Beater\'s Aspis', -- DEF 3
+        Ammo = 'Sweet Satchet', -- 
+		Head = 'Dodge Headband', --
+        Neck = 'Black Neckerchief', --
+        Ear1 = '', --
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = '', --
+        Hands = 'Carbuncle Mitts', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Astral Ring', -- MP 25
+        Back = 'Cotton Cape', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = '', --
+        Feet = 'Seer\'s Pumps', --
+	},
+
+	Idle_20 =  {
+	    Main = 'Yew Wand +1', -- 
+        Sub  = 'She-Slime Shield', -- 
+        Ammo = 'Fortune Egg', -- 
+		-- Head = '', --
+        Neck = 'Black Neckerchief', --
+        -- Ear1 = '', --
+        -- Ear1 = '', --
+        Body = 'Black Tunic', --
+        Hands = 'Carbuncle Mitts', --
+        Ring2 = 'Astral Ring', -- MP 25
+        Ring2 = 'Windurstian Ring', -- MP 3
+        Back = 'Cotton Cape', --
+        Waist = 'Friar\'s Rope', --
+        Legs = 'Baron\'s Slops', --
+        Feet = 'Light Soleas', --
+	},
 	
 	Perp = {
 		Body = 'Austere Robe', --1 Perp
@@ -222,6 +276,14 @@ local PhysBP = T{'Poison Nails','Moonlit Charge','Somnolence','Punch','Rock Thro
 local BuffBP = T{'Shining Ruby','Aerial Armor','Frost Armor','Rolling Thunder','Crimson Howl','Lightning Armor','Ecliptic Growl','Glittering Ruby','Earthen Ward','Spring Water','Hastega','Noctoshield','Ecliptic Howl','Dream Shroud'};
 local DebuffBP = T{'Luncar Cry','Mewing Lullaby','Nightmare','Lunar Roar','Slowga','Ultimate Terror','Sleepga','Eerie Eye'};
 
+--[[-----------------------------------------------------------------------------------
+    City Zones
+--]]-----------------------------------------------------------------------------------
+local CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'Port Jeuno', 
+                        'Windurst Woods', 'Port Windurst', 'Windurst Waters', 'Windurst Walls', 'Heavens Tower',
+                        'Bastok Markets', 'Bastok Mines', 'Metalworks', 'Port Bastok',
+                        'Chateau d\'Oraguille', 'Northern San d\'Oria', 'Port San d\'Oria', 'Southern San d\'Oria' };
+
 --petElement gets set when you cast an avatar so we can match it to day/weather for relic armor
 local petElement = 'Light';
 
@@ -273,16 +335,31 @@ profile.HandleDefault = function()
 		return;
 	end
 	
-
 	if (player.Status == 'Resting') then
 		gFunc.EquipSet(sets.Resting);
 		if (player.MainJobSync <= 50) then
 			gFunc.EquipSet(sets.Resting_50);
 		end
 	elseif (pet == nil) then
-		gFunc.EquipSet(sets.Idle);
-		if (player.MainJobSync <= 50) then
+		if (player.MainJobSync == 75) then
+			gFunc.EquipSet(sets.Idle);
+		elseif (player.MainJobSync >= 50) then
 			gFunc.EquipSet(sets.Idle_50);
+			gFunc.EquipSet(sets.Idle);
+		elseif (player.MainJobSync >= 40) then
+			gFunc.EquipSet(sets.Idle_40);
+			gFunc.EquipSet(sets.Idle_50);
+		elseif (player.MainJobSync >= 30) then
+			gFunc.EquipSet(sets.Idle_30);
+			gFunc.EquipSet(sets.Idle_40);
+		elseif (player.MainJobSync >= 20) then
+			gFunc.EquipSet(sets.Idle_20);
+			gFunc.EquipSet(sets.Idle_30);
+		else
+			gFunc.EquipSet(sets.Idle_20);
+		end
+		if (CityZones:contains(env.Area)) then
+			gFunc.Equip('body', 'Ducal Aketon');
 		end
 	else
 		gFunc.EquipSet(sets.Idle);
@@ -294,22 +371,31 @@ profile.HandleDefault = function()
 		if pet.Name == 'Carbuncle' then
 			gFunc.Equip('main','Light Staff');
 			gFunc.Equip('hands','Carbuncle Mitts');
+			petElement = 'Light';
 		elseif pet.Name == 'Ifrit' then
 			gFunc.Equip('main','Fire Staff');
+			petElement = 'Fire';
 		elseif pet.Name == 'Titan' then
 			gFunc.Equip('main','Earth Staff');
+			petElement = 'Earth';
 		elseif pet.Name == 'Leviathan' then
 			gFunc.Equip('main','Water Staff');
+			petElement = 'Water';
 		elseif pet.Name == 'Garuda' then
 			gFunc.Equip('main','Wind Staff');
+			petElement = 'Wind';
 		elseif pet.Name == 'Shiva' then
 			gFunc.Equip('main','Aquilo\'s Staff');
+			petElement = 'Ice';
 		elseif pet.Name == 'Ramuh' then
 			gFunc.Equip('main','Jupiter\'s Staff');
+			petElement = 'Thunder';
 		elseif pet.Name == 'Fenrir' then
 			gFunc.Equip('main','Dark Staff');
+			petElement = 'Dark';
 		elseif pet.Name == 'Diabolos' then
 			gFunc.Equip('main','Dark Staff');
+			petElement = 'Dark';
 		end
 		
 		if (env.DayElement == petElement) then

@@ -4,7 +4,6 @@
 
         This Lua file has been created and modified for use on HorizonXI
         I use custom keybinds (in a comment at the bottom)
-        I have HorizonMode set to true in settings.lua
 
 --]]-----------------------------------------------------------------------------------
 
@@ -122,18 +121,18 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_PDT = {
         Main = 'Earth Staff', -- PDT -20%
-        Ammo = 'Happy Egg', -- HP +1%
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Reraise Earring', -- PEVA 2
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Errant Hpl.', -- DEF 42 Emnity -3
-        Hands = 'Errant Cuffs', -- DEF 20, Emnity -2, HP -20
+        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Hands = 'Scentless Armlets', -- DEF 4, EVA 5
         Ring1 = 'Tamas Ring', -- Emnity -5
         Ring2 = 'Kshama Ring No.4', -- DEF 3, VIT 3
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
         Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
-        Legs = 'Errant Slops', -- DEF 38, Emnity -3
+        Legs = 'Wonder Braccae', -- HP 21, DEF 12
         Feet = 'Sorcerer\'s Sabots', -- DEF 14, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
@@ -149,7 +148,7 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Errant Hpl.', -- DEF 42 Emnity -3
+        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Src. Gloves +1', -- MP 24, DEF 16, Emnity -3
         Ring1 = 'Merman\'s Ring', -- MDT -4%
         Ring2 = 'Merman\'s Ring', -- MDT -4%
@@ -228,12 +227,12 @@ local sets = {
         Feet = 'Sorcerer\'s Sabots', -- Emnity -1, DEF 14
     },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Engaged Scythe
+        Equipsets: Engaged
             EVA: 
     --]]-----------------------------------------------------------------------------------
     Engaged = {
-        Main = 'Ivory Sickle +1',
-        Ammo = 'Happy Egg', -- HP +1%
+        -- Main = 'Ivory Sickle +1',
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Abyssal Earring', -- Scythe +5
@@ -241,7 +240,7 @@ local sets = {
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Scentless Armlets', -- DEF 4, EVA 5
         Ring1 = 'Tamas Ring', --
-        Ring2 = 'San d\'Orian Ring', -- DEF 2, STR 1
+        Ring2 = 'Kshama Ring No.2', -- DEX 3, Acc 2
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
         Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
         Legs = 'Wizard\'s Tonban', -- DEF 27, EVA 5
@@ -265,7 +264,7 @@ local sets = {
         Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve MP 2
         Hands = 'Zenith Mitts', -- MAB 5
         Ring1 = 'Tamas Ring', -- INT 5, Emnity -3
-        Ring2 = 'Zircon Ring', -- INT 3
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops', -- INT 7, Emnity -3
@@ -287,7 +286,7 @@ local sets = {
         Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
         Hands = 'Wizard\'s Gloves', -- Elem 15
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -309,7 +308,7 @@ local sets = {
         Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
         Hands = 'Zenith Mitts', -- MAB 5
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -331,7 +330,7 @@ local sets = {
         Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
         Hands = 'Errant Cuffs', -- INT 5
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Rainbow Cape', --INT 3
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -354,7 +353,7 @@ local sets = {
         Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve MP 2
         Hands = 'Wizard\'s Gloves', -- Elem 15
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -362,25 +361,36 @@ local sets = {
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Dark
-            MAB:
+			Dark Skill:
             Magic Accuracy:
             INT:
-            Dark Skill:
     --]]-----------------------------------------------------------------------------------
     Dark = {
         Ammo = 'Sweet Sachet',
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Philomath Stole',
-        Ear1 = 'Morion Earring',
-        Ear2 = 'Abyssal Earring',
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring',
         Body = 'Errant Hpl.', -- INT 10
-        Hands = 'Src. Gloves +1', -- Dark 10
+        Hands = 'Src. Gloves +1', -- Dark 12
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Dark 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Wizard\'s Tonban',
         Feet = 'Rostrum Pumps',
+    },
+	--[[-----------------------------------------------------------------------------------
+        Equipsets: Dark Essential
+			Dark Skill:
+            Magic Accuracy:
+            INT:
+    --]]-----------------------------------------------------------------------------------
+    Dark_Essential = {
+        Ear1 = 'Abyssal Earring', -- Dark 5
+        Hands = 'Src. Gloves +1', -- Dark 12
+        Back = 'Merciful Cape', -- Dark 5
+        Legs = 'Wizard\'s Tonban', -- Dark 15
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Stun
@@ -398,7 +408,7 @@ local sets = {
         Body = 'Errant Hpl.', -- INT 10
         Hands = 'Errant Cuffs', -- INT 5
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Dark 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Wizard\'s Tonban',
@@ -564,7 +574,7 @@ local sets = {
         Body = 'Wizard\'s Coat',
         Hands = 'Errant Cuffs', -- INT 5
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -583,7 +593,7 @@ local sets = {
         Body = 'Errant Hpl.', -- INT 10
         Hands = 'Errant Cuffs', -- INT 5
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Zircon Ring',
+        Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Errant Slops',
@@ -634,7 +644,6 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Fishing = {
         Range = 'Lu Shang\'s F. Rod',
-        -- Ammo = 'Sinking Minnow',
         Body = 'Angler\'s Tunica',
         Hands = 'Fsh. Gloves',
         Legs = 'Fisherman\'s Hose',
@@ -680,7 +689,7 @@ local sets = {
         -- Main = 'Diabolos\'s Pole',
     },
     ShivaRing = {
-        -- Ring2 = 'Ice Ring',
+        Ring2 = 'Ice Ring',
     },
     DarkRing = {
         -- Ring2 = 'Diabolos\'s Ring',
@@ -688,6 +697,9 @@ local sets = {
     UggPendant = {
         Neck = 'Uggalepih Pendant',
     },
+	RepGoldMedal = {
+		Neck = 'Rep.Gold Medal',
+	},
     FenrirTorque = {
         -- Neck = 'Fenrir\'s Torque',
     },
@@ -1063,14 +1075,52 @@ profile.HandleDefault = function()
         gFunc.EquipSet('Engaged');
 	else
 		if (Settings.Helm == 1) then
-            gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
+			if (Settings.Idle == 1) then
+				if (player.MainJobSync == 75) then
+					if (player.SubJob == 'RDM') then
+						if (player.MP >= 1068) then
+							gFunc.EquipSet(sets.Idle_MP);
+						elseif (player.MP >= 896) then
+							gFunc.EquipSet(sets.Idle_Standard);
+						else
+							gFunc.EquipSet(sets.Idle_PDT);
+						end
+					elseif (player.SubJob == 'WHM') then
+						if (player.MP >= 1087) then
+							gFunc.EquipSet(sets.Idle_MP);
+						elseif (player.MP >= 915) then
+							gFunc.EquipSet(sets.Idle_Standard);
+						else
+							gFunc.EquipSet(sets.Idle_PDT);
+						end
+					else
+						gFunc.EquipSet(sets.Idle_Standard);
+					end
+				elseif (player.MainJobSync >= 50) then
+					gFunc.EquipSet(sets.Idle_Standard_50);
+					gFunc.EquipSet(sets.Idle_Standard);
+				elseif (player.MainJobSync >= 20) then
+					gFunc.EquipSet(sets.Idle_Standard_20);
+					gFunc.EquipSet(sets.Idle_Standard_50);
+					gFunc.EquipSet(sets.Idle_Standard);
+				else
+					gFunc.EquipSet(sets.Idle_Standard_20);
+					gFunc.EquipSet(sets.Idle_Standard_50);
+					gFunc.EquipSet(sets.Idle_Standard);
+				end
+			else
+				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
+			end
+
+			if (Settings.OutsideNation == 2) then
+				gFunc.EquipSet(sets.RepGoldMedal);
+			end
+
             if (CityZones:contains(environ.Area)) then
                 gFunc.EquipSet(sets.DucalAketon);
-            elseif (player.MainJobSync < 30) then
-                gFunc.EquipSet(sets.Idle_Standard_20)
-            elseif (player.MainJobSync <= 50) then
-                gFunc.EquipSet(sets.Idle_Standard_50)
-            end
+			end
+
+
         elseif (Settings.Helm == 2) then
             gFunc.EquipSet(sets.Fishing);
             if (environ.Area == "Sea Serpent Grotto") then
@@ -1183,11 +1233,14 @@ profile.HandleMidcast = function()
 		else
 			gFunc.EquipSet('Elemental_' .. Elemental[Settings.Elemental]);
 			gFunc.Equip('main', ElementalStaff[action.Element]);
+			if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
+				gFunc.EquipSet(sets.ShivaRing);
+			end
 			if (Settings.Elemental == 3) then
 				if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 					gFunc.EquipSet(sets.DiabolosEarringL);
 				end
-				if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
+				if (environ.DayElement == 'Ice') then
 					gFunc.EquipSet(sets.ShivaRing);
 				end
 			end
@@ -1222,7 +1275,11 @@ profile.HandleMidcast = function()
 		else
 			gFunc.EquipSet(sets.Dark);
 		end
-        gFunc.Equip('main', ElementalStaff[action.Element]);			
+        gFunc.Equip('main', ElementalStaff[action.Element]);
+		if ((player.MP > 850) and (action.Name == 'Aspir')) then
+			gFunc.EquipSet(sets.Idle_MP);
+			gFunc.EquipSet(sets.Dark_Essential);
+		end
 		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 			if (action.Name == 'Drain' or action.Name == 'Aspir') then
 				gFunc.EquipSet(sets.DiabolosPole);
@@ -1261,6 +1318,9 @@ profile.HandleMidcast = function()
 			gFunc.EquipSet(sets.Enhancing);
 		else
 			gFunc.EquipSet(sets.ConserveMP);
+			if (environ.DayElement == 'Water' and gData.GetAction().MppAftercast <= 84) then
+				gFunc.Equip('Ring2', 'Water Ring');
+			end
 		end
 	end
 
