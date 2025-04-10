@@ -4,7 +4,7 @@ local sets = {
 	Idle = {
 		Main = 'Earth Staff',
 		Ammo = 'Hedgehog Bomb',
-		Head = 'Faerie Hairpin', --'Shepherd\'s Bonnet'
+		Head = 'Faerie Hairpin',
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
 		Ear2 = 'Morion Earring',
@@ -183,7 +183,7 @@ local sets = {
 	},
 	
 	petMAB = {
-		-- Head = 'Shep. Bonnet', --+5 Accuracy
+		Head = 'Shep. Bonnet', --+5 Accuracy
         -- Body = 'Shep. Doublet', --+3 MAB
         Hands = 'Summoner\'s Brcr.', --Accuracy
         -- Legs = 'Evoker\'s Spats', --Accuracy
@@ -194,7 +194,7 @@ local sets = {
 	},
 	
 	petAtk = {
-		-- Head = 'Shep. Bonnet', --+5 Accuracy
+		Head = 'Shep. Bonnet', --+5 Accuracy
         Body = 'Summoner\'s Dblt.', --
         Hands = 'Summoner\'s Brcr.', --Accuracy
         -- Legs = 'Evoker\'s Spats', --Accuracy
