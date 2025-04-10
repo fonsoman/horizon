@@ -1200,17 +1200,17 @@ profile.HandleDefault = function()
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
 					if (player.SubJob == 'RDM') then
-						if (player.MP >= 1090) then
+						if (player.MP >= 1070) then
 							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 920) then
+						elseif (player.MP >= 900) then
 							gFunc.EquipSet(sets.Idle_Standard);
 						else
 							gFunc.EquipSet(sets.Idle_PDT);
 						end
 					elseif (player.SubJob == 'WHM') then
-						if (player.MP >= 1110) then
+						if (player.MP >= 1090) then
 							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 940) then
+						elseif (player.MP >= 920) then
 							gFunc.EquipSet(sets.Idle_Standard);
 						else
 							gFunc.EquipSet(sets.Idle_PDT);
