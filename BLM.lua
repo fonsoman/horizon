@@ -38,14 +38,46 @@ local sets = {
         Legs = 'Sorcerer\'s Tonban', -- MP 13, DEF 30, Emnity -2
         Feet = 'Rostrum Pumps', -- MP 30, DEF 20
     },
+	--[[-----------------------------------------------------------------------------------
+        Equipsets: Idle Standard lv 60 cap
+    --]]-----------------------------------------------------------------------------------
+    Idle_Standard_60 = {
+        Main = 'Earth Staff', -- PDT -20%
+        Ammo = 'Fortune Egg', -- MP 1%
+        Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
+        Neck = 'Black Neckerchief', --
+        Ear1 = 'Geist Earring', -- MP 5, MND 1
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Ryl.Sqr. Robe', --
+        Hands = 'Seer\'s Mitts +1', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Kshama Ring No.5', -- MP 5
+        Back = 'Skulker\'s Cape', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = 'Wonder Braccae', --
+        Feet = 'Seer\'s Pumps', --
+    },
+	    --[[-----------------------------------------------------------------------------------
+        Equipsets: Idle Standard lv 51 cap
+    --]]-----------------------------------------------------------------------------------
+    Idle_Standard_51 = {
+        Main = 'Earth Staff', -- PDT -20%
+        Ammo = 'Fortune Egg', -- MP 1%
+        Head = 'Gold Hairpin', -- MP 30
+        Neck = 'Black Neckerchief', --
+        Ear1 = 'Geist Earring', -- MP 5, MND 1
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Ryl.Sqr. Robe', --
+        Hands = 'Seer\'s Mitts +1', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Kshama Ring No.5', -- MP 5
+        Back = 'Skulker\'s Cape', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = 'Wonder Braccae', --
+        Feet = 'Seer\'s Pumps', --
+    },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Idle Standard
-            Refresh:
-            MP:
-            PDT:
-            MDT:
-            DEF:
-            Emnity:
+        Equipsets: Idle Standard lv 50 cap
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_50 = {
         Main = 'Solid Wand', -- 
@@ -64,27 +96,61 @@ local sets = {
         Legs = 'Wonder Braccae', --
         Feet = 'Seer\'s Pumps', --
     },
+	--[[-----------------------------------------------------------------------------------
+        Equipsets: Idle Standard lv 40 cap
+    --]]-----------------------------------------------------------------------------------
+    Idle_Standard_40 = {
+        Main = 'Solid Wand', -- 
+        Sub  = 'Beater\'s Aspis', -- DEF 3
+        Ammo = 'Sweet Satchet', -- 
+        Head = 'Seer\'s Crown +1', --
+        Neck = 'Black Neckerchief', --
+        Ear1 = 'Geist Earring', -- MP 5, MND 1
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Ryl.Sqr. Robe', --
+        Hands = 'Seer\'s Mitts +1', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Ether Ring', -- MP 30
+        Back = 'Black Cape +1', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = 'Wonder Braccae', --
+        Feet = 'Seer\'s Pumps', --
+    },
+	--[[-----------------------------------------------------------------------------------
+        Equipsets: Idle Standard lv 30 cap
+    --]]-----------------------------------------------------------------------------------
+    Idle_Standard_30 = {
+        Main = 'Solid Wand', -- 
+        Sub  = 'Beater\'s Aspis', -- DEF 3
+        Ammo = 'Sweet Satchet', -- 
+        -- Head = 'Seer\'s Crown +1', --
+        Neck = 'Black Neckerchief', --
+        Ear1 = 'Reraise Earring', -- PEVA 2
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Black Tunic', --
+        Hands = 'Seer\'s Mitts +1', --
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Astral Ring', -- MP 25
+        Back = 'Cotton Cape', --
+        Waist = 'Mrc.Cpt. Belt', --
+        Legs = 'Seer\'s Slacks +1', --
+        Feet = 'Seer\'s Pumps', --
+    },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Idle Standard
-            Refresh:
-            MP:
-            PDT:
-            MDT:
-            DEF:
-            Emnity:
+        Equipsets: Idle Standard lv 20 cap
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_20 = {
         Main = 'Yew Wand +1', -- 
         Sub  = 'She-Slime Shield', -- 
         Ammo = 'Fortune Egg', -- 
-        -- Head = 'Gold Hairpin', --
+        -- Head = '', --
         Neck = 'Black Neckerchief', --
         -- Ear1 = 'Shell Earring', -- 
         -- Ear2 = 'Shell Earring', -- 
         Body = 'Black Tunic', --
         Hands = 'Scentless Armlets', --
         Ring1 = 'Eremite\'s Ring', -- 
-        Ring2 = 'Eremite\'s Ring', -- 
+        Ring2 = 'Astral Ring', -- MP 25
         Back = 'Cotton Cape', --
         Waist = 'Friar\'s Rope', --
         Legs = 'Baron\'s Slops', --
@@ -125,7 +191,7 @@ local sets = {
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Reraise Earring', -- PEVA 2
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
+        Ear2 = 'Reraise Earring', -- PEVA 2
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Scentless Armlets', -- DEF 4, EVA 5
         Ring1 = 'Tamas Ring', -- Emnity -5
@@ -147,7 +213,7 @@ local sets = {
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Src. Gloves +1', -- MP 24, DEF 16, Emnity -3
         Ring1 = 'Merman\'s Ring', -- MDT -4%
@@ -719,6 +785,12 @@ local sets = {
     DucalAketon = {
         Body = 'Ducal Aketon',
     },
+	Teleport = {
+		Main = 'Treat Staff II',
+		Head = 'Dream Hat +1',
+		Body = 'Mandra. Suit',
+		Ring2 = 'Tavnazian Ring'
+	}
 };
 
 --[[-----------------------------------------------------------------------------------
@@ -795,7 +867,14 @@ local RestSet = {
 	[1] = 'Rest_hMP',
 	[2] = 'Rest_MaxMP',
 }
-
+local TeleportSet = {
+	[1] = 'False',
+	[2] = 'True',
+}
+local SpiritLantern = {
+	[1] = 'False',
+	[2] = 'True',
+}
 --[[-----------------------------------------------------------------------------------
     Gearset Variable Defaults
 --]]-----------------------------------------------------------------------------------
@@ -808,7 +887,9 @@ local Settings = {
 	SorcRing = 1,
 	MagicBurst = 1,
     Helm = 1,
-	RestSet = 1
+	RestSet = 1,
+	TeleportSet = 1,
+	SpiritLantern = 1,
 }
 
 --[[-----------------------------------------------------------------------------------
@@ -1023,6 +1104,46 @@ profile.HandleCommand = function(args)
 		end
 	end	
 
+	--[[-----------------------------------------------------------------------------------
+        HandleCommand: Teleport Set
+    --]]-----------------------------------------------------------------------------------
+	if (args[1] == 'teleportset') then
+		if (Settings.TeleportSet == 1) then
+			Settings.TeleportSet = 2;
+			gFunc.EquipSet('Teleport');
+			gFunc.Disable('Main');
+			gFunc.Disable('Head');
+			gFunc.Disable('Body');
+			gFunc.Disable('Legs');
+			gFunc.Disable('Ring2');
+			gFunc.Message('Teleport Set: True');
+		else
+			Settings.TeleportSet = 1;
+			gFunc.Enable('Main');
+			gFunc.Enable('Head');
+			gFunc.Enable('Body');
+			gFunc.Enable('Legs');
+			gFunc.Enable('Ring2');
+			gFunc.Message('Teleport Set: False');
+		end
+	end	
+
+	--[[-----------------------------------------------------------------------------------
+        HandleCommand: Spirit Lantern
+    --]]-----------------------------------------------------------------------------------
+	if (args[1] == 'spiritlantern') then
+		if (Settings.SpiritLantern == 1) then
+			Settings.SpiritLantern = 2;
+			gFunc.Equip('Ammo', 'SpiritLantern');
+			gFunc.Disable('Ammo');
+			gFunc.Message('Spirit Lantern: True');
+		else
+			Settings.SpiritLantern = 1;
+			gFunc.Enable('Ammo');
+			gFunc.Message('Spirit Lantern: False');
+		end
+	end	
+
     --[[-----------------------------------------------------------------------------------
         HandleCommand: Cycle HELM gearsets
     --]]-----------------------------------------------------------------------------------
@@ -1055,6 +1176,7 @@ end
 profile.HandleDefault = function()
 	local player = gData.GetPlayer();
 	local environ= gData.GetEnvironment();
+	local combinedSet = T{};
 
     --[[-----------------------------------------------------------------------------------
         HandleDefault:
@@ -1078,17 +1200,17 @@ profile.HandleDefault = function()
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
 					if (player.SubJob == 'RDM') then
-						if (player.MP >= 1068) then
+						if (player.MP >= 1090) then
 							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 896) then
+						elseif (player.MP >= 920) then
 							gFunc.EquipSet(sets.Idle_Standard);
 						else
 							gFunc.EquipSet(sets.Idle_PDT);
 						end
 					elseif (player.SubJob == 'WHM') then
-						if (player.MP >= 1087) then
+						if (player.MP >= 1110) then
 							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 915) then
+						elseif (player.MP >= 940) then
 							gFunc.EquipSet(sets.Idle_Standard);
 						else
 							gFunc.EquipSet(sets.Idle_PDT);
@@ -1096,22 +1218,32 @@ profile.HandleDefault = function()
 					else
 						gFunc.EquipSet(sets.Idle_Standard);
 					end
+				elseif (player.MainJobSync >= 60) then
+					combinedSet = gFunc.Combine(sets.Idle_Standard_60, sets.Idle_Standard);
+					gFunc.EquipSet(combinedSet);
+				elseif (player.MainJobSync >= 51) then
+					combinedSet = gFunc.Combine(sets.Idle_Standard_51, sets.Idle_Standard_60);
+					gFunc.EquipSet(combinedSet);
 				elseif (player.MainJobSync >= 50) then
-					gFunc.EquipSet(sets.Idle_Standard_50);
-					gFunc.EquipSet(sets.Idle_Standard);
+					combinedSet = gFunc.Combine(sets.Idle_Standard_50, sets.Idle_Standard_51);
+					gFunc.EquipSet(combinedSet);
+				elseif (player.MainJobSync >= 40) then
+					combinedSet = gFunc.Combine(sets.Idle_Standard_40, sets.Idle_Standard_50);
+					gFunc.EquipSet(combinedSet);
+				elseif (player.MainJobSync >= 30) then
+					combinedSet = gFunc.Combine(sets.Idle_Standard_30, sets.Idle_Standard_40);
+					gFunc.EquipSet(combinedSet);
 				elseif (player.MainJobSync >= 20) then
-					gFunc.EquipSet(sets.Idle_Standard_20);
-					gFunc.EquipSet(sets.Idle_Standard_50);
-					gFunc.EquipSet(sets.Idle_Standard);
+					combinedSet = gFunc.Combine(sets.Idle_Standard_20, sets.Idle_Standard_30);
+					gFunc.EquipSet(combinedSet);
 				else
 					gFunc.EquipSet(sets.Idle_Standard_20);
-					gFunc.EquipSet(sets.Idle_Standard_50);
-					gFunc.EquipSet(sets.Idle_Standard);
 				end
 			else
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
 
+			-- Todo: Only equip this if you are high in mp or not in PDT
 			if (Settings.OutsideNation == 2) then
 				gFunc.EquipSet(sets.RepGoldMedal);
 			end
@@ -1251,7 +1383,7 @@ profile.HandleMidcast = function()
 				if (environ.DayElement == action.Element) then
 					gFunc.EquipSet(sets.SorcPants);
 				end
-				if (Settings.SorcRing == 2) then
+				if ((Settings.SorcRing == 2) or (player.HPP <= 75)) then
 					gFunc.EquipSet(sets.SorcRing);
 				end
 				if (Settings.InsideNation == 2) then
@@ -1402,8 +1534,8 @@ return profile;
 /bind NUMPAD1 /lac fwd idle_standard
 /bind NUMPAD2 /lac fwd idle_mdt_wind
 /bind NUMPAD3 /lac fwd idle_mdt_lightning
-/bind NUMPAD4 /equipset 4 echo
-/bind NUMPAD5 /equipset 5 echo
+/bind NUMPAD4 /lac fwd teleportset
+/bind NUMPAD5 /lac fwd spiritlantern
 /bind NUMPAD6 /lac fwd rest_hmp
 /bind NUMPAD7 /lac fwd mb
 /bind NUMPAD8 /lac fwd sorc

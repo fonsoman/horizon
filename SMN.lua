@@ -2,20 +2,20 @@ local profile = {};
 	
 local sets = {
 	Idle = {
-	    Main = 'Earth Staff',
+		Main = 'Earth Staff',
 		Ammo = 'Hedgehog Bomb',
-        Head = 'Faerie Hairpin', --'Shepherd\'s Bonnet'
+		Head = 'Faerie Hairpin', --'Shepherd\'s Bonnet'
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
-        Ear2 = 'Morion Earring',
-        Body = 'Errant Hpl.', -- DEF 42 Emnity -3
-        Hands = 'Zenith Mitts',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Evoker\'s Ring',
-        Back = 'Summoner\'s Cape',
-        Waist = 'Hierarch Belt',
+		Ear2 = 'Morion Earring',
+		Body = 'Errant Hpl.', -- DEF 42 Emnity -3
+		Hands = 'Zenith Mitts',
+		Ring1 = 'Tamas Ring',
+		Ring2 = 'Evoker\'s Ring',
+		Back = 'Summoner\'s Cape',
+		Waist = 'Hierarch Belt',
 		Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.'
+		Feet = 'Summoner\'s Pgch.'
 	},
 
 	Idle_50 =  {
@@ -173,47 +173,47 @@ local sets = {
 	},
 	
 	FastCast = {
-		Ear1 = 'Loquac. Earring',
+		-- Ear1 = 'Loquac. Earring',
 		Head = 'Nashira Turban',
-		Body = 'Nashira Manteel',
-		Hands = 'Nashira Gages',
-		Waist = 'Swift Belt',
-		Legs = 'Nashira Seraweels',
+		-- Body = 'Nashira Manteel',
+		-- Hands = 'Nashira Gages',
+		-- Waist = 'Swift Belt',
+		-- Legs = 'Nashira Seraweels',
 		Feet = 'Rostrum Pumps',
 	},
 	
 	petMAB = {
-		Head = 'Shep. Bonnet', --+5 Accuracy
-        Body = 'Shep. Doublet', --+3 MAB
+		-- Head = 'Shep. Bonnet', --+5 Accuracy
+        -- Body = 'Shep. Doublet', --+3 MAB
         Hands = 'Summoner\'s Brcr.', --Accuracy
-        Legs = 'Evoker\'s Spats', --Accuracy
-        Feet = 'Smn. Pigaches +1', --Accuracy
-		Neck = 'Smn. Torque', --+7 Skill
+        -- Legs = 'Evoker\'s Spats', --Accuracy
+        Feet = 'Summoner\'s Pgch.', --Accuracy
+		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
-		Ear1 = 'Smn. Earring', --+3 Skill
+		-- Ear1 = 'Smn. Earring', --+3 Skill
 	},
 	
 	petAtk = {
-		Head = 'Shep. Bonnet', --+5 Accuracy
-        Body = 'Shep. Doublet', --+5 Attack
+		-- Head = 'Shep. Bonnet', --+5 Accuracy
+        Body = 'Summoner\'s Dblt.', --
         Hands = 'Summoner\'s Brcr.', --Accuracy
-        Legs = 'Evoker\'s Spats', --Accuracy
-        Feet = 'Smn. Pigaches +1', --Attack
-		Neck = 'Smn. Torque', --+7 Skill
+        -- Legs = 'Evoker\'s Spats', --Accuracy
+        Feet = 'Summoner\'s Pgch.', --Attack
+		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
 		Ear1 = 'Smn. Earring', --+3 Skill
 	},
 	
 	SummonSkill = {
-		Main = 'Bahamut\'s Staff', --+5 Skill
-		Head = 'Evoker\'s Horn', --+5 Skill
+		-- Main = 'Bahamut\'s Staff', --+5 Skill
+		-- Head = 'Evoker\'s Horn', --+5 Skill
         Hands = 'Summoner\'s Brcr.', --+10 Skill
-		Legs = 'Austere Slops', --+3 Skill
-        Feet = 'Nashira Crackows', --+5 Skill
-        Neck = 'Smn. Torque', --+7 Skill
-		Back = 'Astute Cape', --+5 Skill
+		-- Legs = 'Austere Slops', --+3 Skill
+        -- Feet = 'Nashira Crackows', --+5 Skill
+        -- Neck = 'Smn. Torque', --+7 Skill
+		-- Back = 'Astute Cape', --+5 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
-		Ear1 = 'Smn. Earring', --+3 Skill
+		-- Ear1 = 'Smn. Earring', --+3 Skill
 	},
 	
 	petMacc = {
@@ -237,7 +237,7 @@ local sets = {
 	
 	BPDelay = {
 		-- Head = 'Summoner\'s Horn', --3 Delay 'Austere Hat', --1 Delay
-		Body = 'Austere Robe', --3 Delay 'Yinyang Robe'
+		Body = 'Summoner\'s Dblt.', --3 Delay 'Yinyang Robe'
         Hands = 'Summoner\'s Brcr.', --2 Delay
 		-- Hands = 'Austere Cuffs', --1 Delay
         Legs = 'Summoner\'s Spats', --2 Delay
@@ -362,6 +362,7 @@ profile.HandleDefault = function()
 			gFunc.Equip('body', 'Ducal Aketon');
 		end
 	else
+		-- TODO: Use Combine function to combine these sets
 		gFunc.EquipSet(sets.Idle);
 		gFunc.EquipSet(sets.Perp);
 		-- if (Settings.CurrentLevel < 51) then
@@ -399,7 +400,7 @@ profile.HandleDefault = function()
 		end
 		
 		if (env.DayElement == petElement) then
-			gFunc.Equip('body','Summoner\'s Doublet');
+			gFunc.Equip('body','Summoner\'s Dblt.');
 		end
 		
 		if (env.WeatherElement == petElement) then
