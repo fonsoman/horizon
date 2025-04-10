@@ -324,6 +324,7 @@ profile.HandleDefault = function()
 	local player = gData.GetPlayer();
 	local env = gData.GetEnvironment();
 	local pet = gData.GetPet();
+	local combinedSet = T{};
 	
 	if (myLevel ~= Settings.CurrentLevel) then
 		gFunc.EvaluateLevels(profile.Sets, myLevel);
@@ -344,17 +345,17 @@ profile.HandleDefault = function()
 		if (player.MainJobSync == 75) then
 			gFunc.EquipSet(sets.Idle);
 		elseif (player.MainJobSync >= 50) then
-			gFunc.EquipSet(sets.Idle_50);
-			gFunc.EquipSet(sets.Idle);
+			combinedSet = gFunc.Combine(sets.Idle_50, sets.Idle);
+			gFunc.EquipSet(combinedSet);
 		elseif (player.MainJobSync >= 40) then
-			gFunc.EquipSet(sets.Idle_40);
-			gFunc.EquipSet(sets.Idle_50);
+			combinedSet = gFunc.Combine(sets.Idle_40, sets.Idle_50);
+			gFunc.EquipSet(combinedSet);
 		elseif (player.MainJobSync >= 30) then
-			gFunc.EquipSet(sets.Idle_30);
-			gFunc.EquipSet(sets.Idle_40);
+			combinedSet = gFunc.Combine(sets.Idle_30, sets.Idle_40);
+			gFunc.EquipSet(combinedSet);
 		elseif (player.MainJobSync >= 20) then
-			gFunc.EquipSet(sets.Idle_20);
-			gFunc.EquipSet(sets.Idle_30);
+			combinedSet = gFunc.Combine(sets.Idle_20, sets.Idle_30);
+			gFunc.EquipSet(combinedSet);
 		else
 			gFunc.EquipSet(sets.Idle_20);
 		end

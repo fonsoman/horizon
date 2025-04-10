@@ -193,7 +193,7 @@ local sets = {
         Ear1 = 'Reraise Earring', -- PEVA 2
         Ear2 = 'Reraise Earring', -- PEVA 2
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
-        Hands = 'Scentless Armlets', -- DEF 4, EVA 5
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- Emnity -5
         Ring2 = 'Kshama Ring No.4', -- DEF 3, VIT 3
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
@@ -215,7 +215,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Merman\'s Earring', -- MDT -2%
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
-        Hands = 'Src. Gloves +1', -- MP 24, DEF 16, Emnity -3
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Merman\'s Ring', -- MDT -4%
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
@@ -238,7 +238,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
         Body = 'Black Cotehardie', -- Wind +3, INT +2
-        Hands = 'Errant Cuffs', -- INT +5
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Merman\'s Ring', -- MDT -4%
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Blue Cape', -- Wind +5
@@ -261,7 +261,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
         Body = 'Black Cotehardie', -- Lightning +3, INT +2
-        Hands = 'Errant Cuffs', -- INT +5
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Merman\'s Ring', -- MDT -4%
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
@@ -304,7 +304,7 @@ local sets = {
         Ear1 = 'Abyssal Earring', -- Scythe +5
         Ear2 = 'Static Earring', -- MDB 2, MND 2
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
-        Hands = 'Scentless Armlets', -- DEF 4, EVA 5
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', --
         Ring2 = 'Kshama Ring No.2', -- DEX 3, Acc 2
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
@@ -862,14 +862,11 @@ local Helm = {
 	[3] = 'Cooking',
 	[4] = 'Worker',
     [5] = 'Chocobo',
+    [6] = 'Teleport'
 }
 local RestSet = {
 	[1] = 'Rest_hMP',
 	[2] = 'Rest_MaxMP',
-}
-local TeleportSet = {
-	[1] = 'False',
-	[2] = 'True',
 }
 local SpiritLantern = {
 	[1] = 'False',
@@ -888,7 +885,6 @@ local Settings = {
 	MagicBurst = 1,
     Helm = 1,
 	RestSet = 1,
-	TeleportSet = 1,
 	SpiritLantern = 1,
 }
 
@@ -1105,41 +1101,14 @@ profile.HandleCommand = function(args)
 	end	
 
 	--[[-----------------------------------------------------------------------------------
-        HandleCommand: Teleport Set
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'teleportset') then
-		if (Settings.TeleportSet == 1) then
-			Settings.TeleportSet = 2;
-			gFunc.EquipSet('Teleport');
-			gFunc.Disable('Main');
-			gFunc.Disable('Head');
-			gFunc.Disable('Body');
-			gFunc.Disable('Legs');
-			gFunc.Disable('Ring2');
-			gFunc.Message('Teleport Set: True');
-		else
-			Settings.TeleportSet = 1;
-			gFunc.Enable('Main');
-			gFunc.Enable('Head');
-			gFunc.Enable('Body');
-			gFunc.Enable('Legs');
-			gFunc.Enable('Ring2');
-			gFunc.Message('Teleport Set: False');
-		end
-	end	
-
-	--[[-----------------------------------------------------------------------------------
         HandleCommand: Spirit Lantern
     --]]-----------------------------------------------------------------------------------
 	if (args[1] == 'spiritlantern') then
 		if (Settings.SpiritLantern == 1) then
 			Settings.SpiritLantern = 2;
-			gFunc.Equip('Ammo', 'SpiritLantern');
-			gFunc.Disable('Ammo');
 			gFunc.Message('Spirit Lantern: True');
 		else
 			Settings.SpiritLantern = 1;
-			gFunc.Enable('Ammo');
 			gFunc.Message('Spirit Lantern: False');
 		end
 	end	
@@ -1160,6 +1129,9 @@ profile.HandleCommand = function(args)
         elseif (Settings.Helm == 4) then
 			gFunc.Message('Helm Set: Chocobo');
 			Settings.Helm = 5;
+        elseif (Settings.Helm == 5) then
+			gFunc.Message('Helm Set: Teleport');
+			Settings.Helm = 6;
 		else
 			gFunc.Message('Helm Set: Standard');
 			Settings.Helm = 1;
@@ -1248,7 +1220,7 @@ profile.HandleDefault = function()
 				gFunc.EquipSet(sets.RepGoldMedal);
 			end
 
-            if (CityZones:contains(environ.Area)) then
+            if ((CityZones:contains(environ.Area)) and (player.IsMoving)) then
                 gFunc.EquipSet(sets.DucalAketon);
 			end
 
@@ -1268,6 +1240,8 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.Worker);
         elseif (Settings.Helm == 5) then
             gFunc.EquipSet(sets.Chocobo);
+        elseif (Settings.Helm == 6) then
+            gFunc.EquipSet(sets.Teleport);
         else
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
         end
