@@ -30,9 +30,9 @@ local sets = {
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
-        Hands = 'Src. Gloves +1', -- MP 24, DEF 16, Emnity -3
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
-        Ring2 = 'Kshama Ring No.9', -- MP 5
+        Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- MP 48, DEF 3
         Legs = 'Sorcerer\'s Tonban', -- MP 13, DEF 30, Emnity -2
@@ -1187,33 +1187,39 @@ profile.HandleDefault = function()
 						else
 							gFunc.EquipSet(sets.Idle_PDT);
 						end
+                    elseif (player.SubJob == 'THF') then
+						if (player.MP >= 1000) then
+							gFunc.EquipSet(sets.Idle_MP);
+						elseif (player.MP >= 850) then
+							gFunc.EquipSet(sets.Idle_Standard);
+						else
+							gFunc.EquipSet(sets.Idle_PDT);
+						end
 					else
 						gFunc.EquipSet(sets.Idle_Standard);
 					end
 				elseif (player.MainJobSync >= 60) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_60, sets.Idle_Standard);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_60);
 				elseif (player.MainJobSync >= 51) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_51, sets.Idle_Standard_60);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_51);
 				elseif (player.MainJobSync >= 50) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_50, sets.Idle_Standard_51);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_50);
 				elseif (player.MainJobSync >= 40) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_40, sets.Idle_Standard_50);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_40);
 				elseif (player.MainJobSync >= 30) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_30, sets.Idle_Standard_40);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_30);
 				elseif (player.MainJobSync >= 20) then
-					combinedSet = gFunc.Combine(sets.Idle_Standard_20, sets.Idle_Standard_30);
-					gFunc.EquipSet(combinedSet);
+					gFunc.EquipSet(sets.Idle_Standard_20);
 				else
 					gFunc.EquipSet(sets.Idle_Standard_20);
 				end
 			else
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
+
+            if (environ.Time < 18.00 and environ.Time > 6.00) then
+                gFunc.Equip('Ammo', 'Fenrir\'s Stone');
+            end
 
 			-- Todo: Only equip this if you are high in mp or not in PDT
 			if (Settings.OutsideNation == 2) then

@@ -8,7 +8,7 @@ local sets = {
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
 		Ear2 = 'Morion Earring',
-		Body = 'Errant Hpl.', -- DEF 42 Emnity -3
+		Body = 'Summoner\'s Dblt.',
 		Hands = 'Zenith Mitts',
 		Ring1 = 'Tamas Ring',
 		Ring2 = 'Evoker\'s Ring',
@@ -345,21 +345,17 @@ profile.HandleDefault = function()
 		if (player.MainJobSync == 75) then
 			gFunc.EquipSet(sets.Idle);
 		elseif (player.MainJobSync >= 50) then
-			combinedSet = gFunc.Combine(sets.Idle_50, sets.Idle);
-			gFunc.EquipSet(combinedSet);
+			gFunc.EquipSet(sets.Idle_50);
 		elseif (player.MainJobSync >= 40) then
-			combinedSet = gFunc.Combine(sets.Idle_40, sets.Idle_50);
-			gFunc.EquipSet(combinedSet);
+			gFunc.EquipSet(sets.Idle_40);
 		elseif (player.MainJobSync >= 30) then
-			combinedSet = gFunc.Combine(sets.Idle_30, sets.Idle_40);
-			gFunc.EquipSet(combinedSet);
+			gFunc.EquipSet(sets.Idle_30);
 		elseif (player.MainJobSync >= 20) then
-			combinedSet = gFunc.Combine(sets.Idle_20, sets.Idle_30);
-			gFunc.EquipSet(combinedSet);
+			gFunc.EquipSet(sets.Idle_20);
 		else
 			gFunc.EquipSet(sets.Idle_20);
 		end
-		if (CityZones:contains(env.Area)) then
+		if ((CityZones:contains(env.Area)) and (player.IsMoving)) then
 			gFunc.Equip('body', 'Ducal Aketon');
 		end
 	else
