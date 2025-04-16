@@ -49,13 +49,13 @@ local sets = {
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
         Body = 'Ryl.Sqr. Robe', --
-        Hands = 'Seer\'s Mitts +1', --
+        Hands = 'Wizard\'s Gloves', -- Elem 15
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.5', -- MP 5
         Back = 'Skulker\'s Cape', --
         Waist = 'Mrc.Cpt. Belt', --
         Legs = 'Wonder Braccae', --
-        Feet = 'Seer\'s Pumps', --
+        Feet = 'Wizard\'s Sabots', -- SpellInt 20%, DEF 11
     },
 	    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 51 cap
@@ -209,7 +209,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT = {
         Main = 'Earth Staff',
-        Ammo = 'Fortune Egg',
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
@@ -232,7 +232,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Wind = {
         Main = 'Aquilo\'s Staff', -- Wind +20, INT +5
-        Ammo = 'Fortune Egg',
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Blue Ribbon', -- Wind +6
         Neck = 'Elemental Torque', -- Wind +5
         Ear1 = 'Merman\'s Earring', -- MDT -2%
@@ -255,7 +255,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Lightning = {
         Main = 'Earth Staff', -- Lightning +15
-        Ammo = 'Fortune Egg',
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- Lightning +10
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
@@ -278,7 +278,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Emnity = {
         Main = 'Earth Staff', -- PDT -20%
-        Ammo = 'Fortune Egg', -- MP 1%
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
@@ -485,8 +485,8 @@ local sets = {
             TBD
     --]]-----------------------------------------------------------------------------------
     Healing = {
-        Main = 'Solid Wand', -- MND 5
-        Sub = 'Beater\'s Aspis',
+        Main = 'Chanter\'s Staff', -- MND 6
+        -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Lgn. Circlet', -- MND 1
         Neck = 'Justice Badge', -- MND 3
@@ -742,48 +742,9 @@ local sets = {
         Hands = 'Dream Mittens +1',
         Back = 'Skulker\'s Cape',
     },
-    MstCstBracelets = {
-        Hands = 'Mst.Cst. Bracelets',
-    },
-    DiabolosEarringL = {
-        -- Ear1 = 'Diabolos\'s Earring',
-    },
-    DiabolosEarringR = {
-        -- Ear2 = 'Diabolos\'s Earring',
-    },
-    DiabolosPole = {
-        -- Main = 'Diabolos\'s Pole',
-    },
-    ShivaRing = {
-        Ring2 = 'Ice Ring',
-    },
-    DarkRing = {
-        -- Ring2 = 'Diabolos\'s Ring',
-    },
-    UggPendant = {
-        Neck = 'Uggalepih Pendant',
-    },
-	RepGoldMedal = {
-		Neck = 'Rep.Gold Medal',
-	},
-    FenrirTorque = {
-        -- Neck = 'Fenrir\'s Torque',
-    },
-    SorcRing = {
-        Ring2 = 'Sorcerer\'s Ring',
-    },
-    SorcPants = {
-        Legs = 'Sorcerer\'s Tonban',
-    },
-    MABHead = {
-        -- Head = 'Republic Circlet',
-    },
     MagicBurst = {
         Hands = 'Src. Gloves +1',
         Ear2 = 'Static Earring', -- MDB 2, MND 2, Magic Burst
-    },
-    DucalAketon = {
-        Body = 'Ducal Aketon',
     },
 	Teleport = {
 		Main = 'Treat Staff II',
@@ -840,14 +801,6 @@ local Elemental = {
 	[4] = 'Mid',
     [5] = 'Emnity'
 }
-local OutsideNation = {
-	[1] = 'False',
-	[2] = 'True',
-}
-local InsideNation = {
-	[1] = 'False',
-	[2] = 'True',
-}
 local SorcRing = {
 	[1] = 'False',
 	[2] = 'True',
@@ -868,24 +821,58 @@ local RestSet = {
 	[1] = 'Rest_hMP',
 	[2] = 'Rest_MaxMP',
 }
-local SpiritLantern = {
-	[1] = 'False',
-	[2] = 'True',
-}
+
+--[[-----------------------------------------------------------------------------------
+	Generic Extras
+--]]-----------------------------------------------------------------------------------
+conquest = gFunc.LoadFile('common\\Conquest.lua');
+generic = gFunc.LoadFile('common\\Generic.lua');
+
+--[[-----------------------------------------------------------------------------------
+	Current Stats
+--]]-----------------------------------------------------------------------------------
+local CurrentStatsRDM = {
+	['HP'] = 812,
+	['MP'] = 858,
+};
+
+local CurrentStatsWHM = {
+	['HP'] = 794,
+	['MP'] = 877,
+};
+
+local CurrentStatsTHF = {
+	['HP'] = 812,
+	['MP'] = 858,
+};
+
+local CurrentStats = {};
+
+local GearsetStats = {
+	['PDT'] = {
+		['HP'] = 71,
+		['MP'] = 68
+	},
+	['Idle'] = {
+		['HP'] = -30,
+		['MP'] = 240
+	},
+	['MaxMP'] = {
+		['HP'] = -100,
+		['MP'] = 348
+	}
+};
+
 --[[-----------------------------------------------------------------------------------
     Gearset Variable Defaults
 --]]-----------------------------------------------------------------------------------
 local Settings = {
 	Idle = 1,
 	Elemental = 1,
-	Mode = 1,
-	OutsideNation = 1,
-	InsideNation = 1,
 	SorcRing = 1,
 	MagicBurst = 1,
     Helm = 1,
 	RestSet = 1,
-	SpiritLantern = 1,
 }
 
 --[[-----------------------------------------------------------------------------------
@@ -973,10 +960,20 @@ end
 
 --[[-----------------------------------------------------------------------------------
     OnLoad
-        Runs commands when job switched to BLM
+        Runs commands when job switched
 --]]-----------------------------------------------------------------------------------
 profile.OnLoad = function()
-	(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	local player = gData.GetPlayer();
+	if (player.SubJob == 'RDM') then
+		CurrentStats = CurrentStatsRDM;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	elseif (player.SubJob == 'WHM') then
+		CurrentStats = CurrentStatsWHM;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	elseif (player.SubJob == 'THF') then
+		CurrentStats = CurrentStatsTHF;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	end
 end
 
 --[[-----------------------------------------------------------------------------------
@@ -994,8 +991,9 @@ profile.HandleCommand = function(args)
     if (args[1] == 'idle_standard') then
         Settings.Idle = 1;
         Settings.RestSet = 1;
+		Settings.Helm = 1;
         gFunc.Message('Idle Standard and Rest: hMP');
-        gFunc.Message('Zone: ' .. environ.Area)
+        gFunc.Message('Zone: ' .. environ.Area);
     elseif (args[1] == 'idle_mp') then
         Settings.Idle = 2;
         gFunc.Message('Idle Max MP');
@@ -1049,32 +1047,6 @@ profile.HandleCommand = function(args)
 	end
 
     --[[-----------------------------------------------------------------------------------
-        HandleCommand: Toggle Outside Nation Flag
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'onation') then
-		if (Settings.OutsideNation == 1) then
-			Settings.OutsideNation = 2;
-			gFunc.Message('Outside Nation Set To: True');
-		else
-			Settings.OutsideNation = 1;
-			gFunc.Message('Outside Nation Set To: False');
-		end
-	end
-
-    --[[-----------------------------------------------------------------------------------
-        HandleCommand: Toggle Inside Nation Flag
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'ination') then
-		if (Settings.InsideNation == 1) then
-			Settings.InsideNation = 2;
-			gFunc.Message('Inside Nation Set To: True');
-		else
-			Settings.InsideNation = 1;
-			gFunc.Message('Inside Nation Set To: False');
-		end
-	end	
-
-    --[[-----------------------------------------------------------------------------------
         HandleCommand: Toggle Sorcerer's Ring
     --]]-----------------------------------------------------------------------------------
 	if (args[1] == 'sorc') then
@@ -1097,19 +1069,6 @@ profile.HandleCommand = function(args)
 		else
 			Settings.MagicBurst = 1;
 			gFunc.Message('Magic Burst: False');
-		end
-	end	
-
-	--[[-----------------------------------------------------------------------------------
-        HandleCommand: Spirit Lantern
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'spiritlantern') then
-		if (Settings.SpiritLantern == 1) then
-			Settings.SpiritLantern = 2;
-			gFunc.Message('Spirit Lantern: True');
-		else
-			Settings.SpiritLantern = 1;
-			gFunc.Message('Spirit Lantern: False');
 		end
 	end	
 
@@ -1148,7 +1107,6 @@ end
 profile.HandleDefault = function()
 	local player = gData.GetPlayer();
 	local environ= gData.GetEnvironment();
-	local combinedSet = T{};
 
     --[[-----------------------------------------------------------------------------------
         HandleDefault:
@@ -1158,7 +1116,7 @@ profile.HandleDefault = function()
             Otherwise, equip the Idle set
     --]]-----------------------------------------------------------------------------------
 	if (player.Status == 'Resting') then
-        if ((Settings.Helm == 1) and (player.MP > 1000)) then
+        if ((Settings.Helm == 1) and (player.MP > (CurrentStats.MP + GearsetStats.PDT.MP - 35))) then
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
         elseif (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
@@ -1171,32 +1129,17 @@ profile.HandleDefault = function()
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
-					if (player.SubJob == 'RDM') then
-						if (player.MP >= 1070) then
-							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 900) then
-							gFunc.EquipSet(sets.Idle_Standard);
-						else
-							gFunc.EquipSet(sets.Idle_PDT);
+					if (player.MP >= (CurrentStats.MP + GearsetStats.Idle.MP - 35)) then
+						gFunc.EquipSet(sets.Idle_MP);
+						if (conquest:GetOutsideControl()) then
+							gFunc.Equip('Neck', 'Rep.Gold Medal');
+						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
+							gFunc.Equip('Neck', 'Fenrir\'s Torque');
 						end
-					elseif (player.SubJob == 'WHM') then
-						if (player.MP >= 1090) then
-							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 920) then
-							gFunc.EquipSet(sets.Idle_Standard);
-						else
-							gFunc.EquipSet(sets.Idle_PDT);
-						end
-                    elseif (player.SubJob == 'THF') then
-						if (player.MP >= 1000) then
-							gFunc.EquipSet(sets.Idle_MP);
-						elseif (player.MP >= 850) then
-							gFunc.EquipSet(sets.Idle_Standard);
-						else
-							gFunc.EquipSet(sets.Idle_PDT);
-						end
-					else
+					elseif (player.MP >= (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
 						gFunc.EquipSet(sets.Idle_Standard);
+					else
+						gFunc.EquipSet(sets.Idle_PDT);
 					end
 				elseif (player.MainJobSync >= 60) then
 					gFunc.EquipSet(sets.Idle_Standard_60);
@@ -1221,24 +1164,18 @@ profile.HandleDefault = function()
                 gFunc.Equip('Ammo', 'Fenrir\'s Stone');
             end
 
-			-- Todo: Only equip this if you are high in mp or not in PDT
-			if (Settings.OutsideNation == 2) then
-				gFunc.EquipSet(sets.RepGoldMedal);
-			end
-
             if ((CityZones:contains(environ.Area)) and (player.IsMoving)) then
-                gFunc.EquipSet(sets.DucalAketon);
+				gFunc.Equip('Body', 'Ducal Aketon');
 			end
-
 
         elseif (Settings.Helm == 2) then
             gFunc.EquipSet(sets.Fishing);
             if (environ.Area == "Sea Serpent Grotto") then
-                gFunc.Equip('ammo','Shrimp Lure');
+                gFunc.Equip('Ammo','Shrimp Lure');
             elseif (environ.Area == "Ship bound for Mhaura") then
-                gFunc.Equip('ammo','Sinking Minnow');
+                gFunc.Equip('Ammo','Sinking Minnow');
             elseif (environ.Area == "Ship bound for Selbina") then
-                gFunc.Equip('ammo','Sinking Minnow');
+                gFunc.Equip('Ammo','Sinking Minnow');
             end
         elseif (Settings.Helm == 3) then
             gFunc.EquipSet(sets.Cooking);
@@ -1267,10 +1204,13 @@ profile.HandlePrecast = function()
     local baseSpellName = action.Name:match('^(%a+)')
 
     local spell = gData.GetAction()
-    local fastCastValue = 0.23 
+    local fastCastValue = 0.02
+	if (player.SubJob == 'RDM') then
+        fastCastValue = fastCastValue + 0.15 -- Fast Cast II Trait
+    end
     local latency = 0.250 
     local minimumBuffer = 0.2
-    local packetDelay = 0.25
+    local packetDelay = 0.4
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) + latency - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
@@ -1301,6 +1241,10 @@ profile.HandleMidcast = function()
         Settings.RestSet = 1;
     end
 
+	if (player.MP < (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
+		gFunc.InterimEquipSet(sets.Idle_PDT);
+	end
+
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: MaxMP - Keep equipset the same so you don't waste MP
     --]]-----------------------------------------------------------------------------------
@@ -1312,27 +1256,19 @@ profile.HandleMidcast = function()
     elseif (action.Skill == 'Enfeebling Magic') then
         if	(MndDebuffs:contains(action.Name)) then
 			gFunc.EquipSet(sets.Enfeeb_Mind);
-			gFunc.Equip('main', ElementalStaff[action.Element]);
-			if (Settings.OutsideNation == 2) then
-				gFunc.EquipSet(sets.MstCstBracelets);
-			end
-			if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
-				gFunc.EquipSet(sets.DiabolosEarringL);
-			end
         end
         if	(IntDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Enfeeb_INT);
-            gFunc.Equip('main', ElementalStaff[action.Element]);
-			if (Settings.OutsideNation == 2) then
-				gFunc.EquipSet(sets.MstCstBracelets);
-			end
-			if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
-				gFunc.EquipSet(sets.DiabolosEarringL);
-			end
         end
-		
+		gFunc.Equip('Main', ElementalStaff[action.Element]);
+		if (conquest:GetOutsideControl()) then
+			gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+		end
+		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
+			gFunc.Equip('Ear1', 'Diabolos\'s Earring');
+		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', ElementalObi[action.Element]);
 		end
 
 	--[[-----------------------------------------------------------------------------------
@@ -1341,41 +1277,52 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Elemental Magic') then
 		if (ElementalDebuffs:contains(action.Name)) then	
 			gFunc.EquipSet(sets.MaxINT);
-			gFunc.Equip('main', ElementalStaff[action.Element]);
+			gFunc.Equip('Main', ElementalStaff[action.Element]);
 		else
 			gFunc.EquipSet('Elemental_' .. Elemental[Settings.Elemental]);
 			gFunc.Equip('main', ElementalStaff[action.Element]);
-			if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
-				gFunc.EquipSet(sets.ShivaRing);
-			end
-			if (Settings.Elemental == 3) then
-				if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
-					gFunc.EquipSet(sets.DiabolosEarringL);
-				end
-				if (environ.DayElement == 'Ice') then
-					gFunc.EquipSet(sets.ShivaRing);
-				end
-			end
-			if (Settings.Elemental == 1 or Settings.Elemental == 2) then
+			if (Settings.Elemental == 1 or Settings.Elemental == 2) then -- Standard or Potency Elemental Set
 				if (gData.GetAction().MppAftercast <= 50) then
-					gFunc.EquipSet(sets.UggPendant);
+					gFunc.Equip('Neck', 'Uggalepih Pendant');
 				end
 				if (environ.DayElement == action.Element) then
-					gFunc.EquipSet(sets.SorcPants);
+					gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
 				end
 				if ((Settings.SorcRing == 2) or (player.HPP <= 75)) then
-					gFunc.EquipSet(sets.SorcRing);
+					gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
+					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
+						gFunc.Equip('Ring1', 'Ice Ring');
+					end
+				else
+					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
+						gFunc.Equip('Ring2', 'Ice Ring');
+					end
 				end
-				if (Settings.InsideNation == 2) then
-					gFunc.EquipSet(sets.MABHead);
-				end
+				if (conquest:GetInsideControl()) then
+                    gFunc.Equip('Head', 'Republic Circlet');
+                end
 				if (Settings.MagicBurst == 2) then
 					gFunc.EquipSet(sets.MagicBurst);
 				end
+			elseif (Settings.Elemental == 3 or Settings.Elemental == 4) then -- Mid or Accuracy Elemental Set
+				if (conquest:GetOutsideControl()) then
+					gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+				end
+				if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
+					gFunc.Equip('Ear1', 'Diabolos\'s Earring');
+				end
+				if (environ.DayElement == 'Ice') then
+					gFunc.Equip('Ring2', 'Ice Ring');
+				end
+			elseif ((Settings.Elemental == 5) then  -- Emnity Elemental Set
+				if (environ.Time > 18.00 or environ.Time < 6.00)) then
+					gFunc.Equip('Neck', 'Fenrir\'s Torque');
+				end
 			end
+			
 		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', ElementalObi[action.Element]);
 		end
 
     --[[-----------------------------------------------------------------------------------
@@ -1388,20 +1335,19 @@ profile.HandleMidcast = function()
 			gFunc.EquipSet(sets.Dark);
 		end
         gFunc.Equip('main', ElementalStaff[action.Element]);
-		if ((player.MP > 850) and (action.Name == 'Aspir')) then
-			gFunc.EquipSet(sets.Idle_MP);
-			gFunc.EquipSet(sets.Dark_Essential);
+		if ((gData.GetAction().MppAftercast > 84) and (action.Name == 'Aspir')) then
+			gFunc.EquipSet(gFunc.combineSet(sets.Idle_MP, sets.Dark_Essential));
 		end
 		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 			if (action.Name == 'Drain' or action.Name == 'Aspir') then
-				gFunc.EquipSet(sets.DiabolosPole);
+				gFunc.Equip('Main', 'Diabolos\'s Pole');
 			end
 		end
 		if (environ.DayElement == 'Dark' and gData.GetAction().MppAftercast <= 84) then
-			gFunc.EquipSet(sets.DarkRing);
+			gFunc.Equip('Ring2', 'Diabolos\'s Ring');
 		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', ElementalObi[action.Element]);
 		end
 	
     --[[-----------------------------------------------------------------------------------
@@ -1410,10 +1356,10 @@ profile.HandleMidcast = function()
 	elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
 		gFunc.EquipSet(sets.Healing);
 			if ObiCheck(action) >= 1 then
-				gFunc.Equip('waist', ElementalObi[action.Element]);
+				gFunc.Equip('Waist', ElementalObi[action.Element]);
 			end
-		if (environ.Time < 18.00 and environ.Time > 6.00) then
-			gFunc.EquipSet(sets.FenrirTorque);
+		if (environ.Time > 18.00 or environ.Time < 6.00) then
+			gFunc.Equip('Neck', 'Fenrir\'s Torque');
 		end
 	
     --[[-----------------------------------------------------------------------------------

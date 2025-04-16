@@ -3,7 +3,7 @@ local profile = {};
 local sets = {
 	Idle = {
 		Main = 'Earth Staff',
-		Ammo = 'Hedgehog Bomb',
+		Ammo = 'Fenrir\'s Stone',
 		Head = 'Faerie Hairpin',
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
@@ -60,15 +60,15 @@ local sets = {
         Ammo = 'Sweet Satchet', -- 
 		Head = 'Dodge Headband', --
         Neck = 'Black Neckerchief', --
-        Ear1 = '', --
+        -- Ear1 = '', --
         Ear2 = 'Morion Earring', -- MP 4
-        Body = '', --
+        Body = 'Seer\'s Tunic', -- hMP 1 MP 8
         Hands = 'Carbuncle Mitts', --
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Astral Ring', -- MP 25
         Back = 'Cotton Cape', --
         Waist = 'Mrc.Cpt. Belt', --
-        Legs = '', --
+        Legs = 'Baron\'s Slops', --
         Feet = 'Seer\'s Pumps', --
 	},
 
@@ -96,6 +96,14 @@ local sets = {
         Ring2 = 'Evoker\'s Ring', --1 Perp
 		-- Feet = 'Evoker\'s Pigaches +1',
 	},
+
+	Assault = {
+		Head = 'Shep. Bonnet', --+5 Accuracy
+		-- Body = 'Summoner\'s Dblt.', -- Critical Hit Rate
+		Hands = 'Summoner\'s Brcr.', -- Enhances Accuracy
+		Legs = 'Evoker\'s Spats', -- Enhances Accuracy
+		Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
+	}
 	
    Resting = {
 		Main = 'Dark Staff',
@@ -137,9 +145,6 @@ local sets = {
 	
 	Cure = {
 		Main = 'Light Staff',
-		Sub = '',
-		Range = '',
-		Ammo = 'Hedgehog Bomb',
 		Head = 'Bastokan Circlet',
 		Neck = 'Justice Badge',
 		Ear1 = 'Geist Earring',
@@ -157,7 +162,7 @@ local sets = {
 	Stoneskin = {
 		Main = 'Solid Wand',
         Sub = 'Beater\'s Aspis',
-        -- Ammo = 'Hedgehog Bomb',
+        -- Ammo = '',
         Head = 'Lgn. Circlet', -- MND 1
         Neck = 'Justice Badge', -- MND 3
         Ear1 = 'Geist Earring', -- MND 1
@@ -187,7 +192,7 @@ local sets = {
         -- Body = 'Shep. Doublet', --+3 MAB
         Hands = 'Summoner\'s Brcr.', --Accuracy
         -- Legs = 'Evoker\'s Spats', --Accuracy
-        Feet = 'Summoner\'s Pgch.', --Accuracy
+        Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
 		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
 		-- Ear1 = 'Smn. Earring', --+3 Skill
@@ -198,7 +203,7 @@ local sets = {
         Body = 'Summoner\'s Dblt.', --
         Hands = 'Summoner\'s Brcr.', --Accuracy
         -- Legs = 'Evoker\'s Spats', --Accuracy
-        Feet = 'Summoner\'s Pgch.', --Attack
+        Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
 		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
 		Ear1 = 'Smn. Earring', --+3 Skill
@@ -298,6 +303,7 @@ local function HandlePetAction(PetAction)
 		gFunc.EquipSet(sets.SummonSkill);
 	elseif DebuffBP:contains(BPName) then
 		gFunc.EquipSet(sets.petMacc);
+
 	end
 end
 
@@ -356,52 +362,55 @@ profile.HandleDefault = function()
 			gFunc.EquipSet(sets.Idle_20);
 		end
 		if ((CityZones:contains(env.Area)) and (player.IsMoving)) then
-			gFunc.Equip('body', 'Ducal Aketon');
+			gFunc.Equip('Body', 'Ducal Aketon');
 		end
 	else
 		-- TODO: Use Combine function to combine these sets
-		gFunc.EquipSet(sets.Idle);
-		gFunc.EquipSet(sets.Perp);
+		gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
 		-- if (Settings.CurrentLevel < 51) then
-		-- 	gFunc.Equip('main', 'Dragon Staff');
+		-- 	gFunc.Equip('Main', 'Dragon Staff');
 		-- elseif Settings.CurrentLevel == 75 then
-		-- 	gFunc.Equip('main', 'Bahamut\'s Staff');
+		-- 	gFunc.Equip('Main', 'Bahamut\'s Staff');
 		if pet.Name == 'Carbuncle' then
-			gFunc.Equip('main','Light Staff');
-			gFunc.Equip('hands','Carbuncle Mitts');
+			gFunc.Equip('Main','Light Staff');
+			gFunc.Equip('Hands','Carbuncle Mitts');
 			petElement = 'Light';
 		elseif pet.Name == 'Ifrit' then
-			gFunc.Equip('main','Fire Staff');
+			gFunc.Equip('Main','Fire Staff');
 			petElement = 'Fire';
 		elseif pet.Name == 'Titan' then
-			gFunc.Equip('main','Earth Staff');
+			gFunc.Equip('Main','Earth Staff');
 			petElement = 'Earth';
 		elseif pet.Name == 'Leviathan' then
-			gFunc.Equip('main','Water Staff');
+			gFunc.Equip('Main','Water Staff');
 			petElement = 'Water';
 		elseif pet.Name == 'Garuda' then
-			gFunc.Equip('main','Wind Staff');
+			gFunc.Equip('Main','Wind Staff');
 			petElement = 'Wind';
 		elseif pet.Name == 'Shiva' then
-			gFunc.Equip('main','Aquilo\'s Staff');
+			gFunc.Equip('Main','Aquilo\'s Staff');
 			petElement = 'Ice';
 		elseif pet.Name == 'Ramuh' then
-			gFunc.Equip('main','Jupiter\'s Staff');
+			gFunc.Equip('Main','Jupiter\'s Staff');
 			petElement = 'Thunder';
 		elseif pet.Name == 'Fenrir' then
-			gFunc.Equip('main','Dark Staff');
+			gFunc.Equip('Main','Dark Staff');
 			petElement = 'Dark';
 		elseif pet.Name == 'Diabolos' then
-			gFunc.Equip('main','Dark Staff');
+			gFunc.Equip('Main','Dark Staff');
 			petElement = 'Dark';
+		end
+
+		if pet.Status == 'Engaged' then
+			gFunc.EquipSet(sets.Assault);
 		end
 		
 		if (env.DayElement == petElement) then
-			gFunc.Equip('body','Summoner\'s Dblt.');
+			gFunc.Equip('Body','Summoner\'s Dblt.');
 		end
 		
 		if (env.WeatherElement == petElement) then
-			gFunc.Equip('head','Summoner\'s Horn');
+			gFunc.Equip('Head','Summoner\'s Horn');
 		end
 	end
 end
