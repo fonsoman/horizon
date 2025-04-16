@@ -1129,6 +1129,10 @@ profile.HandleDefault = function()
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
+                    gFunc.Message('Current Stats');
+                    gFunc.Message(dump(CurrentStats));
+                    gFunc.Message('GearsetStats');
+                    gFunc.Message(dump(GearsetStats));
 					if (player.MP >= (CurrentStats['MP'] + GearsetStats.Idle['MP'] - 35)) then
 						gFunc.EquipSet(sets.Idle_MP);
 						if (conquest:GetOutsideControl()) then
@@ -1409,6 +1413,19 @@ end
 
 profile.HandleWeaponskill = function()
 end
+
+function dump(o)
+    if type(o) == 'table' then
+       local s = '{ '
+       for k,v in pairs(o) do
+          if type(k) ~= 'number' then k = '"'..k..'"' end
+          s = s .. '['..k..'] = ' .. dump(v) .. ','
+       end
+       return s .. '} '
+    else
+       return tostring(o)
+    end
+ end
 
 --[[-----------------------------------------------------------------------------------
     Final Return
