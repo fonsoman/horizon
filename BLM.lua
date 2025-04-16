@@ -1314,8 +1314,8 @@ profile.HandleMidcast = function()
 				if (environ.DayElement == 'Ice') then
 					gFunc.Equip('Ring2', 'Ice Ring');
 				end
-			elseif ((Settings.Elemental == 5) then  -- Emnity Elemental Set
-				if (environ.Time > 18.00 or environ.Time < 6.00)) then
+			elseif (Settings.Elemental == 5) then  -- Emnity Elemental Set
+				if (environ.Time > 18.00 or environ.Time < 6.00) then
 					gFunc.Equip('Neck', 'Fenrir\'s Torque');
 				end
 			end
