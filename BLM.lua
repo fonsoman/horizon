@@ -120,7 +120,7 @@ local sets = {
         Equipsets: Idle Standard lv 30 cap
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_30 = {
-        Main = 'Solid Wand', -- 
+        Main = 'Yew Wand +1', -- 
         Sub  = 'Beater\'s Aspis', -- DEF 3
         Ammo = 'Sweet Satchet', -- 
         -- Head = 'Seer\'s Crown +1', --
