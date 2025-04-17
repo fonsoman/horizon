@@ -1129,10 +1129,10 @@ profile.HandleDefault = function()
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
-                    gFunc.Message('Current Stats');
-                    gFunc.Message(dump(CurrentStats));
-                    gFunc.Message('GearsetStats');
-                    gFunc.Message(dump(GearsetStats));
+                    -- gFunc.Message('Current Stats');
+                    -- gFunc.Message(dump(CurrentStats));
+                    -- gFunc.Message('GearsetStats');
+                    -- gFunc.Message(dump(GearsetStats));
 					if (player.MP >= (CurrentStats['MP'] + GearsetStats.Idle['MP'] - 35)) then
 						gFunc.EquipSet(sets.Idle_MP);
 						if (conquest:GetOutsideControl()) then
