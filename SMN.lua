@@ -103,7 +103,7 @@ local sets = {
 		Hands = 'Summoner\'s Brcr.', -- Enhances Accuracy
 		Legs = 'Evoker\'s Spats', -- Enhances Accuracy
 		Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
-	}
+	},
 	
    Resting = {
 		Main = 'Dark Staff',
