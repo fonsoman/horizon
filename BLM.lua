@@ -1116,7 +1116,7 @@ profile.HandleDefault = function()
             Otherwise, equip the Idle set
     --]]-----------------------------------------------------------------------------------
 	if (player.Status == 'Resting') then
-        if ((Settings.Helm == 1) and (player.MP > (CurrentStats['MP'] + GearsetStats.PDT['MP'] - 35))) then
+        if ((Settings.Helm == 1) and (player.MP > (CurrentStats.MP + GearsetStats.PDT.MP - 35))) then
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
         elseif (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
@@ -1133,14 +1133,14 @@ profile.HandleDefault = function()
                     -- gFunc.Message(dump(CurrentStats));
                     -- gFunc.Message('GearsetStats');
                     -- gFunc.Message(dump(GearsetStats));
-					if (player.MP >= (CurrentStats['MP'] + GearsetStats.Idle['MP'] - 35)) then
+					if (player.MP >= (CurrentStats.MP + GearsetStats.Idle.MP - 35)) then
 						gFunc.EquipSet(sets.Idle_MP);
 						if (conquest:GetOutsideControl()) then
 							gFunc.Equip('Neck', 'Rep.Gold Medal');
 						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
 							gFunc.Equip('Neck', 'Fenrir\'s Torque');
 						end
-					elseif (player.MP >= (CurrentStats['MP'] + GearsetStats.PDT['MP'] - 35)) then
+					elseif (player.MP >= (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
 						gFunc.EquipSet(sets.Idle_Standard);
 					else
 						gFunc.EquipSet(sets.Idle_PDT);
@@ -1245,7 +1245,7 @@ profile.HandleMidcast = function()
         Settings.RestSet = 1;
     end
 
-	if (player.MP < (CurrentStats['MP'] + GearsetStats.PDT['MP'] - 35)) then
+	if (player.MP < (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
 		gFunc.InterimEquipSet(sets.Idle_PDT);
 	end
 
