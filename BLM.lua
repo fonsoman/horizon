@@ -843,7 +843,7 @@ local CurrentStatsWHM = {
 
 local CurrentStatsTHF = {
 	['HP'] = 812,
-	['MP'] = 858,
+	['MP'] = 799,
 };
 
 local CurrentStats = {};
