@@ -694,15 +694,18 @@ local sets = {
     HPDown = {
         Main = 'Ivory Sickle +1', -- HP -15
         -- Sub = 'Astral Aspis', -- HP -25
+        Ammo = 'Sweet Satchet', --
         Head = 'Faerie Hairpin', -- HP -20
         Neck = 'Checkered Scarf', -- HP -12
+        Ear1 = 'Reraise Earring', --
+        Ear2 = 'Reraise Earring', --
         Body = 'Black Cotehardie', -- HP -25
         Hands = 'Zenith Mitts', -- HP -50
         Ring1 = 'Astral Ring', -- HP -25
         Ring2 = 'Ether Ring', -- HP -30
         Back = 'Blue Cape', -- HP -15
         Waist = 'Penitent\'s Rope', -- HP -20
-        -- Legs = 'Zenith Slacks', -- HP -50
+        Legs = 'Wizard\'s Tonban', -- MP 14
         Feet = 'Rostrum Pumps', -- HP -30
 	},
     --[[-----------------------------------------------------------------------------------
