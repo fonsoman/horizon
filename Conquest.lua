@@ -213,12 +213,12 @@ ashita.events.register('packet_out', 'LAC_Conquest_Module_HandleOutgoingPacket',
         if (daysUntilConquest == -1) and (currentControl ~= 'N/A') then
             local packet = struct.pack('L', 0);
             AshitaCore:GetPacketManager():AddOutgoingPacket(0x5A, packet:totable());
-            print(chat.header('Conquest') .. chat.message('Sending packet to request conquest information.'));
+            -- print(chat.header('Conquest') .. chat.message('Sending packet to request conquest information.'));
             packetTime = os.clock() + 10;
         elseif (currentNation == 'Unknown') then
             local packet = struct.pack('L', 0);
             AshitaCore:GetPacketManager():AddOutgoingPacket(0x61, packet:totable());
-            print(chat.header('Conquest') .. chat.message('Sending packet to request current nation.'));
+            -- print(chat.header('Conquest') .. chat.message('Sending packet to request current nation.'));
             packetTime = os.clock() + 10;
         end
     end
@@ -237,7 +237,7 @@ ashita.events.register('packet_in', 'LAC_Conquest_Module_HandleIncomingPacket', 
                 regionControllers[region.name] = controllerNames[controller];
             end
 
-            print(chat.header('Conquest') .. chat.message('Updated conquest information.'));
+            -- print(chat.header('Conquest') .. chat.message('Updated conquest information.'));
         end
         
         packetTime = os.clock() + 1;
@@ -248,7 +248,7 @@ ashita.events.register('packet_in', 'LAC_Conquest_Module_HandleIncomingPacket', 
         local newNation = controllerNames[nationIndex + 1];
         if (newNation ~= currentNation) then
             currentNation = newNation;
-            print(chat.header('Conquest') .. chat.message('Updated player nation.'));
+            -- print(chat.header('Conquest') .. chat.message('Updated player nation.'));
         end
     end
 end);
