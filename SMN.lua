@@ -367,6 +367,11 @@ profile.HandleDefault = function()
 	else
 		-- TODO: Use Combine function to combine these sets
 		gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
+
+		if pet.Status == 'Engaged' then
+			gFunc.EquipSet(sets.Assault);
+		end
+		
 		-- if (Settings.CurrentLevel < 51) then
 		-- 	gFunc.Equip('Main', 'Dragon Staff');
 		-- elseif Settings.CurrentLevel == 75 then
@@ -399,10 +404,6 @@ profile.HandleDefault = function()
 		elseif pet.Name == 'Diabolos' then
 			gFunc.Equip('Main','Dark Staff');
 			petElement = 'Dark';
-		end
-
-		if pet.Status == 'Engaged' then
-			gFunc.EquipSet(sets.Assault);
 		end
 		
 		if (env.DayElement == petElement) then
