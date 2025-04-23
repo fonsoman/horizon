@@ -191,7 +191,7 @@ local sets = {
 		Head = 'Shep. Bonnet', --+5 Accuracy
         -- Body = 'Shep. Doublet', --+3 MAB
         Hands = 'Summoner\'s Brcr.', --Accuracy
-        -- Legs = 'Evoker\'s Spats', --Accuracy
+        Legs = 'Evoker\'s Spats', --Accuracy
         Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
 		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
@@ -202,7 +202,7 @@ local sets = {
 		Head = 'Shep. Bonnet', --+5 Accuracy
         Body = 'Summoner\'s Dblt.', --
         Hands = 'Summoner\'s Brcr.', --Accuracy
-        -- Legs = 'Evoker\'s Spats', --Accuracy
+        Legs = 'Evoker\'s Spats', --Accuracy
         Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
 		-- Neck = 'Smn. Torque', --+7 Skill
 		Ring2 = 'Evoker\'s Ring', --+10 Skill
@@ -262,6 +262,12 @@ profile.Sets = sets;
 local Settings = {
      CurrentLevel = 0,
 };
+
+--[[-----------------------------------------------------------------------------------
+	Generic Extras
+--]]-----------------------------------------------------------------------------------
+conquest = gFunc.LoadFile('common\\Conquest.lua');
+generic = gFunc.LoadFile('common\\Generic.lua');
 
 --change the staff names here when you get HQ staves
 local ElementalStaff = {
@@ -350,6 +356,11 @@ profile.HandleDefault = function()
 	elseif (pet == nil) then
 		if (player.MainJobSync == 75) then
 			gFunc.EquipSet(sets.Idle);
+			if (conquest:GetOutsideControl()) then
+				gFunc.Equip('Neck', 'Rep.Gold Medal');
+			elseif (environ.Time < 18.00 and environ.Time > 6.00) then
+				gFunc.Equip('Neck', 'Fenrir\'s Torque');
+			end
 		elseif (player.MainJobSync >= 50) then
 			gFunc.EquipSet(sets.Idle_50);
 		elseif (player.MainJobSync >= 40) then
@@ -365,7 +376,6 @@ profile.HandleDefault = function()
 			gFunc.Equip('Body', 'Ducal Aketon');
 		end
 	else
-		-- TODO: Use Combine function to combine these sets
 		gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
 
 		if pet.Status == 'Engaged' then

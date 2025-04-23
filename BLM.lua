@@ -145,8 +145,8 @@ local sets = {
         Ammo = 'Fortune Egg', -- 
         -- Head = '', --
         Neck = 'Black Neckerchief', --
-        -- Ear1 = 'Shell Earring', -- 
-        -- Ear2 = 'Shell Earring', -- 
+        -- Ear1 = '', -- 
+        -- Ear2 = '', -- 
         Body = 'Black Tunic', --
         Hands = 'Scentless Armlets', --
         Ring1 = 'Eremite\'s Ring', -- 
@@ -171,7 +171,7 @@ local sets = {
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring', -- MP 30
         Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Blue Cape', -- MP 30
+        Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- MP 48
         Legs = 'Wizard\'s Tonban', -- MP 14
         Feet = 'Rostrum Pumps', -- MP 30
@@ -196,7 +196,7 @@ local sets = {
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- Emnity -5
         Ring2 = 'Kshama Ring No.4', -- DEF 3, VIT 3
-        Back = 'Hexerei Cape', -- DT -3%, DEF 5
+        Back = 'Cheviot Cape', -- PDT -5%, DEF 5
         Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
         Legs = 'Wonder Braccae', -- HP 21, DEF 12
         Feet = 'Sorcerer\'s Sabots', -- DEF 14, Emnity -1
@@ -488,18 +488,18 @@ local sets = {
         Main = 'Chanter\'s Staff', -- MND 6
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
-        Head = 'Lgn. Circlet', -- MND 1
+        Head = 'Nashira Turban', -- Emnity -5
         Neck = 'Justice Badge', -- MND 3
         Ear1 = 'Geist Earring', -- MND 1
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Errant Hpl.', -- MND 10
+        Body = 'Duende Cotehardie', -- Conserve MP 4
         Hands = 'Devotee\'s Mitts', -- MND 5
         Ring1 = 'Tamas Ring', -- MND 5
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
         Legs = 'Errant Slops', -- MND 7
-        Feet = 'Errant Pigaches', -- MND 5
+        Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Enhancing
@@ -530,7 +530,7 @@ local sets = {
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
-        Neck = 'Justice Badge', -- MND 3
+        Neck = 'Stone Gorget', -- Enhances Stoneskin
         Ear1 = 'Static Earring', -- MND 2
         Ear2 = 'Geist Earring', -- MND 1
         Body = 'Errant Hpl.', -- MND 10
@@ -597,11 +597,11 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
-        Body = 'Wizard\'s Coat', -- MP 16
+        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.9',
-        Back = 'Blue Cape', -- MP 30
+        Ring2 = 'Ether Ring', -- MP 30
+        Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- hMP 2 MP 48
         Legs = 'Wizard\'s Tonban',
         Feet = 'Rostrum Pumps',
@@ -1132,10 +1132,6 @@ profile.HandleDefault = function()
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
-                    -- gFunc.Message('Current Stats');
-                    -- gFunc.Message(dump(CurrentStats));
-                    -- gFunc.Message('GearsetStats');
-                    -- gFunc.Message(dump(GearsetStats));
 					if (player.MP >= (CurrentStats.MP + GearsetStats.Idle.MP - 35)) then
 						gFunc.EquipSet(sets.Idle_MP);
 						if (conquest:GetOutsideControl()) then
@@ -1171,8 +1167,16 @@ profile.HandleDefault = function()
                 gFunc.Equip('Ammo', 'Fenrir\'s Stone');
             end
 
-            if ((CityZones:contains(environ.Area)) and (player.IsMoving)) then
-				gFunc.Equip('Body', 'Ducal Aketon');
+            if (CityZones:contains(environ.Area)) then
+				gFunc.EquipSet(sets.Idle_MP);
+				if (conquest:GetOutsideControl()) then
+					gFunc.Equip('Neck', 'Rep.Gold Medal');
+				elseif (environ.Time < 18.00 and environ.Time > 6.00) then
+					gFunc.Equip('Neck', 'Fenrir\'s Torque');
+				end
+				if (player.IsMoving) then
+					gFunc.Equip('Body', 'Ducal Aketon');
+				end
 			end
 
         elseif (Settings.Helm == 2) then
@@ -1343,7 +1347,7 @@ profile.HandleMidcast = function()
 		end
         gFunc.Equip('main', ElementalStaff[action.Element]);
 		if ((gData.GetAction().MppAftercast > 84) and (action.Name == 'Aspir')) then
-			gFunc.EquipSet(gFunc.combineSet(sets.Idle_MP, sets.Dark_Essential));
+			gFunc.EquipSet(gFunc.Combine(sets.Idle_MP, sets.Dark_Essential));
 		end
 		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 			if (action.Name == 'Drain' or action.Name == 'Aspir') then
@@ -1416,19 +1420,6 @@ end
 
 profile.HandleWeaponskill = function()
 end
-
-function dump(o)
-    if type(o) == 'table' then
-       local s = '{ '
-       for k,v in pairs(o) do
-          if type(k) ~= 'number' then k = '"'..k..'"' end
-          s = s .. '['..k..'] = ' .. dump(v) .. ','
-       end
-       return s .. '} '
-    else
-       return tostring(o)
-    end
- end
 
 --[[-----------------------------------------------------------------------------------
     Final Return
