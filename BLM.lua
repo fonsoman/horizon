@@ -521,12 +521,10 @@ local sets = {
         -- Feet = 'Mahatma Pigaches',
     },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Stoneskin - Capped at 350
-            MND - 61+55 = 116
-            Enhancing Magic Skill (1/3 as important as MND) - Base 200
+        Equipsets: Stoneskin - Capped at 380
     --]]-----------------------------------------------------------------------------------
     Stoneskin = {
-        Main = 'Chanter\'s Staff', -- MND 6
+        Main = 'Kirin\'s Pole', -- MND 10
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
