@@ -849,6 +849,11 @@ local CurrentStatsTHF = {
 	['MP'] = 799,
 };
 
+local CurrentStatsBST = {
+	['HP'] = 817,
+	['MP'] = 799,
+};
+
 local CurrentStats = {};
 
 local GearsetStats = {
@@ -976,6 +981,11 @@ profile.OnLoad = function()
 	elseif (player.SubJob == 'THF') then
 		CurrentStats = CurrentStatsTHF;
 		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+    elseif (player.SubJob == 'BST') then
+		CurrentStats = CurrentStatsBST;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+    else
+        CurrentStats = CurrentStatsBST;
 	end
 end
 
