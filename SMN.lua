@@ -358,7 +358,7 @@ profile.HandleDefault = function()
 			gFunc.EquipSet(sets.Idle);
 			if (conquest:GetOutsideControl()) then
 				gFunc.Equip('Neck', 'Rep.Gold Medal');
-			elseif (environ.Time < 18.00 and environ.Time > 6.00) then
+			elseif (env.Time < 18.00 and env.Time > 6.00) then
 				gFunc.Equip('Neck', 'Fenrir\'s Torque');
 			end
 		elseif (player.MainJobSync >= 50) then
