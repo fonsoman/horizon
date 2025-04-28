@@ -752,7 +752,10 @@ local sets = {
 		Head = 'Dream Hat +1',
 		Body = 'Mandra. Suit',
 		Ring2 = 'Tavnazian Ring'
-	}
+	},
+    BombQueenRing = {
+        Ring2 = 'Bomb Queen Ring'
+    }
 };
 
 --[[-----------------------------------------------------------------------------------
@@ -1350,6 +1353,8 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Dark Magic') then
 		if (action.Name == 'Stun') then
 			gFunc.EquipSet(sets.Stun);
+        elseif (action.Name == 'Drain') then
+            gFunc.EquipSet(gFunc.Combine(sets.Dark, sets.BombQueenRing));
 		else
 			gFunc.EquipSet(sets.Dark);
 		end
