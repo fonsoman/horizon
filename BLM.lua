@@ -439,8 +439,8 @@ local sets = {
         Ear2 = 'Morion Earring',
         Body = 'Errant Hpl.', -- INT 10
         Hands = 'Src. Gloves +1', -- Dark 12
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.5', -- INT 3
+        Ring1 = 'Kshama Ring No.5', -- INT 3
+        Ring2 = 'Tamas Ring', --
         Back = 'Merciful Cape', -- Dark 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Wizard\'s Tonban',
@@ -754,7 +754,7 @@ local sets = {
 		Ring2 = 'Tavnazian Ring'
 	},
     BombQueenRing = {
-        Ring2 = 'Bomb Queen Ring'
+        Ring1 = 'Bomb Queen Ring'
     }
 };
 
