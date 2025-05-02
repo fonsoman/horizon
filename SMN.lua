@@ -82,7 +82,7 @@ local sets = {
         -- Ear1 = '', --
         Body = 'Black Tunic', --
         Hands = 'Carbuncle Mitts', --
-        Ring2 = 'Astral Ring', -- MP 25
+        Ring1 = 'Astral Ring', -- MP 25
         Ring2 = 'Windurstian Ring', -- MP 3
         Back = 'Cotton Cape', --
         Waist = 'Friar\'s Rope', --
@@ -271,7 +271,7 @@ generic = gFunc.LoadFile('common\\Generic.lua');
 
 --change the staff names here when you get HQ staves
 local ElementalStaff = {
-    ['Fire'] = 'Fire Staff',
+    ['Fire'] = 'Vulcan\'s Staff',
     ['Earth'] = 'Earth Staff',
     ['Water'] = 'Water Staff',
     ['Wind'] = 'Wind Staff',
@@ -391,7 +391,7 @@ profile.HandleDefault = function()
 			gFunc.Equip('Hands','Carbuncle Mitts');
 			petElement = 'Light';
 		elseif pet.Name == 'Ifrit' then
-			gFunc.Equip('Main','Fire Staff');
+			gFunc.Equip('Main','Vulcan\'s Staff');
 			petElement = 'Fire';
 		elseif pet.Name == 'Titan' then
 			gFunc.Equip('Main','Earth Staff');

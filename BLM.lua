@@ -48,13 +48,13 @@ local sets = {
         Neck = 'Black Neckerchief', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
-        Body = 'Ryl.Sqr. Robe', --
+        Body = 'Wizard\'s Coat',
         Hands = 'Wizard\'s Gloves', -- Elem 15
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.5', -- MP 5
         Back = 'Skulker\'s Cape', --
         Waist = 'Mrc.Cpt. Belt', --
-        Legs = 'Wonder Braccae', --
+        Legs = 'Wizard\'s Tonban', -- MP 14
         Feet = 'Wizard\'s Sabots', -- SpellInt 20%, DEF 11
     },
 	    --[[-----------------------------------------------------------------------------------
@@ -762,7 +762,7 @@ local sets = {
     Elemental Staves
 --]]-----------------------------------------------------------------------------------
 local ElementalStaff = {
-    ['Fire'] = 'Fire Staff',
+    ['Fire'] = 'Vulcan\'s Staff',
     ['Earth'] = 'Earth Staff',
     ['Water'] = 'Water Staff',
     ['Wind'] = 'Wind Staff',
@@ -1131,7 +1131,11 @@ profile.HandleDefault = function()
     --]]-----------------------------------------------------------------------------------
 	if (player.Status == 'Resting') then
         if ((Settings.Helm == 1) and (player.MP > (CurrentStats.MP + GearsetStats.PDT.MP - 35))) then
-            gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
+			if (Settings.Idle == 1) then
+				gFunc.EquipSet(sets.Idle_MP);
+			else
+            	gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
+			end
         elseif (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
         else
@@ -1155,6 +1159,9 @@ profile.HandleDefault = function()
 					else
 						gFunc.EquipSet(sets.Idle_PDT);
 					end
+					if (environ.Time < 18.00 and environ.Time > 6.00) then
+						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
+					end
 				elseif (player.MainJobSync >= 60) then
 					gFunc.EquipSet(sets.Idle_Standard_60);
 				elseif (player.MainJobSync >= 51) then
@@ -1173,10 +1180,6 @@ profile.HandleDefault = function()
 			else
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
-
-            if (environ.Time < 18.00 and environ.Time > 6.00) then
-                gFunc.Equip('Ammo', 'Fenrir\'s Stone');
-            end
 
             if (CityZones:contains(environ.Area)) then
 				gFunc.EquipSet(sets.Idle_MP);
