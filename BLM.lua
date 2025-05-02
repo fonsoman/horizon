@@ -859,16 +859,16 @@ local CurrentStats = {};
 
 local GearsetStats = {
 	['PDT'] = {
-		['HP'] = 71,
-		['MP'] = 68
+		['HP'] = 146,
+		['MP'] = 30
 	},
 	['Idle'] = {
 		['HP'] = -42,
-		['MP'] = 194
+		['MP'] = 241
 	},
 	['MaxMP'] = {
-		['HP'] = -100,
-		['MP'] = 348
+		['HP'] = -130,
+		['MP'] = 331
 	}
 };
 
