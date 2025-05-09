@@ -165,8 +165,8 @@ local sets = {
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
-        Ear1 = 'Geist Earring', -- MP 5
-        Ear2 = 'Morion Earring', -- MP 4
+        Ear1 = 'Loquac. Earring', -- MP 30
+        Ear2 = 'Geist Earring', -- MP 5
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring', -- MP 30
@@ -668,7 +668,7 @@ local sets = {
             Fast Cast: 
     --]]-----------------------------------------------------------------------------------
     FastCast = {
-        -- Ear1 = 'Loquac. Earring',
+        Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
@@ -868,7 +868,7 @@ local GearsetStats = {
 	},
 	['MaxMP'] = {
 		['HP'] = -130,
-		['MP'] = 331
+		['MP'] = 357
 	}
 };
 
@@ -1229,7 +1229,7 @@ profile.HandlePrecast = function()
     local baseSpellName = action.Name:match('^(%a+)')
 
     local spell = gData.GetAction()
-    local fastCastValue = 0.02
+    local fastCastValue = 0.04
 	if (player.SubJob == 'RDM') then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast II Trait
     end

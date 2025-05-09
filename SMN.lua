@@ -178,7 +178,7 @@ local sets = {
 	},
 	
 	FastCast = {
-		-- Ear1 = 'Loquac. Earring',
+		Ear1 = 'Loquac. Earring',
 		Head = 'Nashira Turban',
 		-- Body = 'Nashira Manteel',
 		-- Hands = 'Nashira Gages',
