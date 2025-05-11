@@ -1234,7 +1234,7 @@ profile.HandlePrecast = function()
         fastCastValue = fastCastValue + 0.15 -- Fast Cast II Trait
     end
     local latency = 0.250 
-    local minimumBuffer = 0.2
+    local minimumBuffer = 0.5
     local packetDelay = 0.4
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) + latency - minimumBuffer
     if (castDelay >= packetDelay) then
