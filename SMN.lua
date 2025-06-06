@@ -92,7 +92,7 @@ local sets = {
 	
 	Perp = {
 		Body = 'Austere Robe', --1 Perp
-        -- Hands = 'Nashira Gages', --1 Perp
+        Hands = 'Nashira Gages', --1 Perp
         Ring2 = 'Evoker\'s Ring', --1 Perp
 		-- Feet = 'Evoker\'s Pigaches +1',
 	},
