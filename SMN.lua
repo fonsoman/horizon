@@ -8,7 +8,7 @@ local sets = {
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
 		Ear2 = 'Morion Earring',
-		Body = 'Summoner\'s Dblt.',
+		Body = 'Yinyang Robe',
 		Hands = 'Zenith Mitts',
 		Ring1 = 'Tamas Ring',
 		Ring2 = 'Evoker\'s Ring',
@@ -91,7 +91,7 @@ local sets = {
 	},
 	
 	Perp = {
-		Body = 'Austere Robe', --1 Perp
+		-- Body = 'Austere Robe', --1 Perp
         Hands = 'Nashira Gages', --1 Perp
         Ring2 = 'Evoker\'s Ring', --1 Perp
 		-- Feet = 'Evoker\'s Pigaches +1',
@@ -200,7 +200,7 @@ local sets = {
 	
 	petAtk = {
 		Head = 'Shep. Bonnet', --+5 Accuracy
-        Body = 'Summoner\'s Dblt.', --
+        -- Body = 'Summoner\'s Dblt.', --
         Hands = 'Summoner\'s Brcr.', --Accuracy
         Legs = 'Evoker\'s Spats', --Accuracy
         Feet = 'Summoner\'s Pgch.', -- Avatar Atk +7
@@ -242,7 +242,7 @@ local sets = {
 	
 	BPDelay = {
 		-- Head = 'Summoner\'s Horn', --3 Delay 'Austere Hat', --1 Delay
-		Body = 'Summoner\'s Dblt.', --3 Delay 'Yinyang Robe'
+		Body = 'Yinyang Robe', --5 Delay
         Hands = 'Summoner\'s Brcr.', --2 Delay
 		-- Hands = 'Austere Cuffs', --1 Delay
         Legs = 'Summoner\'s Spats', --2 Delay
