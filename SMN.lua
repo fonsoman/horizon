@@ -97,6 +97,23 @@ local sets = {
 		-- Feet = 'Evoker\'s Pigaches +1',
 	},
 
+    Idle_MDT = {
+        Main = 'Earth Staff',
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
+        Head = 'Nashira Turban',
+        Neck = 'Fenrir\'s Torque',
+        Ear1 = 'Arete del Sol', -- Resist stun
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Body = 'Yinyang Robe', -- Refresh 1
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
+        Ring1 = 'Merman\'s Ring', -- MDT -4%
+        Ring2 = 'Merman\'s Ring', -- MDT -4%
+        Back = 'Hexerei Cape', -- DT -3%, DEF 5
+        Waist = 'Earth Belt', -- 
+        Legs = 'Errant Slops', -- DEF 38, Emnity -3
+        Feet = 'Summoner\'s Pgch.',
+    },
+
 	Assault = {
 		Head = 'Shep. Bonnet', --+5 Accuracy
 		-- Body = 'Summoner\'s Dblt.', -- Critical Hit Rate
@@ -260,7 +277,10 @@ local sets = {
 profile.Sets = sets;
 
 local Settings = {
-     CurrentLevel = 0,
+	CurrentLevel = 0,
+	Idle = 1,
+	Helm = 1,
+	RestSet = 1,
 };
 
 --[[-----------------------------------------------------------------------------------
@@ -328,7 +348,67 @@ end
 profile.OnUnload = function()
 end
 
+--[[-----------------------------------------------------------------------------------
+    HandleCommand
+        Accepts arguments to update gearset variables
+--]]-----------------------------------------------------------------------------------
 profile.HandleCommand = function(args)
+
+    local player = gData.GetPlayer();
+	local environ= gData.GetEnvironment();
+    
+    --[[-----------------------------------------------------------------------------------
+        HandleCommand: Each command sets the idle set
+    --]]-----------------------------------------------------------------------------------
+    if (args[1] == 'idle_standard') then
+        Settings.Idle = 1;
+        Settings.RestSet = 1;
+		Settings.Helm = 1;
+        gFunc.Message('Idle Standard and Rest: hMP');
+        gFunc.Message('Zone: ' .. environ.Area);
+    elseif (args[1] == 'idle_mdt') then
+        Settings.Idle = 2;
+        gFunc.Message('Idle MDT');
+    end
+
+    --[[-----------------------------------------------------------------------------------
+        HandleCommand: Each command sets the rest set
+            rest_mp sets rest set and idle set to max mp
+    --]]-----------------------------------------------------------------------------------
+    if (args[1] == 'rest_hmp') then
+        Settings.RestSet = 1;
+        gFunc.Message('Rest: hMP');
+    elseif (args[1] == 'rest_mp') then
+        Settings.RestSet = 2;
+        Settings.Idle = 2;
+        gFunc.Message('Rest + Idle: Max MP');
+    end
+
+    --[[-----------------------------------------------------------------------------------
+        HandleCommand: Cycle HELM gearsets
+    --]]-----------------------------------------------------------------------------------
+    if (args[1] == 'helm') then
+		if (Settings.Helm == 1) then
+			Settings.Helm = 2;
+			gFunc.Message('Helm Set: Fishing');
+		elseif (Settings.Helm == 2) then
+			Settings.Helm = 3;
+			gFunc.Message('Helm Set: Cooking');
+		elseif (Settings.Helm == 3) then
+			gFunc.Message('Helm Set: Worker');
+			Settings.Helm = 4;
+        elseif (Settings.Helm == 4) then
+			gFunc.Message('Helm Set: Chocobo');
+			Settings.Helm = 5;
+        elseif (Settings.Helm == 5) then
+			gFunc.Message('Helm Set: Teleport');
+			Settings.Helm = 6;
+		else
+			gFunc.Message('Helm Set: Standard');
+			Settings.Helm = 1;
+		end
+	end
+
 end
 
 profile.HandleDefault = function()
