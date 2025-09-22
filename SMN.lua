@@ -160,13 +160,13 @@ local sets = {
 	},
 	
 	Stoneskin = {
-		Main = 'Solid Wand',
-        Sub = 'Beater\'s Aspis',
-        -- Ammo = '',
-        Head = 'Lgn. Circlet', -- MND 1
-        Neck = 'Justice Badge', -- MND 3
-        Ear1 = 'Geist Earring', -- MND 1
-        -- Ear2 = 'Geist Earring',
+        Main = 'Kirin\'s Pole', -- MND 10
+        -- Sub = '',
+        -- Ammo = 'Hedgehog Bomb',
+        Head = 'Faerie Hairpin', -- MP 55
+        Neck = 'Stone Gorget', -- Enhances Stoneskin
+        Ear1 = 'Static Earring', -- MND 2
+        Ear2 = 'Geist Earring', -- MND 1
         Body = 'Errant Hpl.', -- MND 10
         Hands = 'Devotee\'s Mitts', -- MND 5
         Ring1 = 'Tamas Ring', -- MND 5
