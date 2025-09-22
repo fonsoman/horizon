@@ -435,7 +435,13 @@ profile.HandleDefault = function()
 		end
 	elseif (pet == nil) then
 		if (player.MainJobSync == 75) then
-			gFunc.EquipSet(sets.Idle);
+			if (Settings.Idle == 1) then
+				gFunc.EquipSet(sets.Idle);
+			elseif (Settings.Idle == 1)
+				gFunc.EquipSet(sets.Idle_MDT);
+			else
+				gFunc.EquipSet(sets.Idle);
+			end
 			if (conquest:GetOutsideControl()) then
 				gFunc.Equip('Neck', 'Rep.Gold Medal');
 			elseif (env.Time < 18.00 and env.Time > 6.00) then
