@@ -437,7 +437,7 @@ profile.HandleDefault = function()
 		if (player.MainJobSync == 75) then
 			if (Settings.Idle == 1) then
 				gFunc.EquipSet(sets.Idle);
-			elseif (Settings.Idle == 1) then
+			elseif (Settings.Idle == 2) then
 				gFunc.EquipSet(sets.Idle_MDT);
 			else
 				gFunc.EquipSet(sets.Idle);
@@ -462,8 +462,14 @@ profile.HandleDefault = function()
 			gFunc.Equip('Body', 'Ducal Aketon');
 		end
 	else
-		gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
-
+		if (Settings.Idle == 1) then
+			gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
+		elseif (Settings.Idle == 2) then
+			gFunc.EquipSet(sets.Idle_MDT);
+		else
+			gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));
+		end
+		
 		if pet.Status == 'Engaged' then
 			gFunc.EquipSet(sets.Assault);
 		end
