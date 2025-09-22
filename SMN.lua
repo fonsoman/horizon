@@ -437,7 +437,7 @@ profile.HandleDefault = function()
 		if (player.MainJobSync == 75) then
 			if (Settings.Idle == 1) then
 				gFunc.EquipSet(sets.Idle);
-			elseif (Settings.Idle == 1)
+			elseif (Settings.Idle == 1) then
 				gFunc.EquipSet(sets.Idle_MDT);
 			else
 				gFunc.EquipSet(sets.Idle);
