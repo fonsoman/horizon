@@ -485,7 +485,7 @@ local sets = {
             TBD
     --]]-----------------------------------------------------------------------------------
     Healing = {
-        Main = 'Chanter\'s Staff', -- MND 6
+        Main = 'Light Staff', -- Cure Pot 10%
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- Emnity -5
