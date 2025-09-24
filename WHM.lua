@@ -704,7 +704,7 @@ local RestSet = {
 	Generic Extras
 --]]-----------------------------------------------------------------------------------
 conquest = gFunc.LoadFile('common\\Conquest.lua');
-generic = gFunc.LoadFile('common\\Generic.lua');
+gcinclude = gFunc.LoadFile('common\\Generic.lua');
 
 --[[-----------------------------------------------------------------------------------
     Gearset Variable Defaults
@@ -856,7 +856,7 @@ profile.HandleDefault = function()
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
 
-            if (CityZones:contains(environ.Area)) then
+            if (gcinclude.CityZones:contains(environ.Area)) then
 				gFunc.EquipSet(sets.Idle_MP);
 				if (conquest:GetOutsideControl()) then
 					gFunc.Equip('Neck', 'Rep.Gold Medal');
@@ -940,13 +940,13 @@ profile.HandleMidcast = function()
         HandleMidcast: Enfeebling Magic
     --]]-----------------------------------------------------------------------------------
     elseif (action.Skill == 'Enfeebling Magic') then
-        if	(MndDebuffs:contains(action.Name)) then
+        if	(gcinclude.MndDebuffs:contains(action.Name)) then
 			gFunc.EquipSet(sets.Enfeeb_Mind);
         end
-        if	(IntDebuffs:contains(action.Name)) then
+        if	(gcinclude.IntDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Enfeeb_INT);
         end
-		gFunc.Equip('Main', ElementalStaff[action.Element]);
+		gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		if (conquest:GetOutsideControl()) then
 			gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
 		end
@@ -954,22 +954,22 @@ profile.HandleMidcast = function()
 			gFunc.Equip('Ear1', 'Diabolos\'s Earring');
 		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('Waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 
 	--[[-----------------------------------------------------------------------------------
         HandleMidcast: Elemental Magic
     --]]-----------------------------------------------------------------------------------
 	elseif (action.Skill == 'Elemental Magic') then
-		if (ElementalDebuffs:contains(action.Name)) then	
+		if (gcinclude.ElementalDebuffs:contains(action.Name)) then	
 			gFunc.EquipSet(sets.MaxINT);
-			gFunc.Equip('Main', ElementalStaff[action.Element]);
+			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		else
 			gFunc.EquipSet(sets.Elemental_Standard);
-			gFunc.Equip('Main', ElementalStaff[action.Element]);
+			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('Waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 
     --[[-----------------------------------------------------------------------------------
@@ -996,7 +996,7 @@ profile.HandleMidcast = function()
 			gFunc.Equip('Ring2', 'Diabolos\'s Ring');
 		end
 		if ObiCheck(action) >= 1 then
-			gFunc.Equip('Waist', ElementalObi[action.Element]);
+			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 	
     --[[-----------------------------------------------------------------------------------
@@ -1005,7 +1005,7 @@ profile.HandleMidcast = function()
 	elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
 		gFunc.EquipSet(sets.Healing);
 			if ObiCheck(action) >= 1 then
-				gFunc.Equip('Waist', ElementalObi[action.Element]);
+				gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 			end
 		if (environ.Time > 18.00 or environ.Time < 6.00) then
 			gFunc.Equip('Neck', 'Fenrir\'s Torque');

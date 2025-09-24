@@ -85,9 +85,9 @@ function gcinclude.ObiCheck(spell)
     --[[-----------------------------------------------------------------------------------
         Obi: Update weight based on Day
     --]]-----------------------------------------------------------------------------------
-    if (DayElementTable[zone.Day] == element) then
+    if (gcinclude.DayElementTable[zone.Day] == element) then
         weight = weight + 1;
-    elseif (DayElementTable[zone.Day] == badEle[element]) then
+    elseif (gcinclude.DayElementTable[zone.Day] == badEle[element]) then
         weight = weight - 1;
     end
     
