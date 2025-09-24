@@ -111,4 +111,4 @@ function gcinclude.ObiCheck(spell)
     return weight;
 end
 
-return generic
+return gcinclude
