@@ -973,7 +973,6 @@ local Settings = {
 --]]-----------------------------------------------------------------------------------
 profile.OnLoad = function()
 	local player = gData.GetPlayer();
-    gcinclude.Initialize();
 	if (player.SubJob == 'RDM') then
 		CurrentStats = CurrentStatsRDM;
 		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
