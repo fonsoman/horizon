@@ -2,7 +2,7 @@
     Elemental Staves
 --]]-----------------------------------------------------------------------------------
 local ElementalStaff = {
-    ['Fire'] = 'Fire Staff',
+    ['Fire'] = 'Vulcan\'s Staff',
     ['Earth'] = 'Earth Staff',
     ['Water'] = 'Water Staff',
     ['Wind'] = 'Wind Staff',

@@ -25,17 +25,17 @@ local sets = {
     Idle_Standard = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
+        Head = '',
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = 'Black Cotehardie', --
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- MP 48, DEF 3
-        Legs = 'Sorcerer\'s Tonban', -- MP 13, DEF 30, Emnity -2
+        Legs = '',
         Feet = 'Rostrum Pumps', -- MP 30, DEF 20
     },
 	--[[-----------------------------------------------------------------------------------
@@ -44,18 +44,18 @@ local sets = {
     Idle_Standard_60 = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
+        Head = '',
         Neck = 'Black Neckerchief', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
-        Body = 'Wizard\'s Coat',
-        Hands = 'Wizard\'s Gloves', -- Elem 15
+        Body = 'Black Cotehardie', --
+        Hands = '',
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.5', -- MP 5
         Back = 'Skulker\'s Cape', --
         Waist = 'Mrc.Cpt. Belt', --
-        Legs = 'Wizard\'s Tonban', -- MP 14
-        Feet = 'Wizard\'s Sabots', -- SpellInt 20%, DEF 11
+        Legs = '',
+        Feet = '',
     },
 	    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 51 cap
@@ -192,14 +192,14 @@ local sets = {
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Reraise Earring', -- PEVA 2
         Ear2 = 'Reraise Earring', -- PEVA 2
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = '',
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Kshama Ring No.4', -- DEF 3, VIT 3
         Back = 'Cheviot Cape', -- PDT -5%, DEF 5
-        Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
+        Waist = '',
         Legs = 'Wonder Braccae', -- HP 21, DEF 12
-        Feet = 'Sorcerer\'s Sabots', -- DEF 14, Emnity -1
+        Feet = '',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT
@@ -214,12 +214,12 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Merman\'s Earring', -- MDT -2%
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = '',
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
-        Waist = 'Sorcerer\'s Belt', -- DEF 4. HP 20
+        Waist = '',
         Legs = 'Errant Slops', -- DEF 38, Emnity -3
         Feet = 'Rostrum Pumps',
     },
@@ -290,7 +290,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Penitent\'s Rope', -- Emnity -3, DEF 4
         Legs = 'Errant Slops', -- Emnity -3, DEF 38
-        Feet = 'Sorcerer\'s Sabots', -- Emnity -1, DEF 14
+        Feet = '',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Engaged
@@ -303,14 +303,14 @@ local sets = {
         Neck = 'Black Neckerchief', -- DEF 2
         Ear1 = 'Abyssal Earring', -- Scythe +5
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = '',
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', --
         Ring2 = 'Kshama Ring No.2', -- DEX 3, Acc 2
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
-        Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
-        Legs = 'Wizard\'s Tonban', -- DEF 27, EVA 5
-        Feet = 'Wizard\'s Sabots', -- SpellInt 20%, DEF 11
+        Waist = '',
+        Legs = '',
+        Feet = '',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Standard
@@ -332,98 +332,9 @@ local sets = {
         Ring1 = 'Tamas Ring', -- INT 5, Emnity -3
         Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
-        Waist = 'Sorcerer\'s Belt', -- INT 6
+        Waist = '',
         Legs = 'Errant Slops', -- INT 7, Emnity -3
         Feet = 'Rostrum Pumps', -- INT 3, Fast Cast
-    },
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: Elemental Accuracy
-            Magic Accuracy:
-            Elemental Skill:
-            INT:
-            MAB:      
-    --]]-----------------------------------------------------------------------------------
-    Elemental_Accuracy = {
-        Ammo = 'Sweet Sachet',
-        Head = 'Nashira Turban', -- MAcc 5, Emnity -5
-        Neck = 'Elemental Torque',
-        Ear1 = 'Novio Earring', -- MAB 7
-        Ear2 = 'Abyssal Earring',
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
-        Hands = 'Wizard\'s Gloves', -- Elem 15
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.5', -- INT 3
-        Back = 'Merciful Cape', -- Elem 5
-        Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
-        Feet = 'Rostrum Pumps',
-    },
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: Elemental Mid
-            MAB:
-            Magic Accuracy:
-            INT:
-            Elemental Skill:
-    --]]-----------------------------------------------------------------------------------
-    Elemental_Mid = {
-        Ammo = 'Sweet Sachet',
-        Head = 'Nashira Turban', -- MAcc 5, Emnity -5
-        Neck = 'Elemental Torque',
-        Ear1 = 'Novio Earring', -- MAB 7
-        Ear2 = 'Moldavite Earring', -- MAB 5
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
-        Hands = 'Zenith Mitts', -- MAB 5
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.5', -- INT 3
-        Back = 'Merciful Cape', -- Elem 5
-        Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
-        Feet = 'Rostrum Pumps',
-    },
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: Elemental Potency
-            MAB:
-            Magic Accuracy:
-            INT:
-            Elemental Skill:
-    --]]-----------------------------------------------------------------------------------
-    Elemental_Potency = {
-        Ammo = 'Sweet Sachet',
-        Head = 'Wizard\'s Petasos',
-        Neck = 'Philomath Stole',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Abyssal Earring',
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve 2
-        Hands = 'Errant Cuffs', -- INT 5
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.5', -- INT 3
-        Back = 'Rainbow Cape', --INT 3
-        Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
-        Feet = 'Rostrum Pumps',
-    },
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: Elemental Emnity
-            Emnity: 
-            MAB:
-            Magic Accuracy:
-            INT:
-            Elemental Skill:
-    --]]-----------------------------------------------------------------------------------
-    Elemental_Emnity = {
-        Ammo = 'Sweet Sachet',
-        Head = 'Nashira Turban', -- MAcc 5, Emnity -5
-        Neck = 'Elemental Torque',
-        Ear1 = 'Novio Earring', -- MAB 7
-        Ear2 = 'Moldavite Earring', -- MAB 5
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve MP 2
-        Hands = 'Wizard\'s Gloves', -- Elem 15
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.5', -- INT 3
-        Back = 'Merciful Cape', -- Elem 5
-        Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
-        Feet = 'Errant Pigaches', -- Emn -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Dark
@@ -683,29 +594,7 @@ local sets = {
         -- Legs = 'Aries Subligar',
         Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5
     },
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: HP Down
-            /RDM - HP: 772 Target: 586 (-186)
-            /WHM - HP: 774 Target: 580 (-194)
-            HP: -197
-    --]]-----------------------------------------------------------------------------------
-    HPDown = {
-        Main = 'Ivory Sickle +1', -- HP -15
-        -- Sub = 'Astral Aspis', -- HP -25
-        Ammo = 'Sweet Sachet',
-        Head = 'Faerie Hairpin', -- HP -20
-        Neck = 'Checkered Scarf', -- HP -12
-        Ear1 = 'Reraise Earring', --
-        Ear2 = 'Reraise Earring', --
-        Body = 'Black Cotehardie', -- HP -25
-        Hands = 'Zenith Mitts', -- HP -50
-        Ring1 = 'Astral Ring', -- HP -25
-        Ring2 = 'Ether Ring', -- HP -30
-        Back = 'Blue Cape', -- HP -15
-        Waist = 'Penitent\'s Rope', -- HP -20
-        Legs = 'Wizard\'s Tonban', -- MP 14
-        Feet = 'Rostrum Pumps', -- HP -30
-	},
+
     --[[-----------------------------------------------------------------------------------
         Equipsets: HELM
     --]]-----------------------------------------------------------------------------------
@@ -798,21 +687,6 @@ local Idle = {
     [5] = 'MDT_Wind',
     [6] = 'MDT_Lightning'
 }
-local Elemental = {
-	[1] = 'Standard',
-	[2] = 'Potency',
-	[3] = 'Accuracy',
-	[4] = 'Mid',
-    [5] = 'Emnity'
-}
-local SorcRing = {
-	[1] = 'False',
-	[2] = 'True',
-}
-local MagicBurst = {
-	[1] = 'False',
-	[2] = 'True',
-}
 local Helm = {
     [1] = 'Standard',
 	[2] = 'Fishing',
@@ -833,161 +707,21 @@ conquest = gFunc.LoadFile('common\\Conquest.lua');
 generic = gFunc.LoadFile('common\\Generic.lua');
 
 --[[-----------------------------------------------------------------------------------
-	Current Stats
---]]-----------------------------------------------------------------------------------
-local CurrentStatsRDM = {
-	['HP'] = 812,
-	['MP'] = 858,
-};
-
-local CurrentStatsWHM = {
-	['HP'] = 794,
-	['MP'] = 877,
-};
-
-local CurrentStatsTHF = {
-	['HP'] = 812,
-	['MP'] = 799,
-};
-
-local CurrentStatsBST = {
-	['HP'] = 817,
-	['MP'] = 799,
-};
-
-local CurrentStats = {};
-
-local GearsetStats = {
-	['PDT'] = {
-		['HP'] = 146,
-		['MP'] = 30
-	},
-	['Idle'] = {
-		['HP'] = -42,
-		['MP'] = 241
-	},
-	['MaxMP'] = {
-		['HP'] = -130,
-		['MP'] = 357
-	}
-};
-
---[[-----------------------------------------------------------------------------------
     Gearset Variable Defaults
 --]]-----------------------------------------------------------------------------------
 local Settings = {
 	Idle = 1,
-	Elemental = 1,
-	SorcRing = 1,
-	MagicBurst = 1,
     Helm = 1,
 	RestSet = 1,
 }
-
---[[-----------------------------------------------------------------------------------
-    Spell Groupings
---]]-----------------------------------------------------------------------------------
-local MndDebuffs = T{ 'Slow', 'Paralyze', 'Silence' };
-local IntDebuffs = T{ 'Blind','Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Bind', 'Gravity', 'Dispel', 'Poison', 'Poison II' };
-local ElementalDebuffs = T{ 'Burn', 'Choke', 'Shock', 'Rasp', 'Drown', 'Frost' };
-
---[[-----------------------------------------------------------------------------------
-    Day to Element Table
---]]-----------------------------------------------------------------------------------
-local DayElementTable = {
-    ['Firesday'] = 'Fire',
-    ['Earthsday'] = 'Earth',
-    ['Watersday'] = 'Water',
-    ['Windsday'] = 'Wind',
-    ['Iceday'] = 'Ice',
-    ['Lightningday'] = 'Thunder',
-    ['Lightsday'] = 'Light',
-    ['Darksday'] = 'Dark'
-};
-
---[[-----------------------------------------------------------------------------------
-    City Zones
---]]-----------------------------------------------------------------------------------
-local CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'Port Jeuno', 
-                        'Windurst Woods', 'Port Windurst', 'Windurst Waters', 'Windurst Walls', 'Heavens Tower',
-                        'Bastok Markets', 'Bastok Mines', 'Metalworks', 'Port Bastok',
-                        'Chateau d\'Oraguille', 'Northern San d\'Oria', 'Port San d\'Oria', 'Southern San d\'Oria' };
-
---[[-----------------------------------------------------------------------------------
-    Weather/Day Check for Obi
-        This function assigns a weight based on the day of the week and the weather
-        You give this function a spell, and it returns the weight of that element
---]]-----------------------------------------------------------------------------------
-function ObiCheck(spell)
-
-    local element = spell.Element;
-    local zone = gData.GetEnvironment();
-    local weight = 0;
-    
-    --[[-----------------------------------------------------------------------------------
-        Obi: Table of Bad Elements for each day
-    --]]-----------------------------------------------------------------------------------
-    local badEle = {
-        ['Fire'] = 'Water',
-        ['Earth'] = 'Wind',
-        ['Water'] = 'Thunder',
-        ['Wind'] = 'Ice',
-        ['Ice'] = 'Fire',
-        ['Thunder'] = 'Earth',
-        ['Light'] = 'Dark',
-        ['Dark'] = 'Light'
-    };
-    
-    --[[-----------------------------------------------------------------------------------
-        Obi: Update weight based on Day
-    --]]-----------------------------------------------------------------------------------
-    if (DayElementTable[zone.Day] == element) then
-        weight = weight + 1;
-    elseif (DayElementTable[zone.Day] == badEle[element]) then
-        weight = weight - 1;
-    end
-    
-    --[[-----------------------------------------------------------------------------------
-        Obi: Update weight based on Weather
-    --]]-----------------------------------------------------------------------------------
-    if string.find(zone.Weather, element) then
-        if string.find(zone.Weather, 'x2') then
-            weight = weight + 2;
-        else
-            weight = weight + 1;
-        end
-    elseif string.find(zone.Weather, badEle[element]) then
-        if string.find(zone.Weather, 'x2') then
-            weight = weight - 2;
-        else
-            weight = weight - 1;
-        end
-    end    
-    
-    return weight;
-end
 
 --[[-----------------------------------------------------------------------------------
     OnLoad
         Runs commands when job switched
 --]]-----------------------------------------------------------------------------------
 profile.OnLoad = function()
-	local player = gData.GetPlayer();
-	if (player.SubJob == 'RDM') then
-		CurrentStats = CurrentStatsRDM;
-		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
-	elseif (player.SubJob == 'WHM') then
-		CurrentStats = CurrentStatsWHM;
-		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
-	elseif (player.SubJob == 'THF') then
-		CurrentStats = CurrentStatsTHF;
-		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
-    elseif (player.SubJob == 'BST') then
-		CurrentStats = CurrentStatsBST;
-		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
-    else
-        CurrentStats = CurrentStatsBST;
-	end
+    gSettings.AllowAddSet = true;
+	(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
 end
 
 --[[-----------------------------------------------------------------------------------
@@ -1039,54 +773,6 @@ profile.HandleCommand = function(args)
     end
 
     --[[-----------------------------------------------------------------------------------
-        HandleCommand: Cycle Nuke Sets
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'nukes') then
-		if (Settings.Elemental == 1) then
-			Settings.Elemental = 2;
-			gFunc.Message('Elemental Magic Set: Potency');
-		elseif (Settings.Elemental == 2) then
-			Settings.Elemental = 3;
-			gFunc.Message('Elemental Magic Set: Accuracy');
-		elseif (Settings.Elemental == 3) then
-			Settings.Elemental = 4;
-			gFunc.Message('Elemental Magic Set: Mid');
-        elseif (Settings.Elemental == 4) then
-			Settings.Elemental = 5;
-			gFunc.Message('Elemental Magic Set: Emnity');
-		else
-			Settings.Elemental = 1;
-			gFunc.Message('Elemental Magic Set: Standard');
-		end
-	end
-
-    --[[-----------------------------------------------------------------------------------
-        HandleCommand: Toggle Sorcerer's Ring
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'sorc') then
-		if (Settings.SorcRing == 1) then
-			Settings.SorcRing = 2;
-			gFunc.Message('Sorcerer\'s Ring: Enabled');
-		else
-			Settings.SorcRing = 1;
-			gFunc.Message('Sorcerer\'s Ring: Disabled');
-		end
-	end	
-
-    --[[-----------------------------------------------------------------------------------
-        HandleCommand: Toggle Magic Burst
-    --]]-----------------------------------------------------------------------------------
-	if (args[1] == 'mb') then
-		if (Settings.MagicBurst == 1) then
-			Settings.MagicBurst = 2;
-			gFunc.Message('Magic Burst: True');
-		else
-			Settings.MagicBurst = 1;
-			gFunc.Message('Magic Burst: False');
-		end
-	end	
-
-    --[[-----------------------------------------------------------------------------------
         HandleCommand: Cycle HELM gearsets
     --]]-----------------------------------------------------------------------------------
     if (args[1] == 'helm') then
@@ -1130,13 +816,7 @@ profile.HandleDefault = function()
             Otherwise, equip the Idle set
     --]]-----------------------------------------------------------------------------------
 	if (player.Status == 'Resting') then
-        if ((Settings.Helm == 1) and (player.MP > (CurrentStats.MP + GearsetStats.PDT.MP - 35))) then
-			if (Settings.Idle == 1) then
-				gFunc.EquipSet(sets.Idle_MP);
-			else
-            	gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
-			end
-        elseif (player.MainJobSync <= 50) then
+        if (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
         else
 		    gFunc.EquipSet(RestSet[Settings.RestSet]);
@@ -1147,17 +827,12 @@ profile.HandleDefault = function()
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
 				if (player.MainJobSync == 75) then
-					if (player.MP >= (CurrentStats.MP + GearsetStats.Idle.MP - 35)) then
-						gFunc.EquipSet(sets.Idle_MP);
-						if (conquest:GetOutsideControl()) then
-							gFunc.Equip('Neck', 'Rep.Gold Medal');
-						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
-							gFunc.Equip('Neck', 'Fenrir\'s Torque');
-						end
-					elseif (player.MP >= (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
-						gFunc.EquipSet(sets.Idle_Standard);
-					else
-						gFunc.EquipSet(sets.Idle_PDT);
+					gFunc.EquipSet(sets.Idle_Standard);
+					if (conquest:GetOutsideControl()) then
+						gFunc.Equip('Neck', 'Rep.Gold Medal');
+					end
+					if (environ.Time < 18.00 and environ.Time > 6.00) then
+						gFunc.Equip('Neck', 'Fenrir\'s Torque');
 					end
 					if (environ.Time < 18.00 and environ.Time > 6.00) then
 						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
@@ -1244,11 +919,6 @@ profile.HandlePrecast = function()
     local castTimeDecimal = ((spell.CastTime * (1 - fastCastValue)) / 1000) % 1
     local formattedCastTime = string.format("%.2f", castTimeSeconds + castTimeDecimal)
     --AshitaCore:GetChatManager():QueueCommand(8, '/echo Cast Time: ' .. formattedCastTime .. ' seconds')
-    if action.Skill == 'Elemental Magic' and ElementalMagicSpells:contains(baseSpellName) then
-        if (player.HPP >= 76) and (Settings.SorcRing == 2) then
-            gFunc.EquipSet(sets.HPDown)
-        end
-    end
 	gFunc.EquipSet(sets.FastCast);
 end
 
@@ -1260,15 +930,6 @@ profile.HandleMidcast = function()
 	local action = gData.GetAction();
 	local player = gData.GetPlayer();
 	local environ= gData.GetEnvironment();
-	
-    if ((player.MP <= 948) and (Settings.Idle == 2)) then
-        Settings.Idle = 1;
-        Settings.RestSet = 1;
-    end
-
-	if (player.MP < (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
-		gFunc.InterimEquipSet(sets.Idle_PDT);
-	end
 
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: MaxMP - Keep equipset the same so you don't waste MP
@@ -1304,47 +965,8 @@ profile.HandleMidcast = function()
 			gFunc.EquipSet(sets.MaxINT);
 			gFunc.Equip('Main', ElementalStaff[action.Element]);
 		else
-			gFunc.EquipSet('Elemental_' .. Elemental[Settings.Elemental]);
-			gFunc.Equip('main', ElementalStaff[action.Element]);
-			if (Settings.Elemental == 1 or Settings.Elemental == 2) then -- Standard or Potency Elemental Set
-				if (gData.GetAction().MppAftercast <= 50) then
-					gFunc.Equip('Neck', 'Uggalepih Pendant');
-				end
-				if (environ.DayElement == action.Element) then
-					gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
-				end
-				if ((Settings.SorcRing == 2) or (player.HPP <= 75)) then
-					gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
-					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
-						gFunc.Equip('Ring1', 'Ice Ring');
-					end
-				else
-					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
-						gFunc.Equip('Ring2', 'Ice Ring');
-					end
-				end
-				if (conquest:GetInsideControl()) then
-                    gFunc.Equip('Head', 'Republic Circlet');
-                end
-				if (Settings.MagicBurst == 2) then
-					gFunc.EquipSet(sets.MagicBurst);
-				end
-			elseif (Settings.Elemental == 3 or Settings.Elemental == 4) then -- Mid or Accuracy Elemental Set
-				if (conquest:GetOutsideControl()) then
-					gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
-				end
-				if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
-					gFunc.Equip('Ear1', 'Diabolos\'s Earring');
-				end
-				if (environ.DayElement == 'Ice') then
-					gFunc.Equip('Ring2', 'Ice Ring');
-				end
-			elseif (Settings.Elemental == 5) then  -- Emnity Elemental Set
-				if (environ.Time > 18.00 or environ.Time < 6.00) then
-					gFunc.Equip('Neck', 'Fenrir\'s Torque');
-				end
-			end
-			
+			gFunc.EquipSet(sets.Elemental_Standard);
+			gFunc.Equip('Main', ElementalStaff[action.Element]);
 		end
 		if ObiCheck(action) >= 1 then
 			gFunc.Equip('Waist', ElementalObi[action.Element]);
