@@ -830,7 +830,7 @@ local RestSet = {
 	Generic Extras
 --]]-----------------------------------------------------------------------------------
 conquest = gFunc.LoadFile('common\\Conquest.lua');
-generic = gFunc.LoadFile('common\\Generic.lua');
+gcinclude = gFunc.LoadFile('common\\Generic.lua');
 
 --[[-----------------------------------------------------------------------------------
 	Current Stats
@@ -973,6 +973,7 @@ local Settings = {
 --]]-----------------------------------------------------------------------------------
 profile.OnLoad = function()
 	local player = gData.GetPlayer();
+    gcinclude.Initialize();
 	if (player.SubJob == 'RDM') then
 		CurrentStats = CurrentStatsRDM;
 		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
@@ -1181,7 +1182,7 @@ profile.HandleDefault = function()
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
 
-            if (CityZones:contains(environ.Area)) then
+            if (gcinclude.CityZones:contains(environ.Area)) then
 				gFunc.EquipSet(sets.Idle_MP);
 				if (conquest:GetOutsideControl()) then
 					gFunc.Equip('Neck', 'Rep.Gold Medal');

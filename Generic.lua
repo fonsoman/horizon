@@ -1,7 +1,9 @@
+local gcinclude = T{};
+
 --[[-----------------------------------------------------------------------------------
     Elemental Staves
 --]]-----------------------------------------------------------------------------------
-local ElementalStaff = {
+gcinclude.ElementalStaff = {
     ['Fire'] = 'Vulcan\'s Staff',
     ['Earth'] = 'Earth Staff',
     ['Water'] = 'Water Staff',
@@ -15,7 +17,7 @@ local ElementalStaff = {
 --[[-----------------------------------------------------------------------------------
     Obis
 --]]-----------------------------------------------------------------------------------
-local ElementalObi = {
+gcinclude.ElementalObi = {
     ['Fire'] = 'Karin Obi',
     ['Earth'] = 'Dorin Obi',
     ['Water'] = 'Suirin Obi',
@@ -29,14 +31,14 @@ local ElementalObi = {
 --[[-----------------------------------------------------------------------------------
     Spell Groupings
 --]]-----------------------------------------------------------------------------------
-local MndDebuffs = T{ 'Slow', 'Paralyze', 'Silence' };
-local IntDebuffs = T{ 'Blind','Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Bind', 'Gravity', 'Dispel', 'Poison', 'Poison II' };
-local ElementalDebuffs = T{ 'Burn', 'Choke', 'Shock', 'Rasp', 'Drown', 'Frost' };
+gcinclude.MndDebuffs = T{ 'Slow', 'Paralyze', 'Silence' };
+gcinclude.IntDebuffs = T{ 'Blind','Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Bind', 'Gravity', 'Dispel', 'Poison', 'Poison II' };
+gcinclude.ElementalDebuffs = T{ 'Burn', 'Choke', 'Shock', 'Rasp', 'Drown', 'Frost' };
 
 --[[-----------------------------------------------------------------------------------
     Day to Element Table
 --]]-----------------------------------------------------------------------------------
-local DayElementTable = {
+gcinclude.DayElementTable = {
     ['Firesday'] = 'Fire',
     ['Earthsday'] = 'Earth',
     ['Watersday'] = 'Water',
@@ -50,7 +52,7 @@ local DayElementTable = {
 --[[-----------------------------------------------------------------------------------
     City Zones
 --]]-----------------------------------------------------------------------------------
-local CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'Port Jeuno', 
+gcinclude.CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'Port Jeuno', 
                         'Windurst Woods', 'Port Windurst', 'Windurst Waters', 'Windurst Walls', 'Heavens Tower',
                         'Bastok Markets', 'Bastok Mines', 'Metalworks', 'Port Bastok',
                         'Chateau d\'Oraguille', 'Northern San d\'Oria', 'Port San d\'Oria', 'Southern San d\'Oria' };
@@ -60,7 +62,7 @@ local CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'Port 
         This function assigns a weight based on the day of the week and the weather
         You give this function a spell, and it returns the weight of that element
 --]]-----------------------------------------------------------------------------------
-function ObiCheck(spell)
+function gcinclude.ObiCheck(spell)
 
     local element = spell.Element;
     local zone = gData.GetEnvironment();
