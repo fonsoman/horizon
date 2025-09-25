@@ -953,7 +953,7 @@ profile.HandleMidcast = function()
 		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 			gFunc.Equip('Ear1', 'Diabolos\'s Earring');
 		end
-		if ObiCheck(action) >= 1 then
+		if gcinclude.ObiCheck(action) >= 1 then
 			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 
@@ -968,7 +968,7 @@ profile.HandleMidcast = function()
 			gFunc.EquipSet(sets.Elemental_Standard);
 			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		end
-		if ObiCheck(action) >= 1 then
+		if gcinclude.ObiCheck(action) >= 1 then
 			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 
@@ -995,7 +995,7 @@ profile.HandleMidcast = function()
 		if (environ.DayElement == 'Dark' and gData.GetAction().MppAftercast <= 84) then
 			gFunc.Equip('Ring2', 'Diabolos\'s Ring');
 		end
-		if ObiCheck(action) >= 1 then
+		if gcinclude.ObiCheck(action) >= 1 then
 			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 		end
 	
@@ -1004,7 +1004,7 @@ profile.HandleMidcast = function()
     --]]-----------------------------------------------------------------------------------
 	elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
 		gFunc.EquipSet(sets.Healing);
-			if ObiCheck(action) >= 1 then
+			if gcinclude.ObiCheck(action) >= 1 then
 				gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 			end
 		if (environ.Time > 18.00 or environ.Time < 6.00) then
