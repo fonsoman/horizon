@@ -500,7 +500,7 @@ profile.HandleDefault = function()
 		elseif ((pet.Name == 'Ramuh') or (pet.Name == 'Lightning Spirit')) then
 			gFunc.Equip('Main','Jupiter\'s Staff');
 			petElement = 'Thunder';
-		elseif ((pet.Name == 'Fenrir') or (pet.Name == 'Diabolos') OR (pet.Name == 'Dark Spirit')) then
+		elseif ((pet.Name == 'Fenrir') or (pet.Name == 'Diabolos') or (pet.Name == 'Dark Spirit')) then
 			gFunc.Equip('Main','Dark Staff');
 			petElement = 'Dark';
 		end
