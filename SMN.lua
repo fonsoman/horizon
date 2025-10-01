@@ -478,29 +478,29 @@ profile.HandleDefault = function()
 		-- 	gFunc.Equip('Main', 'Dragon Staff');
 		-- elseif Settings.CurrentLevel == 75 then
 		-- 	gFunc.Equip('Main', 'Bahamut\'s Staff');
-		if (pet.Name == 'Carbuncle') OR (pet.Name == 'Light Spirit') then
+		if ((pet.Name == 'Carbuncle') or (pet.Name == 'Light Spirit')) then
 			gFunc.Equip('Main','Light Staff');
 			gFunc.Equip('Hands','Carbuncle Mitts');
 			petElement = 'Light';
-		elseif (pet.Name == 'Ifrit') OR (pet.Name == 'Fire Spirit') then
+		elseif ((pet.Name == 'Ifrit') or (pet.Name == 'Fire Spirit')) then
 			gFunc.Equip('Main','Vulcan\'s Staff');
 			petElement = 'Fire';
-		elseif (pet.Name == 'Titan') OR (pet.Name == 'Earth Spirit') then
+		elseif ((pet.Name == 'Titan') or (pet.Name == 'Earth Spirit')) then
 			gFunc.Equip('Main','Earth Staff');
 			petElement = 'Earth';
-		elseif (pet.Name == 'Leviathan') OR (pet.Name == 'Water Spirit') then
+		elseif ((pet.Name == 'Leviathan') or (pet.Name == 'Water Spirit')) then
 			gFunc.Equip('Main','Water Staff');
 			petElement = 'Water';
-		elseif (pet.Name == 'Garuda') OR (pet.Name == 'Wind Spirit') then
+		elseif ((pet.Name == 'Garuda') or (pet.Name == 'Wind Spirit')) then
 			gFunc.Equip('Main','Wind Staff');
 			petElement = 'Wind';
-		elseif (pet.Name == 'Shiva') OR (pet.Name == 'Ice Spirit') then
+		elseif ((pet.Name == 'Shiva') or (pet.Name == 'Ice Spirit')) then
 			gFunc.Equip('Main','Aquilo\'s Staff');
 			petElement = 'Ice';
-		elseif (pet.Name == 'Ramuh') OR (pet.Name == 'Lightning Spirit') then
+		elseif ((pet.Name == 'Ramuh') or (pet.Name == 'Lightning Spirit')) then
 			gFunc.Equip('Main','Jupiter\'s Staff');
 			petElement = 'Thunder';
-		elseif (pet.Name == 'Fenrir') OR (pet.Name == 'Diabolos') OR (pet.Name == 'Dark Spirit') then
+		elseif ((pet.Name == 'Fenrir') or (pet.Name == 'Diabolos') OR (pet.Name == 'Dark Spirit')) then
 			gFunc.Equip('Main','Dark Staff');
 			petElement = 'Dark';
 		end
