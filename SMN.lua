@@ -478,9 +478,12 @@ profile.HandleDefault = function()
 		-- 	gFunc.Equip('Main', 'Dragon Staff');
 		-- elseif Settings.CurrentLevel == 75 then
 		-- 	gFunc.Equip('Main', 'Bahamut\'s Staff');
-		if ((pet.Name == 'Carbuncle') or (pet.Name == 'LightSpirit')) then
+		if (pet.Name == 'Carbuncle') then
 			gFunc.Equip('Main','Light Staff');
 			gFunc.Equip('Hands','Carbuncle Mitts');
+			petElement = 'Light';
+		elseif (pet.Name == 'LightSpirit') then
+			gFunc.Equip('Main','Light Staff');
 			petElement = 'Light';
 		elseif ((pet.Name == 'Ifrit') or (pet.Name == 'FireSpirit')) then
 			gFunc.Equip('Main','Vulcan\'s Staff');
