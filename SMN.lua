@@ -55,7 +55,7 @@ local sets = {
 	},
 
 	Idle_30 =  {
-	    Main = '', -- 
+	    Main = 'Yew Wand +1', -- 
         Sub  = 'Beater\'s Aspis', -- DEF 3
         Ammo = 'Sweet Sachet', -- 
 		Head = 'Dodge Headband', --

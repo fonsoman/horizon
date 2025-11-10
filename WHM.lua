@@ -25,18 +25,18 @@ local sets = {
     Idle_Standard = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = '',
+        Head = 'Faerie Hairpin',
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2
+        Ear2 = 'Morion Earring',
         Body = 'Black Cotehardie', --
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
         Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Merciful Cape', -- MP 25
-        Waist = 'Hierarch Belt', -- MP 48, DEF 3
-        Legs = '',
-        Feet = 'Rostrum Pumps', -- MP 30, DEF 20
+        Back = 'Cheviot Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Wonder Braccae',
+        Feet = 'Light Soleas'
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 60 cap
@@ -44,18 +44,18 @@ local sets = {
     Idle_Standard_60 = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = '',
+        Head = 'Gold Hairpin',
         Neck = 'Black Neckerchief', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
         Body = 'Black Cotehardie', --
-        Hands = '',
+        Hands = 'Garden Bangles',
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.5', -- MP 5
-        Back = 'Skulker\'s Cape', --
-        Waist = 'Mrc.Cpt. Belt', --
-        Legs = '',
-        Feet = '',
+        Back = 'Cheviot Cape', --
+        Waist = 'Penitent\'s Rope', --
+        Legs = 'Wonder Braccae',
+        Feet = 'Light Soleas',
     },
 	    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 51 cap
@@ -327,12 +327,12 @@ local sets = {
         Neck = 'Elemental Torque', -- Elem 7
         Ear1 = 'Novio Earring', -- MAB 7
         Ear2 = 'Moldavite Earring', -- MAB 5
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve MP 2
+        Body = 'Black Cotehardie',
         Hands = 'Zenith Mitts', -- MAB 5
         Ring1 = 'Tamas Ring', -- INT 5, Emnity -3
         Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
-        Waist = '',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Errant Slops', -- INT 7, Emnity -3
         Feet = 'Rostrum Pumps', -- INT 3, Fast Cast
     },
@@ -826,7 +826,7 @@ profile.HandleDefault = function()
 	else
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
-				if (player.MainJobSync == 75) then
+				if (player.MainJobSync >= 61) then
 					gFunc.EquipSet(sets.Idle_Standard);
 					if (conquest:GetOutsideControl()) then
 						gFunc.Equip('Neck', 'Rep.Gold Medal');
