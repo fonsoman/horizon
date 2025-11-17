@@ -110,7 +110,7 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
         Waist = 'Earth Belt', -- 
-        Legs = 'Errant Slops', -- DEF 38, Emnity -3
+        Legs = 'Mahatma Slops', -- DEF 39, Emnity -4
         Feet = 'Summoner\'s Pgch.',
     },
 
@@ -172,7 +172,7 @@ local sets = {
 		Ring2 = 'Mana Ring',
 		Back = 'White Cape +1',
 		Waist = 'Friar\'s Rope',
-		Legs = 'Errant Slops',
+		Legs = 'Mahatma Slops',
 		Feet = 'Seer\'s Pumps +1' 
 	},
 	
@@ -190,7 +190,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Errant Slops', -- MND 7
+        Legs = 'Mahatma Slops', -- MND 8
         Feet = 'Errant Pigaches' -- MND 5
 	},
 	

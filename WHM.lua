@@ -220,7 +220,7 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
         Waist = '',
-        Legs = 'Errant Slops', -- DEF 38, Emnity -3
+        Legs = 'Mahatma Slops', -- DEF 39, Emnity -4
         Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
@@ -243,7 +243,7 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Blue Cape', -- Wind +5
         Waist = 'Ice Belt', -- Wind +20
-        Legs = 'Errant Slops', -- INT +7
+        Legs = 'Mahatma Slops', -- INT +8
         Feet = 'Rostrum Pumps', -- INT +3
     },
     --[[-----------------------------------------------------------------------------------
@@ -266,7 +266,7 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
-        Legs = 'Errant Slops', -- INT +7
+        Legs = 'Mahatma Slops', -- INT +8
         Feet = 'Rostrum Pumps', -- INT +3
     },
     --[[-----------------------------------------------------------------------------------
@@ -289,7 +289,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9',
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Penitent\'s Rope', -- Emnity -3, DEF 4
-        Legs = 'Errant Slops', -- Emnity -3, DEF 38
+        Legs = 'Mahatma Slops', -- Emnity -4, DEF 39
         Feet = '',
     },
     --[[-----------------------------------------------------------------------------------
@@ -333,7 +333,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Penitent\'s Rope',
-        Legs = 'Errant Slops', -- INT 7, Emnity -3
+        Legs = 'Mahatma Slops', -- INT 8, Emnity -4
         Feet = 'Rostrum Pumps', -- INT 3, Fast Cast
     },
     --[[-----------------------------------------------------------------------------------
@@ -409,7 +409,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Errant Slops', -- MND 7
+        Legs = 'Mahatma Slops', -- MND 8
         Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
@@ -448,7 +448,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Errant Slops', -- MND 7
+        Legs = 'Mahatma Slops', -- MND 8
         Feet = 'Errant Pigaches' -- MND 5
     },
     --[[-----------------------------------------------------------------------------------
@@ -532,7 +532,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Errant Slops',
+        Legs = 'Mahatma Slops',
         Feet = 'Errant Pigaches', -- MND 5
     },
     --[[-----------------------------------------------------------------------------------
@@ -552,7 +552,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
+        Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
@@ -571,7 +571,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.5', -- INT 3
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
-        Legs = 'Errant Slops',
+        Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
