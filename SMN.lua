@@ -2,7 +2,7 @@ local profile = {};
 	
 local sets = {
 	Idle = {
-		Main = 'Kukulcan\'s Staff', -- MP 30
+		Main = 'Kirin\'s Pole', -- MP 20 HP 20
 		Ammo = 'Fenrir\'s Stone',
 		Head = 'Faerie Hairpin',
 		Neck = 'Uggalepih Pendant',
