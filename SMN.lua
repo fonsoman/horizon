@@ -2,7 +2,7 @@ local profile = {};
 	
 local sets = {
 	Idle = {
-		Main = 'Earth Staff',
+		Main = 'Kukulcan\'s Staff', -- MP 30
 		Ammo = 'Fenrir\'s Stone',
 		Head = 'Faerie Hairpin',
 		Neck = 'Uggalepih Pendant',
@@ -19,8 +19,7 @@ local sets = {
 	},
 
 	Idle_50 =  {
-	    Main = 'Solid Wand', -- 
-        Sub  = 'Beater\'s Aspis', -- DEF 3
+	    Main = 'Kukulcan\'s Staff', -- MP 30
         Ammo = 'Sweet Sachet', -- 
 		Head = 'Gold Hairpin', -- MP 30
         Neck = 'Black Neckerchief', --
@@ -37,8 +36,7 @@ local sets = {
 	},
 
 	Idle_40 =  {
-	    Main = 'Solid Wand', -- 
-        Sub  = 'Beater\'s Aspis', -- DEF 3
+	    Main = 'Kukulcan\'s Staff', -- MP 30
         Ammo = 'Sweet Sachet', -- 
 		Head = 'Lgn. Circlet', -- MP 5
         Neck = 'Black Neckerchief', --
@@ -139,8 +137,8 @@ local sets = {
 	},
 
 	Resting_50 = {
-        Main = 'Pilgrim\'s Wand', -- hMP 2
-        Sub = 'Beater\'s Aspis',
+        Main = 'Kukulcan\'s Staff', -- hMP 3
+        Sub = '',
         Ammo = 'Fortune Egg', -- MP +1%
 		Head = 'Gold Hairpin', -- MP 30
         Neck = 'Black Neckerchief',
