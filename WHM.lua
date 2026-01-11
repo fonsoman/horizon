@@ -28,15 +28,15 @@ local sets = {
         Head = 'Faerie Hairpin',
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Morion Earring',
-        Body = 'Black Cotehardie', --
+        Ear2 = 'Static Earring',
+        Body = 'Cleric\'s Bliaut', --
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
         Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Cheviot Cape',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Wonder Braccae',
-        Feet = 'Light Soleas'
+        Back = 'Merciful Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Cleric\'s Pantaloons',
+        Feet = 'Errant Pigaches'
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 60 cap
@@ -290,7 +290,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Penitent\'s Rope', -- Emnity -3, DEF 4
         Legs = 'Mahatma Slops', -- Emnity -4, DEF 39
-        Feet = '',
+        Feet = 'Errant Pigaches',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Engaged
@@ -403,13 +403,13 @@ local sets = {
         Neck = 'Justice Badge', -- MND 3
         Ear1 = 'Geist Earring', -- MND 1
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Duende Cotehardie', -- Conserve MP 4
+        Body = 'Cleric\'s Bliaut', --
         Hands = 'Devotee\'s Mitts', -- MND 5
         Ring1 = 'Tamas Ring', -- MND 5
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Mahatma Slops', -- MND 8
+        Legs = 'Cleric\'s Pantaloons', --
         Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
