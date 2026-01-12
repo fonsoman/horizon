@@ -35,7 +35,7 @@ local sets = {
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Cleric\'s Pantaloons',
+        Legs = 'Cleric\'s Pantaln.',
         Feet = 'Errant Pigaches'
     },
 	--[[-----------------------------------------------------------------------------------
@@ -409,7 +409,7 @@ local sets = {
         Ring2 = 'Kshama Ring No.9', -- MND 3
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
-        Legs = 'Cleric\'s Pantaloons', --
+        Legs = 'Cleric\'s Pantaln.', --
         Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
