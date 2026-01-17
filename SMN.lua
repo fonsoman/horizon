@@ -176,7 +176,7 @@ local sets = {
         Ring1 = 'Merman\'s Ring', -- MDT -4%
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
-        Waist = 'Sorcerer\'s Belt', -- HP 20
+        Waist = 'Water Belt', -- Fire +20
         Legs = 'Mahatma Slops', -- INT 8
         Feet = 'Summoner\'s Pgch.',
     },
