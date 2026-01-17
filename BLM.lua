@@ -1200,7 +1200,7 @@ profile.HandleDefault = function()
 				else
 					gFunc.EquipSet(sets.Idle_Standard_20);
 				end
-			elseif (Settings.Idle == 4)
+			elseif (Settings.Idle == 4) then
                 if (environ.Area == "Behemoth\'s Dominion") then
                     gFunc.EquipSet(sets.Idle_MDT_Behemoth);
                 elseif (environ.Area == "Dragon\'s Aery") then
@@ -1210,7 +1210,6 @@ profile.HandleDefault = function()
                 else
                     gFunc.EquipSet(sets.Idle_MDT);
                 end
-
             else
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
