@@ -223,51 +223,74 @@ local sets = {
         Legs = 'Mahatma Slops', -- DEF 39, Emnity -4
         Feet = 'Rostrum Pumps',
     },
-    --[[-----------------------------------------------------------------------------------
+	    --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Wind
             Wind Res:
             MDT:
             MEVA:
             INT:
     --]]-----------------------------------------------------------------------------------
-    Idle_MDT_Wind = {
+    Idle_MDT_Fafnir = {
         Main = 'Aquilo\'s Staff', -- Wind +20, INT +5
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Blue Ribbon', -- Wind +6
+        Head = 'Nashira Turban',
         Neck = 'Elemental Torque', -- Wind +5
         Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Black Cotehardie', -- Wind +3, INT +2
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Body = 'Yinyang Robe', -- Refresh 1
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
-        Back = 'Blue Cape', -- Wind +5
+        Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Ice Belt', -- Wind +20
         Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Rostrum Pumps', -- INT +3
+        Feet = 'Summoner\'s Pgch.',
     },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Idle MDT Lightning
+        Equipsets: Idle MDT Behemoth
             Lightning Res:
             MDT: -3%
             MEVA:
             INT:
     --]]-----------------------------------------------------------------------------------
-    Idle_MDT_Lightning = {
+    Idle_MDT_Behemoth = {
         Main = 'Earth Staff', -- Lightning +15
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Wizard\'s Petasos', -- Lightning +10
+        Head = 'Nashira Turban',
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Black Cotehardie', -- Lightning +3, INT +2
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Body = 'Yinyang Robe', -- Refresh 1
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
         Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Rostrum Pumps', -- INT +3
+        Feet = 'Summoner\'s Pgch.',
+    },
+    --[[-----------------------------------------------------------------------------------
+        Equipsets: Idle MDT Tiamat
+            Lightning Res:
+            MDT: -3%
+            MEVA:
+            INT:
+    --]]-----------------------------------------------------------------------------------
+    Idle_MDT_Tiamat = {
+        Main = 'Water Staff', -- Fire +15
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
+        Head = 'Nashira Turban',
+        Neck = 'Uggalepih Pendant',
+        Ear1 = 'Merman\'s Earring', -- MDT -2%
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Body = 'Yinyang Robe', -- Refresh 1
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
+        Ring1 = 'Merman\'s Ring', -- MDT -4%
+        Ring2 = 'Merman\'s Ring', -- MDT -4%
+        Back = 'Hexerei Cape', -- DT -3%
+        Waist = 'Water Belt', -- Fire +20
+        Legs = 'Mahatma Slops', -- INT 8
+        Feet = 'Summoner\'s Pgch.',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Emnity
@@ -852,6 +875,16 @@ profile.HandleDefault = function()
 				else
 					gFunc.EquipSet(sets.Idle_Standard_20);
 				end
+            elseif (Settings.Idle == 4) then
+                if (environ.Area == "Behemoth\'s Dominion") then
+                    gFunc.EquipSet(sets.Idle_MDT_Behemoth);
+                elseif (environ.Area == "Dragon\'s Aery") then
+                    gFunc.EquipSet(sets.Idle_MDT_Fafnir);
+                elseif (environ.Area == "Attohwa Chasm") then
+                    gFunc.EquipSet(sets.Idle_MDT_Tiamat);
+                else
+                    gFunc.EquipSet(sets.Idle_MDT);
+                end
 			else
 				gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
 			end
