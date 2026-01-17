@@ -218,10 +218,10 @@ local sets = {
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
-        Back = 'Hexerei Cape', -- DT -3%, DEF 5
-        Waist = 'Sorcerer\'s Belt', -- DEF 4. HP 20
-        Legs = 'Mahatma Slops', -- DEF 39, Emnity -4
-        Feet = 'Rostrum Pumps',
+        Back = 'Hexerei Cape', -- DT -3%
+        Waist = 'Sorcerer\'s Belt', -- HP 20
+        Legs = 'Mahatma Slops', -- INT 8
+        Feet = 'Sorcerer\'s Sabots', -- INT 2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Wind
@@ -241,10 +241,10 @@ local sets = {
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
-        Back = 'Blue Cape', -- Wind +5
+        Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Ice Belt', -- Wind +20
-        Legs = 'Mahatma Slops', -- INT +7
-        Feet = 'Rostrum Pumps', -- INT +3
+        Legs = 'Mahatma Slops', -- INT +8
+        Feet = 'Sorcerer\'s Sabots', -- INT 2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Behemoth
@@ -267,7 +267,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
         Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Rostrum Pumps', -- INT +3
+        Feet = 'Sorcerer\'s Sabots', -- INT 2
     },
         --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Tiamat
@@ -283,14 +283,14 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Black Cotehardie', -- Lightning +3, INT +2
+        Body = 'Black Cotehardie', -- Lightning 3, INT 2
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
-        Waist = 'Earth Belt', -- Lightning +20
-        Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Rostrum Pumps', -- INT +3
+        Waist = 'Sorcerer\'s Belt', -- HP 20
+        Legs = 'Mahatma Slops', -- INT 8
+        Feet = 'Sorcerer\'s Sabots', -- INT 2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Emnity
