@@ -713,13 +713,13 @@ local sets = {
             HP: -197
     --]]-----------------------------------------------------------------------------------
     HPDown = {
-        Main = 'Ivory Sickle +1', -- HP -15
+        -- Main = 'Ivory Sickle +1', -- HP -15
         -- Sub = 'Astral Aspis', -- HP -25
         Ammo = 'Sweet Sachet',
         Head = 'Faerie Hairpin', -- HP -20
-        Neck = 'Checkered Scarf', -- HP -12
-        Ear1 = 'Reraise Earring', --
-        Ear2 = 'Reraise Earring', --
+        Neck = 'Uggalepih Pendant', -- MP 20
+        Ear1 = 'Loquac. Earring', -- MP 30
+        Ear2 = 'Astral Earring', -- HP -25 MP 25
         Body = 'Black Cotehardie', -- HP -25
         Hands = 'Zenith Mitts', -- HP -50
         Ring1 = 'Astral Ring', -- HP -25
