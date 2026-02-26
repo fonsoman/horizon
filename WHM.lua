@@ -243,8 +243,8 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Ice Belt', -- Wind +20
-        Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Summoner\'s Pgch.',
+        Legs = 'Cleric\'s Pantaln.',
+        Feet = 'Cleric\'s Duckbills'
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Behemoth
@@ -266,8 +266,8 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
-        Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Summoner\'s Pgch.',
+        Legs = 'Cleric\'s Pantaln.',
+        Feet = 'Cleric\'s Duckbills'
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Tiamat
@@ -279,8 +279,8 @@ local sets = {
     Idle_MDT_Tiamat = {
         Main = 'Water Staff', -- Fire +15
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Nashira Turban',
-        Neck = 'Uggalepih Pendant',
+        Head = 'Cleric\'s Cap',
+        Neck = 'Enfeebling Torque',
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Merman\'s Earring', -- MDT -2%
         Body = 'Cleric\'s Bliaut', --
@@ -289,8 +289,8 @@ local sets = {
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Water Belt', -- Fire +20
-        Legs = 'Mahatma Slops', -- INT 8
-        Feet = 'Summoner\'s Pgch.',
+        Legs = 'Cleric\'s Pantaln.',
+        Feet = 'Cleric\'s Duckbills'
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Emnity
