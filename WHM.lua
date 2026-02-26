@@ -941,7 +941,7 @@ profile.HandlePrecast = function()
 	if (player.SubJob == 'RDM') then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast II Trait
     end
-    local latency = 0.250 
+    local latency = 0.1
     local minimumBuffer = 0.5
     local packetDelay = 0.4
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) + latency - minimumBuffer
@@ -1155,38 +1155,3 @@ return profile;
 --]]
 
 
-
-
-
-
-    --[[-----------------------------------------------------------------------------------
-        Equipsets: Aspid Sept 17th, 2024
-            Hit for 1200+
-            Magic Burst Flag on
-            Sorcerer's Ring Flag on
-            Ice Obi and Sorc Tonban On for Ice Day
-            MAB: 21-28
-            Magic Accuracy: 0
-            INT: 22
-            Elemental Skill: 5-12
-            Emnity: -12
-            Conserve MP: 2
-    --]]-----------------------------------------------------------------------------------
-    --[[
-    Aspid = {
-        Ammo = 'Sweet Sachet', -- INT 2
-        Head = 'Wizard\'s Petasos', -- INT 4, Emnity -4
-        Neck = 'Uggalepih Pendant', -- MAB 7 (If higher than 50mp I used 'Elemental Torque', -- Elem 7)
-        Ear1 = 'Moldavite Earring', -- MAB 5
-        Ear2 = 'Abyssal Earring', -- INT 2
-        Body = 'Igqira Weskit', -- MAB 6, Elem 5, Conserve MP 2
-        Hands = 'Src. Gloves +1', -- Multiplies the magic burst bonus by 1.05, Emnity -3
-        Ring1 = 'Tamas Ring', -- INT 5, Emnity -3
-        Ring2 = 'Sorcerer\'s Ring', -- MAB 10
-        Back = 'Black Cape +1', -- INT 3
-        Waist = 'Hyorin Obi', -- 10% for magic of the day
-        Legs = 'Sorcerer\'s Tonban', -- INT 3, Emnity -2, 5% damage bonus for ice on iceday
-        Feet = 'Rostrum Pumps', -- INT 3, Fast Cast
-    },
-    ]]--
-    
