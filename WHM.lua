@@ -433,7 +433,7 @@ local sets = {
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
         Legs = 'Cleric\'s Pantaln.', --
-        Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
+        Feet = 'Sorcerer\'s Sabots' -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Enhancing
@@ -441,18 +441,18 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Enhancing = {
         -- Ammo = 'Hedgehog Bomb',
-        -- Head = 'Faerie Hairpin',
+        Head = 'Nashira Turban',
         Neck = 'Enhancing Torque',
-        -- Ear1 = 'Loquac. Earring',
-        -- Ear2 = 'Magnetic Earring',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Geist Earring',
         Body = 'Blessed Bliaut',
-        -- Hands = 'Devotee\'s Mitts',
+        Hands = 'Nashira Gages',
         Ring1 = 'Tamas Ring',
-        -- Ring2 = 'Ether Ring',
+        Ring2 = 'Kshama Ring No.9',
         Back = 'Merciful Cape', -- Enha 5
-        Waist = 'Penitent\'s Rope', -- MND 5
-        -- Legs = 'Mahatma Slops',
-        -- Feet = 'Mahatma Pigaches',
+        Waist = 'Cleric\'s Belt',
+        Legs = 'Cleric\'s Pantaln.',
+        Feet = 'Cleric\'s Duckbills'
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Stoneskin - Capped at 380
