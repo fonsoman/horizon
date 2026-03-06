@@ -884,7 +884,7 @@ profile.HandleDefault = function()
         if (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
         else
-            if (player.MPP >= 92) then
+            if (player.MP >= (CurrentStats.MP + GearsetStats.Rest.MP - 80)) then
                 gFunc.EquipSet(sets.Idle_MP);
             else
 		        gFunc.EquipSet(RestSet[Settings.RestSet]);
