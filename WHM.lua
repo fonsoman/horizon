@@ -750,17 +750,13 @@ local CurrentStatsNIN = {
 local CurrentStats = {};
 
 local GearsetStats = {
-	['MDT'] = {
-		['HP'] = 146, -- todo: update to proper number
-		['MP'] = 30 -- todo: update to proper number
-	},
 	['Idle'] = {
-		['HP'] = -42, -- todo: update to proper number
-		['MP'] = 241 -- todo: update to proper number
+		['HP'] = -20, -- todo: update to proper number
+		['MP'] = 277 -- todo: update to proper number
 	},
 	['MaxMP'] = {
-		['HP'] = -130, -- todo: update to proper number
-		['MP'] = 357 -- todo: update to proper number
+		['HP'] = -155, -- todo: update to proper number
+		['MP'] = 395 -- todo: update to proper number
 	}
 };
 
@@ -888,7 +884,11 @@ profile.HandleDefault = function()
         if (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
         else
-		    gFunc.EquipSet(RestSet[Settings.RestSet]);
+            if (player.MPP >= 95) then
+                gFunc.EquipSet(sets.Idle_MP);
+            else
+		        gFunc.EquipSet(RestSet[Settings.RestSet]);
+            end
         end
     elseif (player.Status == 'Engaged') then
         gFunc.EquipSet('Engaged');
@@ -903,10 +903,8 @@ profile.HandleDefault = function()
 						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
 							gFunc.Equip('Neck', 'Fenrir\'s Torque');
 						end
-					elseif (player.MP >= (CurrentStats.MP + GearsetStats.MDT.MP - 35)) then
-						gFunc.EquipSet(sets.Idle_Standard);
 					else
-						gFunc.EquipSet(sets.Idle_MDT);
+						gFunc.EquipSet(sets.Idle_Standard);
 					end
 					if (environ.Time < 18.00 and environ.Time > 6.00) then
 						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
