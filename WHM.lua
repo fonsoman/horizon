@@ -757,6 +757,10 @@ local GearsetStats = {
 	['MaxMP'] = {
 		['HP'] = -155, -- todo: update to proper number
 		['MP'] = 395 -- todo: update to proper number
+	},
+	['Rest'] = {
+		['HP'] = -62,
+		['MP'] = 219
 	}
 };
 
