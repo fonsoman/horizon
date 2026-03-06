@@ -761,6 +761,10 @@ local GearsetStats = {
 	['Rest'] = {
 		['HP'] = -62,
 		['MP'] = 219
+	},
+	['Healing'] = {
+		['HP'] = -11,
+		['MP'] = 128
 	}
 };
 
@@ -1089,13 +1093,15 @@ profile.HandleMidcast = function()
         HandleMidcast: Cures
     --]]-----------------------------------------------------------------------------------
 	elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
-		gFunc.EquipSet(sets.Healing);
-			if gcinclude.ObiCheck(action) >= 1 then
-				gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
-			end
-		if (environ.Time > 18.00 or environ.Time < 6.00) then
-			gFunc.Equip('Neck', 'Fenrir\'s Torque');
-		end
+         if (player.MP <= (CurrentStats.MP + GearsetStats.Healing.MP)) then
+            gFunc.EquipSet(sets.Healing);
+                if gcinclude.ObiCheck(action) >= 1 then
+                    gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
+                end
+            if (environ.Time > 18.00 or environ.Time < 6.00) then
+                gFunc.Equip('Neck', 'Fenrir\'s Torque');
+            end
+        end
 	
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: Enhancing Magic
