@@ -750,7 +750,7 @@ local CurrentStatsNIN = {
 local CurrentStats = {};
 
 local GearsetStats = {
-	['PDT'] = {
+	['MDT'] = {
 		['HP'] = 146, -- todo: update to proper number
 		['MP'] = 30 -- todo: update to proper number
 	},
