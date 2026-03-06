@@ -807,6 +807,7 @@ profile.HandleCommand = function(args)
 		Settings.Helm = 1;
         gFunc.Message('Idle Standard and Rest: hMP');
         gFunc.Message('Zone: ' .. environ.Area);
+        gFunc.Message('MPP: ' .. player.MPP);
     elseif (args[1] == 'idle_mp') then
         Settings.Idle = 2;
         gFunc.Message('Idle Max MP');
@@ -884,7 +885,7 @@ profile.HandleDefault = function()
         if (player.MainJobSync <= 50) then
             gFunc.EquipSet(sets.Rest_hMP_50);
         else
-            if (player.MPP >= 95) then
+            if (player.MPP >= 0.95) then
                 gFunc.EquipSet(sets.Idle_MP);
             else
 		        gFunc.EquipSet(RestSet[Settings.RestSet]);
