@@ -219,7 +219,7 @@ local sets = {
         Ring1 = 'Bomb Queen Ring', -- HP 75
         Ring2 = 'Merman\'s Ring', -- MDT -4%
         Back = 'Hexerei Cape', -- DT -3%, DEF 5
-        Waist = '',
+        Waist = 'Cleric\'s Belt', -- MP 40
         Legs = 'Mahatma Slops', -- DEF 39, Emnity -4
         Feet = 'Rostrum Pumps',
     },
@@ -482,16 +482,16 @@ local sets = {
     Rest_hMP = {
         Main = 'Dark Staff',
         Ammo = 'Fortune Egg',
-        Head = 'Wizard\'s Petasos',
+        Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
         Body = 'Errant Hpl.', -- hMP 5
-        Hands = 'Src. Gloves +1', -- MP 24
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.9', -- MP 5
+        Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
-        Waist = 'Hierarch Belt', -- hMP 2 MP 48
+        Waist = 'Cleric\'s Belt', -- hMP 3 MP 40
         Legs = 'Baron\'s Slops',
         Feet = 'Rostrum Pumps',
     },
@@ -529,13 +529,13 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = 'Cleric\'s Bliaut', --
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring',
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- hMP 2 MP 48
-        Legs = 'Wizard\'s Tonban',
+        Legs = 'Cleric\'s Pantaln.', -- MP 17
         Feet = 'Rostrum Pumps',
 	},
     --[[-----------------------------------------------------------------------------------
@@ -738,8 +738,8 @@ local CurrentStatsBLM = {
 };
 
 local CurrentStatsTHF = {
-	['HP'] = 812, -- todo: update to proper number
-	['MP'] = 799, -- todo: update to proper number
+	['HP'] = 883, -- todo: update to proper number
+	['MP'] = 738, -- todo: update to proper number
 };
 
 local CurrentStatsNIN = {
@@ -903,10 +903,10 @@ profile.HandleDefault = function()
 						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
 							gFunc.Equip('Neck', 'Fenrir\'s Torque');
 						end
-					elseif (player.MP >= (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
+					elseif (player.MP >= (CurrentStats.MP + GearsetStats.MDT.MP - 35)) then
 						gFunc.EquipSet(sets.Idle_Standard);
 					else
-						gFunc.EquipSet(sets.Idle_PDT);
+						gFunc.EquipSet(sets.Idle_MDT);
 					end
 					if (environ.Time < 18.00 and environ.Time > 6.00) then
 						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
