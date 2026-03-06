@@ -25,7 +25,7 @@ local sets = {
     Idle_Standard = {
         Main = 'Earth Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = 'Faerie Hairpin',
+        Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
         Ear2 = 'Static Earring',
@@ -33,10 +33,10 @@ local sets = {
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
         Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Merciful Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Cleric\'s Pantaln.',
-        Feet = 'Errant Pigaches'
+        Back = 'Merciful Cape', -- MP 25
+        Waist = 'Hierarch Belt', -- MP 48
+        Legs = 'Cleric\'s Pantaln.', -- MP 17
+        Feet = 'Cleric\'s Duckbills' -- MP 18
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 60 cap
@@ -166,14 +166,14 @@ local sets = {
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Loquac. Earring', -- MP 30
-        Ear2 = 'Geist Earring', -- MP 5
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Ear2 = 'Astral Earring', -- MP 25
+        Body = 'Cleric\'s Bliaut', --
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring', -- MP 30
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- MP 48
-        Legs = 'Wizard\'s Tonban', -- MP 14
+        Legs = 'Cleric\'s Pantaln.', -- MP 17
         Feet = 'Rostrum Pumps', -- MP 30
     },
     --[[-----------------------------------------------------------------------------------
@@ -730,6 +730,41 @@ conquest = gFunc.LoadFile('common\\Conquest.lua');
 gcinclude = gFunc.LoadFile('common\\Generic.lua');
 
 --[[-----------------------------------------------------------------------------------
+	Current Stats
+--]]-----------------------------------------------------------------------------------
+local CurrentStatsBLM = {
+	['HP'] = 812, -- todo: update to proper number
+	['MP'] = 858, -- todo: update to proper number
+};
+
+local CurrentStatsTHF = {
+	['HP'] = 812, -- todo: update to proper number
+	['MP'] = 799, -- todo: update to proper number
+};
+
+local CurrentStatsNIN = {
+	['HP'] = 817, -- todo: update to proper number
+	['MP'] = 799, -- todo: update to proper number
+};
+
+local CurrentStats = {};
+
+local GearsetStats = {
+	['PDT'] = {
+		['HP'] = 146, -- todo: update to proper number
+		['MP'] = 30 -- todo: update to proper number
+	},
+	['Idle'] = {
+		['HP'] = -42, -- todo: update to proper number
+		['MP'] = 241 -- todo: update to proper number
+	},
+	['MaxMP'] = {
+		['HP'] = -130, -- todo: update to proper number
+		['MP'] = 357 -- todo: update to proper number
+	}
+};
+
+--[[-----------------------------------------------------------------------------------
     Gearset Variable Defaults
 --]]-----------------------------------------------------------------------------------
 local Settings = {
@@ -743,8 +778,19 @@ local Settings = {
         Runs commands when job switched
 --]]-----------------------------------------------------------------------------------
 profile.OnLoad = function()
-    gSettings.AllowAddSet = true;
-	(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+    local player = gData.GetPlayer();
+	if (player.SubJob == 'BLM') then
+		CurrentStats = CurrentStatsBLM;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	elseif (player.SubJob == 'THF') then
+		CurrentStats = CurrentStatsTHF;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+	elseif (player.SubJob == 'NIN') then
+		CurrentStats = CurrentStatsNIN;
+		(function() AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 020'); end):once(3);
+    else
+        CurrentStats = CurrentStatsTHF;
+	end
 end
 
 --[[-----------------------------------------------------------------------------------
@@ -849,13 +895,18 @@ profile.HandleDefault = function()
 	else
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
-				if (player.MainJobSync >= 61) then
-					gFunc.EquipSet(sets.Idle_Standard);
-					if (conquest:GetOutsideControl()) then
-						gFunc.Equip('Neck', 'Rep.Gold Medal');
-					end
-					if (environ.Time < 18.00 and environ.Time > 6.00) then
-						gFunc.Equip('Neck', 'Fenrir\'s Torque');
+				if (player.MainJobSync == 75) then
+					if (player.MP >= (CurrentStats.MP + GearsetStats.Idle.MP - 35)) then
+						gFunc.EquipSet(sets.Idle_MP);
+						if (conquest:GetOutsideControl()) then
+							gFunc.Equip('Neck', 'Rep.Gold Medal');
+						elseif (environ.Time < 18.00 and environ.Time > 6.00) then
+							gFunc.Equip('Neck', 'Fenrir\'s Torque');
+						end
+					elseif (player.MP >= (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
+						gFunc.EquipSet(sets.Idle_Standard);
+					else
+						gFunc.EquipSet(sets.Idle_PDT);
 					end
 					if (environ.Time < 18.00 and environ.Time > 6.00) then
 						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
