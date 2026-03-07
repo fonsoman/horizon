@@ -453,16 +453,16 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Enhancing = {
         -- Ammo = 'Hedgehog Bomb',
-        Head = 'Nashira Turban',
+        -- Head = 'Nashira Turban',
         Neck = 'Enhancing Torque',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Geist Earring',
+        -- Ear1 = 'Loquac. Earring',
+        -- Ear2 = 'Geist Earring',
         Body = 'Blessed Bliaut',
-        Hands = 'Nashira Gages',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Kshama Ring No.9',
+        -- Hands = 'Nashira Gages',
+        -- Ring1 = 'Tamas Ring',
+        -- Ring2 = 'Kshama Ring No.9',
         Back = 'Merciful Cape', -- Enha 5
-        Waist = 'Cleric\'s Belt',
+        -- Waist = 'Cleric\'s Belt',
         Legs = 'Cleric\'s Pantaln.',
         Feet = 'Cleric\'s Duckbills'
     },
