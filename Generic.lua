@@ -5,7 +5,7 @@ local gcinclude = T{};
 --]]-----------------------------------------------------------------------------------
 gcinclude.ElementalStaff = {
     ['Fire'] = 'Vulcan\'s Staff',
-    ['Earth'] = 'Earth Staff',
+    ['Earth'] = 'Terra\'s Staff',
     ['Water'] = 'Water Staff',
     ['Wind'] = 'Wind Staff',
     ['Ice'] = 'Aquilo\'s Staff',

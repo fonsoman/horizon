@@ -96,7 +96,7 @@ local sets = {
 	},
 
     Idle_MDT = {
-        Main = 'Earth Staff',
+        Main = 'Terra\'s Staff',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Nashira Turban',
         Neck = 'Fenrir\'s Torque',
@@ -142,16 +142,16 @@ local sets = {
             INT:
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Behemoth = {
-        Main = 'Earth Staff', -- Lightning +15
+        Main = 'Terra\'s Staff', -- Lightning +20
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Nashira Turban',
-        Neck = 'Uggalepih Pendant',
-        Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Head = 'Green Ribbon +1', -- Lightning +10
+        Neck = 'Jeweled Collar', -- Lightning +10
+        Ear1 = 'Topaz Earring', -- Lightning +10
+        Ear2 = 'Topaz Earring', -- Lightning +10
         Body = 'Yinyang Robe', -- Refresh 1
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
-        Ring2 = 'Merman\'s Ring', -- MDT -4%
+        Ring2 = 'Malflash Ring', -- Lightning +10
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
         Legs = 'Mahatma Slops', -- INT +8
@@ -358,7 +358,7 @@ generic = gFunc.LoadFile('common\\Generic.lua');
 --change the staff names here when you get HQ staves
 local ElementalStaff = {
     ['Fire'] = 'Vulcan\'s Staff',
-    ['Earth'] = 'Earth Staff',
+    ['Earth'] = 'Terra\'s Staff',
     ['Water'] = 'Water Staff',
     ['Wind'] = 'Wind Staff',
     ['Ice'] = 'Aquilo\'s Staff',
@@ -563,7 +563,7 @@ profile.HandleDefault = function()
 			gFunc.Equip('Main','Vulcan\'s Staff');
 			petElement = 'Fire';
 		elseif ((pet.Name == 'Titan') or (pet.Name == 'EarthSpirit')) then
-			gFunc.Equip('Main','Earth Staff');
+			gFunc.Equip('Main','Terra\'s Staff');
 			petElement = 'Earth';
 		elseif ((pet.Name == 'Leviathan') or (pet.Name == 'WaterSpirit')) then
 			gFunc.Equip('Main','Water Staff');

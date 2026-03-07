@@ -23,7 +23,7 @@ local sets = {
             Emnity: -10
     --]]-----------------------------------------------------------------------------------
     Idle_Standard = {
-        Main = 'Earth Staff', -- PDT -20%
+        Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -42,7 +42,7 @@ local sets = {
         Equipsets: Idle Standard lv 60 cap
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_60 = {
-        Main = 'Earth Staff', -- PDT -20%
+        Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
         Neck = 'Black Neckerchief', --
@@ -61,7 +61,7 @@ local sets = {
         Equipsets: Idle Standard lv 51 cap
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_51 = {
-        Main = 'Earth Staff', -- PDT -20%
+        Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Gold Hairpin', -- MP 30
         Neck = 'Black Neckerchief', --
@@ -161,7 +161,7 @@ local sets = {
             MP: 322
     --]]-----------------------------------------------------------------------------------
     Idle_MP = {
-        Main = 'Earth Staff',
+        Main = 'Terra\'s Staff',
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -186,7 +186,7 @@ local sets = {
             VIT: 3
     --]]-----------------------------------------------------------------------------------
     Idle_PDT = {
-        Main = 'Earth Staff', -- PDT -20%
+        Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- DEF 20 MP 25 INT 4
         Neck = 'Black Neckerchief', -- DEF 2
@@ -208,7 +208,7 @@ local sets = {
             INT:
     --]]-----------------------------------------------------------------------------------
     Idle_MDT = {
-        Main = 'Earth Staff',
+        Main = 'Terra\'s Staff',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- DEF 20 MP 25 INT 4
         Neck = 'Uggalepih Pendant',
@@ -254,16 +254,16 @@ local sets = {
             INT:
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Behemoth = {
-        Main = 'Earth Staff', -- Lightning +15
+        Main = 'Terra\'s Staff', -- Lightning +20
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- Lightning +10
-        Neck = 'Uggalepih Pendant',
-        Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Neck = 'Jeweled Collar', -- Lightning +10
+        Ear1 = 'Topaz Earring', -- Lightning +10
+        Ear2 = 'Topaz Earring', -- Lightning +10
         Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
         Ring1 = 'Bomb Queen Ring', -- HP 75
-        Ring2 = 'Merman\'s Ring', -- MDT -4%
+        Ring2 = 'Malflash Ring', -- Lightning +10
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
         Legs = 'Mahatma Slops', -- INT +8
@@ -300,7 +300,7 @@ local sets = {
             DEF: 134
     --]]-----------------------------------------------------------------------------------
     Idle_Emnity = {
-        Main = 'Earth Staff', -- PDT -20%
+        Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -786,7 +786,7 @@ local sets = {
 --]]-----------------------------------------------------------------------------------
 -- local ElementalStaff = {
 --     ['Fire'] = 'Vulcan\'s Staff',
---     ['Earth'] = 'Earth Staff',
+--     ['Earth'] = 'Terra\'s Staff',
 --     ['Water'] = 'Water Staff',
 --     ['Wind'] = 'Wind Staff',
 --     ['Ice'] = 'Aquilo\'s Staff',
