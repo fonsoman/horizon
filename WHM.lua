@@ -436,6 +436,18 @@ local sets = {
         Feet = 'Sorcerer\'s Sabots' -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
+        Equipsets: Regen
+            TBD
+    --]]-----------------------------------------------------------------------------------
+      Regen = {
+        Main = 'Rucke\'s rung',
+        -- Ear1 = 'Magnetic Earring',
+        Body = 'Cleric\'s Bliaut',
+        -- Hands = 'Blessed Mitts',
+        -- Waist = 'Swift Belt',
+        Head = 'Nashira Turban'
+    },
+    --[[-----------------------------------------------------------------------------------
         Equipsets: Enhancing
             TBD
     --]]-----------------------------------------------------------------------------------
@@ -606,6 +618,15 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     --[[-----------------------------------------------------------------------------------
+        Equipsets: Fast Cast
+            Fast Cast: 
+    --]]-----------------------------------------------------------------------------------
+    PreCastCure = {
+        Main = 'Rucke\'s rung',
+        Feet = 'Rostrum Pumps', --'Cure Clogs',
+        Ear2 = 'Loq. Earring'
+    },
+    --[[-----------------------------------------------------------------------------------
         Equipsets: Conserve MP
             Conserve MP: 9
     --]]-----------------------------------------------------------------------------------
@@ -738,8 +759,8 @@ local CurrentStatsBLM = {
 };
 
 local CurrentStatsTHF = {
-	['HP'] = 883, -- todo: update to proper number
-	['MP'] = 738, -- todo: update to proper number
+	['HP'] = 883,
+	['MP'] = 738,
 };
 
 local CurrentStatsNIN = {
@@ -751,12 +772,12 @@ local CurrentStats = {};
 
 local GearsetStats = {
 	['Idle'] = {
-		['HP'] = -20, -- todo: update to proper number
-		['MP'] = 277 -- todo: update to proper number
+		['HP'] = -20,
+		['MP'] = 277
 	},
 	['MaxMP'] = {
-		['HP'] = -155, -- todo: update to proper number
-		['MP'] = 395 -- todo: update to proper number
+		['HP'] = -155
+		['MP'] = 395
 	},
 	['Rest'] = {
 		['HP'] = -62,
@@ -1009,7 +1030,12 @@ profile.HandlePrecast = function()
     local castTimeDecimal = ((spell.CastTime * (1 - fastCastValue)) / 1000) % 1
     local formattedCastTime = string.format("%.2f", castTimeSeconds + castTimeDecimal)
     --AshitaCore:GetChatManager():QueueCommand(8, '/echo Cast Time: ' .. formattedCastTime .. ' seconds')
-	gFunc.EquipSet(sets.FastCast);
+
+    if string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
+	    gFunc.EquipSet(sets.PreCastCure);
+    else
+        gFunc.EquipSet(sets.FastCast);
+    end
 end
 
 --[[-----------------------------------------------------------------------------------
@@ -1102,6 +1128,12 @@ profile.HandleMidcast = function()
                 gFunc.Equip('Neck', 'Fenrir\'s Torque');
             end
         end
+
+    --[[-----------------------------------------------------------------------------------
+        HandleMidcast: Regen
+    --]]-----------------------------------------------------------------------------------
+	elseif string.match(action.Name, 'Regen') then
+        gFunc.EquipSet(sets.Regen);
 	
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: Enhancing Magic
