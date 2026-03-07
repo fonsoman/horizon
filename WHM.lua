@@ -776,7 +776,7 @@ local GearsetStats = {
 		['MP'] = 277
 	},
 	['MaxMP'] = {
-		['HP'] = -155
+		['HP'] = -155,
 		['MP'] = 395
 	},
 	['Rest'] = {
