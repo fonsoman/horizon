@@ -1274,9 +1274,23 @@ profile.HandleMidcast = function()
         Settings.RestSet = 1;
     end
 
-	if (player.MP < (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
-		gFunc.InterimEquipSet(sets.Idle_PDT);
-	end
+	-- if (player.MP < (CurrentStats.MP + GearsetStats.PDT.MP - 35)) then
+	-- 	gFunc.InterimEquipSet(sets.Idle_PDT);
+	-- end
+
+    if (Settings.Idle == 4) then
+        if (environ.Area == "Behemoth\'s Dominion") then
+            gFunc.InterimEquipSet(sets.Idle_MDT_Behemoth);
+        elseif (environ.Area == "Dragon\'s Aery") then
+            gFunc.InterimEquipSet(sets.Idle_MDT_Fafnir);
+        elseif (environ.Area == "Attohwa Chasm") then
+            gFunc.InterimEquipSet(sets.Idle_MDT_Tiamat);
+        else
+            gFunc.InterimEquipSet(sets.Idle_MDT);
+        end
+    else
+        gFunc.InterimEquipSet('Idle_' .. Idle[Settings.Idle]);
+    end
 
     --[[-----------------------------------------------------------------------------------
         HandleMidcast: MaxMP - Keep equipset the same so you don't waste MP
