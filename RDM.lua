@@ -293,29 +293,6 @@ local sets = {
         Feet = 'Summoner\'s Pgch.',
     },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Idle Emnity
-            Emnity: -22
-            PDT: -23%
-            MDT: -3%
-            DEF: 134
-    --]]-----------------------------------------------------------------------------------
-    Idle_Emnity = {
-        Main = 'Terra\'s Staff', -- PDT -20%
-        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
-        Neck = 'Uggalepih Pendant', -- MP 20
-        Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Errant Hpl.', -- Emnity -3, DEF 42
-        Hands = 'Src. Gloves +1', -- Emnity -3, DEF 16
-        Ring1 = 'Tamas Ring', -- Emnity -5
-        Ring2 = 'Kshama Ring No.9',
-        Back = 'Hexerei Cape', -- DT -3%
-        Waist = 'Penitent\'s Rope', -- Emnity -3, DEF 4
-        Legs = 'Mahatma Slops', -- Emnity -4, DEF 39
-        Feet = 'Errant Pigaches',
-    },
-    --[[-----------------------------------------------------------------------------------
         Equipsets: Engaged
             EVA: 
     --]]-----------------------------------------------------------------------------------
@@ -425,7 +402,7 @@ local sets = {
         Head = 'Nashira Turban', -- Emnity -5
         Neck = 'Justice Badge', -- MND 3
         Ear1 = 'Geist Earring', -- MND 1
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
+        Ear2 = 'Geist Earring', -- MND 1
         Body = 'Cleric\'s Bliaut', --
         Hands = 'Devotee\'s Mitts', -- MND 5
         Ring1 = 'Tamas Ring', -- MND 5
