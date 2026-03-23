@@ -24,7 +24,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Standard = {
         Main = 'Terra\'s Staff', -- PDT -20%
-        Ammo = 'Fortune Egg', -- MP 1%
+        Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Merman\'s Earring', -- MDT -2%
@@ -162,7 +162,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MP = {
         Main = 'Terra\'s Staff',
-        Ammo = 'Fortune Egg', -- MP 1%
+        Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Loquac. Earring', -- MP 30
@@ -293,29 +293,6 @@ local sets = {
         Feet = 'Cleric\'s Duckbills'
     },
     --[[-----------------------------------------------------------------------------------
-        Equipsets: Idle Emnity
-            Emnity: -22
-            PDT: -23%
-            MDT: -3%
-            DEF: 134
-    --]]-----------------------------------------------------------------------------------
-    Idle_Emnity = {
-        Main = 'Terra\'s Staff', -- PDT -20%
-        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Wizard\'s Petasos', -- Emnity -4, DEF 20
-        Neck = 'Uggalepih Pendant', -- MP 20
-        Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = 'Errant Hpl.', -- Emnity -3, DEF 42
-        Hands = 'Src. Gloves +1', -- Emnity -3, DEF 16
-        Ring1 = 'Tamas Ring', -- Emnity -5
-        Ring2 = 'Kshama Ring No.9',
-        Back = 'Hexerei Cape', -- DT -3%
-        Waist = 'Penitent\'s Rope', -- Emnity -3, DEF 4
-        Legs = 'Mahatma Slops', -- Emnity -4, DEF 39
-        Feet = 'Errant Pigaches',
-    },
-    --[[-----------------------------------------------------------------------------------
         Equipsets: Engaged
             EVA: 
     --]]-----------------------------------------------------------------------------------
@@ -420,8 +397,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Healing = {
         Main = 'Light Staff', -- Cure Pot 10%
-        -- Sub = 'Beater\'s Aspis',
-        -- Ammo = 'Hedgehog Bomb',
+        Ammo = 'Hedgehog Bomb', -- Emnity -1
         Head = 'Nashira Turban', -- Emnity -5
         Neck = 'Justice Badge', -- MND 3
         Ear1 = 'Geist Earring', -- MND 1
@@ -493,7 +469,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_hMP = {
         Main = 'Dark Staff',
-        Ammo = 'Fortune Egg',
+        Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring', -- hMP 2
@@ -536,7 +512,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_MaxMP = {
         Main = 'Dark Staff',
-        Ammo = 'Fortune Egg',
+        Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Relaxing Earring', -- hMP 2
@@ -556,7 +532,7 @@ local sets = {
             MND: 
     --]]-----------------------------------------------------------------------------------
     Enfeeb_Mind = {
-        -- Ammo = 'Hedgehog Bomb',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Igqira Tiara',
         Neck = 'Enfeebling Torque',
         Ear1 = 'Geist Earring', -- MND 1

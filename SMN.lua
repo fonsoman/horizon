@@ -3,7 +3,7 @@ local profile = {};
 local sets = {
 	Idle = {
 		Main = 'Kirin\'s Pole', -- MP 20 HP 20
-		Ammo = 'Fenrir\'s Stone',
+		Ammo = 'Hedgehog Bomb', -- MP 30
 		Head = 'Faerie Hairpin',
 		Neck = 'Uggalepih Pendant',
 		Ear1 = 'Geist Earring',
@@ -228,6 +228,7 @@ local sets = {
 	
 	Cure = {
 		Main = 'Light Staff',
+		Ammo = 'Hedgehog Bomb', -- MP 30
 		Head = 'Bastokan Circlet',
 		Neck = 'Justice Badge',
 		Ear1 = 'Geist Earring',
@@ -244,7 +245,6 @@ local sets = {
 	
 	Stoneskin = {
         Main = 'Kirin\'s Pole', -- MND 10
-        -- Sub = '',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Stone Gorget', -- Enhances Stoneskin
