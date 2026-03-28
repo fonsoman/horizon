@@ -11,7 +11,7 @@ gcinclude.ElementalStaff = {
     ['Ice'] = 'Aquilo\'s Staff',
     ['Thunder'] = 'Jupiter\'s Staff',
     ['Light'] = 'Light Staff',
-    ['Dark'] = 'Dark Staff'
+    ['Dark'] = 'Pluto\'s Staff'
 };
 
 --[[-----------------------------------------------------------------------------------

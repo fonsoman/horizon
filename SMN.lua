@@ -189,7 +189,7 @@ local sets = {
 	},
 	
    Resting = {
-		Main = 'Dark Staff',
+		Main = 'Pluto\'s Staff',
         -- Head = '',
         Neck = 'Checkered Scarf',
         Body = 'Errant Hpl.',
@@ -364,7 +364,7 @@ local ElementalStaff = {
     ['Ice'] = 'Aquilo\'s Staff',
     ['Thunder'] = 'Jupiter\'s Staff',
     ['Light'] = 'Light Staff',
-    ['Dark'] = 'Dark Staff'
+    ['Dark'] = 'Pluto\'s Staff'
 };
 
 --Bloodpact Lists. I have flaming crush in the PhysicalBP list which may not be optimal
@@ -578,7 +578,7 @@ profile.HandleDefault = function()
 			gFunc.Equip('Main','Jupiter\'s Staff');
 			petElement = 'Thunder';
 		elseif ((pet.Name == 'Fenrir') or (pet.Name == 'Diabolos') or (pet.Name == 'DarkSpirit')) then
-			gFunc.Equip('Main','Dark Staff');
+			gFunc.Equip('Main','Pluto\'s Staff');
 			petElement = 'Dark';
 		end
 		

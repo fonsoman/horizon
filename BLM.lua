@@ -544,7 +544,7 @@ local sets = {
             MP:
     --]]-----------------------------------------------------------------------------------
     Rest_hMP = {
-        Main = 'Dark Staff',
+        Main = 'Pluto\'s Staff',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Wizard\'s Petasos',
         Neck = 'Checkered Scarf',
@@ -587,7 +587,7 @@ local sets = {
             hMP:
     --]]-----------------------------------------------------------------------------------
     Rest_MaxMP = {
-        Main = 'Dark Staff',
+        Main = 'Pluto\'s Staff',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant',
@@ -767,7 +767,7 @@ local sets = {
 --     ['Ice'] = 'Aquilo\'s Staff',
 --     ['Thunder'] = 'Jupiter\'s Staff',
 --     ['Light'] = 'Light Staff',
---     ['Dark'] = 'Dark Staff'
+--     ['Dark'] = 'Pluto\'s Staff'
 -- };
 
 --[[-----------------------------------------------------------------------------------
