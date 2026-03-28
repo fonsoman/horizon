@@ -826,7 +826,7 @@ profile.HandleDefault = function()
 	else
 		if (Settings.Helm == 1) then
 			if (Settings.Idle == 1) then
-				if (player.MainJobSync >= 61) then
+				if (player.MainJobLevel >= 61) then
 					gFunc.EquipSet(sets.Idle_Standard);
 					if (conquest:GetOutsideControl()) then
 						gFunc.Equip('Neck', 'Rep.Gold Medal');
@@ -837,9 +837,9 @@ profile.HandleDefault = function()
 					if (environ.Time < 18.00 and environ.Time > 6.00) then
 						gFunc.Equip('Ammo', 'Fenrir\'s Stone');
 					end
-				elseif (player.MainJobSync >= 60) then
+				elseif (player.MainJobLevel >= 60) then
 					gFunc.EquipSet(sets.Idle_Standard_60);
-				elseif (player.MainJobSync >= 51) then
+				elseif (player.MainJobLevel >= 51) then
 					gFunc.EquipSet(sets.Idle_Standard_51);
 				elseif (player.MainJobSync >= 50) then
 					gFunc.EquipSet(sets.Idle_Standard_50);
