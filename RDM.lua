@@ -839,7 +839,7 @@ profile.HandleDefault = function()
 					end
 				elseif (player.MainJobLevel >= 60) then
 					gFunc.EquipSet(sets.Idle_Standard_60);
-				elseif (player.MainJobLevel >= 51) then
+				elseif (player.MainJobSync >= 51) then
 					gFunc.EquipSet(sets.Idle_Standard_51);
 				elseif (player.MainJobSync >= 50) then
 					gFunc.EquipSet(sets.Idle_Standard_50);
