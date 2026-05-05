@@ -961,10 +961,6 @@ profile.HandleDefault = function()
         elseif (Settings.Helm == 3) then
             gFunc.EquipSet(sets.Cooking);
         elseif (Settings.Helm == 4) then
-            gFunc.EquipSet(sets.Worker);
-        elseif (Settings.Helm == 5) then
-            gFunc.EquipSet(sets.Chocobo);
-        elseif (Settings.Helm == 6) then
             gFunc.EquipSet(sets.Teleport);
         else
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);

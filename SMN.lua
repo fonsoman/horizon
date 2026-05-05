@@ -337,6 +337,26 @@ local sets = {
 		Feet = 'Dream Boots +1',
 		Hands = 'Dream Mittens +1',
     },
+
+	Fishing = {
+        Range = 'Lu Shang\'s F. Rod',
+        Body = 'Angler\'s Tunica',
+        Hands = 'Fsh. Gloves',
+        Legs = 'Fisherman\'s Hose',
+        Feet = 'Fisherman\'s Boots',
+    },
+    
+	Cooking = {
+        Head = 'Chef\'s Hat',
+        Body = 'Culinarian\'s Apron',
+    },
+	
+	Teleport = {
+		Main = 'Treat Staff II',
+		Head = 'Dream Hat +1',
+		Body = 'Mandra. Suit',
+		Ring2 = 'Tavnazian Ring'
+	},
     
 };
 
@@ -461,14 +481,8 @@ profile.HandleCommand = function(args)
 			Settings.Helm = 3;
 			gFunc.Message('Helm Set: Cooking');
 		elseif (Settings.Helm == 3) then
-			gFunc.Message('Helm Set: Worker');
-			Settings.Helm = 4;
-        elseif (Settings.Helm == 4) then
-			gFunc.Message('Helm Set: Chocobo');
-			Settings.Helm = 5;
-        elseif (Settings.Helm == 5) then
 			gFunc.Message('Helm Set: Teleport');
-			Settings.Helm = 6;
+			Settings.Helm = 4;
 		else
 			gFunc.Message('Helm Set: Standard');
 			Settings.Helm = 1;
@@ -500,33 +514,50 @@ profile.HandleDefault = function()
 			gFunc.EquipSet(sets.Resting_50);
 		end
 	elseif (pet == nil) then
-		if (player.MainJobSync == 75) then
-			if (Settings.Idle == 1) then
-				gFunc.EquipSet(sets.Idle);
-			elseif (Settings.Idle == 2) then
-				gFunc.EquipSet(sets.Idle_MDT);
+		if (Settings.Helm == 1) then
+			if (player.MainJobSync == 75) then
+				if (Settings.Idle == 1) then
+					gFunc.EquipSet(sets.Idle);
+				elseif (Settings.Idle == 2) then
+					gFunc.EquipSet(sets.Idle_MDT);
+				else
+					gFunc.EquipSet(sets.Idle);
+				end
+				if (conquest:GetOutsideControl()) then
+					gFunc.Equip('Neck', 'Rep.Gold Medal');
+				elseif (env.Time < 18.00 and env.Time > 6.00) then
+					gFunc.Equip('Neck', 'Fenrir\'s Torque');
+				end
+			elseif (player.MainJobSync >= 50) then
+				gFunc.EquipSet(sets.Idle_50);
+			elseif (player.MainJobSync >= 40) then
+				gFunc.EquipSet(sets.Idle_40);
+			elseif (player.MainJobSync >= 30) then
+				gFunc.EquipSet(sets.Idle_30);
+			elseif (player.MainJobSync >= 20) then
+				gFunc.EquipSet(sets.Idle_20);
 			else
-				gFunc.EquipSet(sets.Idle);
+				gFunc.EquipSet(sets.Idle_20);
 			end
-			if (conquest:GetOutsideControl()) then
-				gFunc.Equip('Neck', 'Rep.Gold Medal');
-			elseif (env.Time < 18.00 and env.Time > 6.00) then
-				gFunc.Equip('Neck', 'Fenrir\'s Torque');
+			if ((CityZones:contains(env.Area)) and (player.IsMoving)) then
+				gFunc.Equip('Body', 'Ducal Aketon');
 			end
-		elseif (player.MainJobSync >= 50) then
-			gFunc.EquipSet(sets.Idle_50);
-		elseif (player.MainJobSync >= 40) then
-			gFunc.EquipSet(sets.Idle_40);
-		elseif (player.MainJobSync >= 30) then
-			gFunc.EquipSet(sets.Idle_30);
-		elseif (player.MainJobSync >= 20) then
-			gFunc.EquipSet(sets.Idle_20);
-		else
-			gFunc.EquipSet(sets.Idle_20);
-		end
-		if ((CityZones:contains(env.Area)) and (player.IsMoving)) then
-			gFunc.Equip('Body', 'Ducal Aketon');
-		end
+		elseif (Settings.Helm == 2) then
+            gFunc.EquipSet(sets.Fishing);
+            if (environ.Area == "Sea Serpent Grotto") then
+                gFunc.Equip('Ammo','Shrimp Lure');
+            elseif (environ.Area == "Ship bound for Mhaura") then
+                gFunc.Equip('Ammo','Sinking Minnow');
+            elseif (environ.Area == "Ship bound for Selbina") then
+                gFunc.Equip('Ammo','Sinking Minnow');
+            end
+        elseif (Settings.Helm == 3) then
+            gFunc.EquipSet(sets.Cooking);
+        elseif (Settings.Helm == 4) then
+            gFunc.EquipSet(sets.Teleport);
+        else
+            gFunc.EquipSet(sets.Idle);
+        end
 	else
 		if (Settings.Idle == 1) then
 			gFunc.EquipSet(gFunc.Combine(sets.Idle, sets.Perp));

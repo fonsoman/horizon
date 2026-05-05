@@ -783,14 +783,8 @@ profile.HandleCommand = function(args)
 			Settings.Helm = 3;
 			gFunc.Message('Helm Set: Cooking');
 		elseif (Settings.Helm == 3) then
-			gFunc.Message('Helm Set: Worker');
-			Settings.Helm = 4;
-        elseif (Settings.Helm == 4) then
-			gFunc.Message('Helm Set: Chocobo');
-			Settings.Helm = 5;
-        elseif (Settings.Helm == 5) then
 			gFunc.Message('Helm Set: Teleport');
-			Settings.Helm = 6;
+			Settings.Helm = 4;
 		else
 			gFunc.Message('Helm Set: Standard');
 			Settings.Helm = 1;
@@ -890,10 +884,6 @@ profile.HandleDefault = function()
         elseif (Settings.Helm == 3) then
             gFunc.EquipSet(sets.Cooking);
         elseif (Settings.Helm == 4) then
-            gFunc.EquipSet(sets.Worker);
-        elseif (Settings.Helm == 5) then
-            gFunc.EquipSet(sets.Chocobo);
-        elseif (Settings.Helm == 6) then
             gFunc.EquipSet(sets.Teleport);
         else
             gFunc.EquipSet('Idle_' .. Idle[Settings.Idle]);
