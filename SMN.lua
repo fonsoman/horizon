@@ -494,7 +494,7 @@ end
 profile.HandleDefault = function()
     local myLevel = AshitaCore:GetMemoryManager():GetPlayer():GetMainJobLevel();
 	local player = gData.GetPlayer();
-	local env = gData.GetEnvironment();
+	local environ= gData.GetEnvironment();
 	local pet = gData.GetPet();
 	local combinedSet = T{};
 	
@@ -525,7 +525,7 @@ profile.HandleDefault = function()
 				end
 				if (conquest:GetOutsideControl()) then
 					gFunc.Equip('Neck', 'Rep.Gold Medal');
-				elseif (env.Time < 18.00 and env.Time > 6.00) then
+				elseif (environ.Time < 18.00 and environ.Time > 6.00) then
 					gFunc.Equip('Neck', 'Fenrir\'s Torque');
 				end
 			elseif (player.MainJobSync >= 50) then
@@ -539,7 +539,7 @@ profile.HandleDefault = function()
 			else
 				gFunc.EquipSet(sets.Idle_20);
 			end
-			if ((CityZones:contains(env.Area)) and (player.IsMoving)) then
+			if ((CityZones:contains(environ.Area)) and (player.IsMoving)) then
 				gFunc.Equip('Body', 'Ducal Aketon');
 			end
 		elseif (Settings.Helm == 2) then
@@ -613,11 +613,11 @@ profile.HandleDefault = function()
 			petElement = 'Dark';
 		end
 		
-		if (env.DayElement == petElement) then
+		if (environ.DayElement == petElement) then
 			gFunc.Equip('Body','Summoner\'s Dblt.');
 		end
 		
-		if (env.WeatherElement == petElement) then
+		if (environ.WeatherElement == petElement) then
 			gFunc.Equip('Head','Summoner\'s Horn');
 		end
 	end
