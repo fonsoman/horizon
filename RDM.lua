@@ -25,18 +25,18 @@ local sets = {
     Idle_Standard = {
         Main = 'Terra\'s Staff', -- PDT -20%
         Ammo = 'Fortune Egg', -- MP 1%
-        Head = 'Faerie Hairpin',
-        Neck = 'Uggalepih Pendant', -- MP 20
-        Ear1 = 'Merman\'s Earring', -- MDT -2%
-        Ear2 = 'Static Earring',
-        Body = 'Cleric\'s Bliaut', --
-        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
-        Ring1 = 'Tamas Ring', -- MP 30, Emnity -5
-        Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Merciful Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Cleric\'s Pantaln.',
-        Feet = 'Errant Pigaches'
+        Head = 'Gold Hairpin',
+        Neck = 'Rep.Mythril Medal', --
+        Ear1 = 'Geist Earring', -- MP 5, MND 1
+        Ear2 = 'Morion Earring', -- MP 4
+        Body = 'Black Cotehardie', --
+        Hands = 'Seer\'s Mitts',
+        Ring1 = 'Tamas Ring', -- MP 20
+        Ring2 = 'Kshama Ring No.5', -- MP 5
+        Back = 'Black Cape +1', --
+        Waist = 'Penitent\'s Rope', --
+        Legs = 'Wonder Braccae',
+        Feet = 'Light Soleas',
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 60 cap
