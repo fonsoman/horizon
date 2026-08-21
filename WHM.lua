@@ -297,11 +297,12 @@ local sets = {
             EVA: 
     --]]-----------------------------------------------------------------------------------
     Engaged = {
-        -- Main = 'Ivory Sickle +1',
+        Main = 'Darksteel Maul +1',
+        Sub  = 'Holy Maul +1', -- 
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
-        Neck = 'Black Neckerchief', -- DEF 2
-        Ear1 = 'Abyssal Earring', -- Scythe +5
+        Neck = '9999\'s Broken Collar', --
+        -- Ear1 = 'Abyssal Earring', -- Scythe +5
         Ear2 = 'Static Earring', -- MDB 2, MND 2
         Body = '',
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
@@ -432,7 +433,7 @@ local sets = {
         -- Head = 'Nashira Turban',
         Neck = 'Enhancing Torque',
         -- Ear1 = 'Loquac. Earring',
-        -- Ear2 = 'Geist Earring',
+        Ear2 = 'Augment. Earring',
         Body = 'Blessed Bliaut',
         -- Hands = 'Nashira Gages',
         -- Ring1 = 'Tamas Ring',
@@ -928,7 +929,7 @@ profile.HandleDefault = function()
                     gFunc.EquipSet(sets.Idle_MDT_Behemoth);
                 elseif (environ.Area == "Dragon\'s Aery") then
                     gFunc.EquipSet(sets.Idle_MDT_Fafnir);
-                elseif (environ.Area == "Attohwa Chasm") then
+                elseif (environ.Area == "Attohwa Chasm") or (environ.Area == "Mount Zhayolm") then
                     gFunc.EquipSet(sets.Idle_MDT_Tiamat);
                 else
                     gFunc.EquipSet(sets.Idle_MDT);
@@ -1001,6 +1002,9 @@ profile.HandlePrecast = function()
 	    gFunc.EquipSet(sets.PreCastCure);
     else
         gFunc.EquipSet(sets.FastCast);
+        if (player.SubJob == 'RDM') then
+            gFunc.Equip('Back', 'Warlock\'s Mantle');
+        end
     end
 end
 
@@ -1060,8 +1064,10 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Dark Magic') then
 		if (action.Name == 'Stun') then
 			gFunc.EquipSet(sets.Stun);
-        elseif (action.Name == 'Drain') then
-            gFunc.EquipSet(gFunc.Combine(sets.Dark, sets.BombQueenRing));
+        elseif (action.Name == 'Drain' or action.Name == 'Aspir') then
+            gFunc.EquipSet(sets.Dark);
+            gFunc.Equip('Ring1', 'Overlord\'s Ring');
+            -- gFunc.EquipSet(gFunc.Combine(sets.Dark, sets.BombQueenRing));
 		else
 			gFunc.EquipSet(sets.Dark);
 		end
