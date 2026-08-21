@@ -103,18 +103,18 @@ local sets = {
         Main = 'Solid Wand', -- 
         Sub  = 'Beater\'s Aspis', -- DEF 3
         Ammo = 'Sweet Sachet', -- 
-        Head = 'Seer\'s Crown +1', --
-        Neck = 'Black Neckerchief', --
+        Head = 'Republic Circlet', --
+        Neck = 'Stone Gorget', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
         Ear2 = 'Morion Earring', -- MP 4
         Body = 'Ryl.Sqr. Robe', --
-        Hands = 'Seer\'s Mitts +1', --
+        Hands = 'Scentless Armlets', --
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Black Cape +1', --
         Waist = 'Mrc.Cpt. Belt', --
         Legs = 'Wonder Braccae', --
-        Feet = 'Seer\'s Pumps', --
+        Feet = 'Light Soleas', --
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 30 cap
@@ -128,13 +128,13 @@ local sets = {
         Ear1 = 'Reraise Earring', -- PEVA 2
         Ear2 = 'Morion Earring', -- MP 4
         Body = 'Black Tunic', --
-        Hands = 'Seer\'s Mitts +1', --
+        Hands = 'Scentless Armlets', --
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Astral Ring', -- MP 25
         Back = 'Cotton Cape', --
         Waist = 'Mrc.Cpt. Belt', --
-        Legs = 'Seer\'s Slacks +1', --
-        Feet = 'Seer\'s Pumps', --
+        Legs = 'Baron\'s Slops', --
+        Feet = 'Light Soleas', --
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle Standard lv 20 cap
