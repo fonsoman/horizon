@@ -24,6 +24,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Standard = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -43,6 +44,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_60 = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Gold Hairpin',
         Neck = 'Rep.Mythril Medal', --
@@ -162,6 +164,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MP = {
         Main = 'Terra\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -187,6 +190,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_PDT = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2
@@ -209,6 +213,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT = {
         Main = 'Terra\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Uggalepih Pendant',
@@ -232,6 +237,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Fafnir = {
         Main = 'Aquilo\'s Staff', -- Wind +20, INT +5
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Nashira Turban',
         Neck = 'Elemental Torque', -- Wind +5
@@ -255,6 +261,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Behemoth = {
         Main = 'Terra\'s Staff', -- Lightning +20
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Green Ribbon +1', -- Lightning +10
         Neck = 'Jeweled Collar', -- Lightning +10
@@ -278,6 +285,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Tiamat = {
         Main = 'Water Staff', -- Fire +15
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Cleric\'s Cap',
         Neck = 'Enfeebling Torque',
@@ -298,20 +306,20 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Engaged = {
         Main = 'Darksteel Maul +1',
-        Sub  = 'Holy Maul +1', -- 
+        Sub  = 'Ryl.Sqr. Shield', -- 
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
-        Head = 'Igqira Tiara', -- DEF 20, PEVA 10
+        Head = 'Nashira Turban', --
         Neck = '9999\'s Broken Collar', --
-        -- Ear1 = 'Abyssal Earring', -- Scythe +5
+        Ear1 = 'Novia Earring',
         Ear2 = 'Static Earring', -- MDB 2, MND 2
-        Body = '',
+        Body = 'Cleric\'s Bliaut', --
         Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
-        Ring1 = 'Tamas Ring', --
+        Ring1 = 'Jelly Ring', --
         Ring2 = 'Kshama Ring No.2', -- DEX 3, Acc 2
-        Back = 'Hexerei Cape', -- DT -3%, DEF 5
-        Waist = '',
-        Legs = '',
-        Feet = '',
+        Back = 'Cheviot Cape', -- PDT -5%, DEF 5
+        Waist = 'Mrc.Cpt. Belt',
+        Legs = 'Cleric\'s Pantaln.',
+        Feet = 'Cleric\'s Duckbills',
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Standard
@@ -398,6 +406,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Healing = {
         Main = 'Light Staff', -- Cure Pot 10%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- Emnity -1
         Head = 'Nashira Turban', -- Emnity -5
         Neck = 'Justice Badge', -- MND 3
@@ -448,6 +457,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Stoneskin = {
         Main = 'Kirin\'s Pole', -- MND 10
+        Sub = 'Bugard Strap +1',
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
@@ -470,6 +480,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_hMP = {
         Main = 'Pluto\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Checkered Scarf',
@@ -513,6 +524,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_MaxMP = {
         Main = 'Pluto\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant',
