@@ -24,6 +24,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Standard = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -43,6 +44,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_Standard_60 = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fortune Egg', -- MP 1%
         Head = 'Wizard\'s Petasos', -- MP 25, DEF 20
         Neck = 'Black Neckerchief', --
@@ -162,6 +164,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MP = {
         Main = 'Terra\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant', -- MP 20
@@ -187,6 +190,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_PDT = {
         Main = 'Terra\'s Staff', -- PDT -20%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- DEF 20 MP 25 INT 4
         Neck = 'Black Neckerchief', -- DEF 2
@@ -209,6 +213,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT = {
         Main = 'Terra\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- DEF 20 MP 25 INT 4
         Neck = 'Uggalepih Pendant',
@@ -232,6 +237,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Fafnir = {
         Main = 'Aquilo\'s Staff', -- Wind +20, INT +5
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- DEF 20 MP 25 INT 4
         Neck = 'Elemental Torque', -- Wind +5
@@ -255,6 +261,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Behemoth = {
         Main = 'Terra\'s Staff', -- Lightning +20
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', -- Lightning +10
         Neck = 'Jeweled Collar', -- Lightning +10
@@ -278,6 +285,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Idle_MDT_Tiamat = {
         Main = 'Water Staff', -- Fire +15
+        Sub = 'Bugard Strap +1',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Wizard\'s Petasos', --
         Neck = 'Uggalepih Pendant',
@@ -486,6 +494,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Healing = {
         Main = 'Light Staff', -- Cure Pot 10%
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- Emnity -1
         Head = 'Nashira Turban', -- Emnity -5
         Neck = 'Justice Badge', -- MND 3
@@ -509,7 +518,7 @@ local sets = {
         -- Head = 'Faerie Hairpin',
         Neck = 'Enhancing Torque',
         -- Ear1 = 'Loquac. Earring',
-        -- Ear2 = 'Magnetic Earring',
+        Ear2 = 'Augment. Earring',
         Body = 'Errant Hpl.', -- MND 10
         -- Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
@@ -524,6 +533,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Stoneskin = {
         Main = 'Kirin\'s Pole', -- MND 10
+        Sub = 'Bugard Strap +1',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Stone Gorget', -- Enhances Stoneskin
@@ -545,6 +555,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_hMP = {
         Main = 'Pluto\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Wizard\'s Petasos',
         Neck = 'Checkered Scarf',
@@ -588,6 +599,7 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     Rest_MaxMP = {
         Main = 'Pluto\'s Staff',
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- MP 30
         Head = 'Faerie Hairpin', -- MP 55
         Neck = 'Uggalepih Pendant',
@@ -1248,6 +1260,10 @@ profile.HandlePrecast = function()
         end
     end
 	gFunc.EquipSet(sets.FastCast);
+
+	if (player.SubJob == 'RDM') then
+        gFunc.Equip('Back', 'Warlock\'s Mantle');
+    end
 end
 
 --[[-----------------------------------------------------------------------------------
@@ -1368,11 +1384,14 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Dark Magic') then
 		if (action.Name == 'Stun') then
 			gFunc.EquipSet(sets.Stun);
-        elseif (action.Name == 'Drain') then
-            gFunc.EquipSet(gFunc.Combine(sets.Dark, sets.BombQueenRing));
 		else
 			gFunc.EquipSet(sets.Dark);
 		end
+
+        if (action.Name == 'Drain' or action.Name == 'Aspir') then
+            gFunc.Equip('Ring1', 'Overlord\'s Ring');
+        end
+
         gFunc.Equip('main', gcinclude.ElementalStaff[action.Element]);
 		if ((gData.GetAction().MppAftercast > 84) and (action.Name == 'Aspir')) then
 			gFunc.EquipSet(gFunc.Combine(sets.Idle_MP, sets.Dark_Essential));
