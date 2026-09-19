@@ -701,8 +701,8 @@ local sets = {
     --]]-----------------------------------------------------------------------------------
     HPDown = {
         Main = 'Ivory Sickle +1', -- HP -15
-        -- Sub = 'Astral Aspis', -- HP -25
-        -- Ammo = 'Sweet Sachet',
+        Sub = 'Bugard Strap +1',
+        Ammo = 'Sweet Sachet',
         Head = 'Faerie Hairpin', -- HP -20
         Neck = 'Checkered Scarf', -- HP - 12
         Ear1 = 'Loquac. Earring', -- MP 30
@@ -1254,14 +1254,16 @@ profile.HandlePrecast = function()
     local castTimeDecimal = ((spell.CastTime * (1 - fastCastValue)) / 1000) % 1
     local formattedCastTime = string.format("%.2f", castTimeSeconds + castTimeDecimal)
     --AshitaCore:GetChatManager():QueueCommand(8, '/echo Cast Time: ' .. formattedCastTime .. ' seconds')
+    local isHPDown = false;
     if action.Skill == 'Elemental Magic' and ElementalMagicSpells:contains(baseSpellName) then
-        if (player.HPP >= 76) and (Settings.SorcRing == 2) then
-            gFunc.EquipSet(sets.HPDown)
+        if (Settings.SorcRing == 2) then
+            gFunc.EquipSet(sets.HPDown);
+            isHPDown = true;
         end
     end
 	gFunc.EquipSet(sets.FastCast);
 
-	if (player.SubJob == 'RDM') then
+	if (player.SubJob == 'RDM') and not isHPDown then
         gFunc.Equip('Back', 'Warlock\'s Mantle');
     end
 end
