@@ -167,7 +167,7 @@ local sets = {
         Neck = 'Uggalepih Pendant', -- MP 20
         Ear1 = 'Loquac. Earring', -- MP 30
         Ear2 = 'Geist Earring', -- MP 5
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = 'Black Cotehardie', --
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring', -- MP 30
         Ring2 = 'Ether Ring', -- MP 30
@@ -297,7 +297,8 @@ local sets = {
             EVA: 
     --]]-----------------------------------------------------------------------------------
     Engaged = {
-        -- Main = 'Ivory Sickle +1',
+        Main = 'Broadsword +1',
+        Sub = '',
         Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
         Head = 'Igqira Tiara', -- DEF 20, PEVA 10
         Neck = 'Black Neckerchief', -- DEF 2

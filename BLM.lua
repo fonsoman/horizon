@@ -203,7 +203,7 @@ local sets = {
         Back = 'Cheviot Cape', -- PDT -5%, DEF 5
         Waist = 'Sorcerer\'s Belt', -- DEF 4, HP 20
         Legs = 'Wonder Braccae', -- HP 21, DEF 12
-        Feet = 'Sorcerer\'s Sabots', -- DEF 14, Emnity -1
+        Feet = 'Src. Sabots +1', -- DEF 15, MP 18
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT
@@ -226,7 +226,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Sorcerer\'s Belt', -- HP 20
         Legs = 'Mahatma Slops', -- INT 8
-        Feet = 'Sorcerer\'s Sabots', -- INT 2
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Wind
@@ -250,7 +250,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Ice Belt', -- Wind +20
         Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Sorcerer\'s Sabots', -- INT 2
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Behemoth
@@ -274,7 +274,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Earth Belt', -- Lightning +20
         Legs = 'Mahatma Slops', -- INT +8
-        Feet = 'Sorcerer\'s Sabots', -- INT 2
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18
     },
         --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Tiamat
@@ -298,7 +298,7 @@ local sets = {
         Back = 'Hexerei Cape', -- DT -3%
         Waist = 'Water Belt', -- Fire +20
         Legs = 'Mahatma Slops', -- INT 8
-        Feet = 'Sorcerer\'s Sabots', -- INT 2
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Engaged
@@ -330,6 +330,7 @@ local sets = {
             Conserve MP: 2
     --]]-----------------------------------------------------------------------------------
     Elemental_Standard = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet', -- INT 2
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Elemental Torque', -- Elem 7
@@ -342,7 +343,7 @@ local sets = {
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops', -- INT 8, Emnity -4
-        Feet = 'Rostrum Pumps', -- INT 3, Fast Cast
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Accuracy
@@ -352,6 +353,7 @@ local sets = {
             MAB:      
     --]]-----------------------------------------------------------------------------------
     Elemental_Accuracy = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet',
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Elemental Torque',
@@ -364,7 +366,7 @@ local sets = {
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Mid
@@ -374,6 +376,7 @@ local sets = {
             Elemental Skill:
     --]]-----------------------------------------------------------------------------------
     Elemental_Mid = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet',
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Elemental Torque',
@@ -386,7 +389,7 @@ local sets = {
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Potency
@@ -396,6 +399,7 @@ local sets = {
             Elemental Skill:
     --]]-----------------------------------------------------------------------------------
     Elemental_Potency = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet',
         Head = 'Wizard\'s Petasos',
         Neck = 'Philomath Stole',
@@ -408,7 +412,7 @@ local sets = {
         Back = 'Rainbow Cape', --INT 3
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Elemental Emnity
@@ -419,6 +423,7 @@ local sets = {
             Elemental Skill:
     --]]-----------------------------------------------------------------------------------
     Elemental_Emnity = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Hedgehog Bomb', -- Emnity -1
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Elemental Torque',
@@ -431,7 +436,7 @@ local sets = {
         Back = 'Merciful Cape', -- Elem 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches', -- Emn -2
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Dark
@@ -440,6 +445,7 @@ local sets = {
             INT:
     --]]-----------------------------------------------------------------------------------
     Dark = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet',
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Philomath Stole',
@@ -452,7 +458,7 @@ local sets = {
         Back = 'Merciful Cape', -- Dark 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Wizard\'s Tonban',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
 	--[[-----------------------------------------------------------------------------------
         Equipsets: Dark Essential
@@ -474,6 +480,7 @@ local sets = {
             Dark Skill:
     --]]-----------------------------------------------------------------------------------
     Stun = {
+        Sub = 'Bugard Strap +1',
         Ammo = 'Sweet Sachet',
         Head = 'Nashira Turban', -- MAcc 5, Emnity -5
         Neck = 'Philomath Stole',
@@ -486,7 +493,7 @@ local sets = {
         Back = 'Merciful Cape', -- Dark 5
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Wizard\'s Tonban',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Healing
@@ -507,7 +514,7 @@ local sets = {
         Back = 'Rainbow Cape', -- MND 3
         Waist = 'Penitent\'s Rope', -- MND 5
         Legs = 'Mahatma Slops', -- MND 8
-        Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5, Emnity -1
+        Feet = 'Src. Sabots +1', -- Conserve MP 5, Emnity -1
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Enhancing
@@ -652,7 +659,7 @@ local sets = {
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Max INT
@@ -671,7 +678,7 @@ local sets = {
         Back = 'Rainbow Cape',
         Waist = 'Sorcerer\'s Belt', -- INT 6
         Legs = 'Mahatma Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Src. Sabots +1', -- INT 3, MP 18, Emnity -2
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: Fast Cast
@@ -691,7 +698,7 @@ local sets = {
         Body = 'Duende Cotehardie', -- Conserve MP 4
         -- Back = 'Maledictor\'s Shawl',
         -- Legs = 'Aries Subligar',
-        Feet = 'Sorcerer\'s Sabots', -- Conserve MP 5
+        Feet = 'Src. Sabots +1', -- Conserve MP 5
     },
     --[[-----------------------------------------------------------------------------------
         Equipsets: HP Down
@@ -1330,54 +1337,69 @@ profile.HandleMidcast = function()
         HandleMidcast: Elemental Magic
     --]]-----------------------------------------------------------------------------------
 	elseif (action.Skill == 'Elemental Magic') then
-		if (gcinclude.ElementalDebuffs:contains(action.Name)) then	
+		-- Elemental Debuffs (Burn, Frost, Choke, Rasp, Shock, Drown)
+		if (gcinclude.ElementalDebuffs:contains(action.Name)) then
 			gFunc.EquipSet(sets.MaxINT);
 			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		else
+			-- Base Elemental Set Selection
 			gFunc.EquipSet('Elemental_' .. Elemental[Settings.Elemental]);
-			gFunc.Equip('main', gcinclude.ElementalStaff[action.Element]);
-			if (Settings.Elemental == 1 or Settings.Elemental == 2) then -- Standard or Potency Elemental Set
-				if (gData.GetAction().MppAftercast <= 50) then
-					gFunc.Equip('Neck', 'Uggalepih Pendant');
-				end
-				if (environ.DayElement == action.Element) then
-					gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
-				end
-				if ((Settings.SorcRing == 2) or (player.HPP <= 75)) then
-					gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
-					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
-						gFunc.Equip('Ring1', 'Ice Ring');
-					end
-				else
-					if (environ.DayElement == 'Ice' and gData.GetAction().MppAftercast <= 84) then
-						gFunc.Equip('Ring2', 'Ice Ring');
-					end
-				end
+			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
+
+			-- Mode-Specific Nuances
+			if (Settings.Elemental == 1 or Settings.Elemental == 2) then -- Standard / Potency
 				if (conquest:GetInsideControl()) then
-                    gFunc.Equip('Head', 'Republic Circlet');
-                end
-				if (Settings.MagicBurst == 2) then
-					gFunc.EquipSet(sets.MagicBurst);
+					gFunc.Equip('Head', 'Republic Circlet');
 				end
-			elseif (Settings.Elemental == 3 or Settings.Elemental == 4) then -- Mid or Accuracy Elemental Set
+
+			elseif (Settings.Elemental == 3 or Settings.Elemental == 4) then -- Accuracy / Mid
 				if (conquest:GetOutsideControl()) then
 					gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
 				end
 				if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
 					gFunc.Equip('Ear1', 'Diabolos\'s Earring');
 				end
-				if (environ.DayElement == 'Ice') then
-					gFunc.Equip('Ring2', 'Ice Ring');
-				end
-			elseif (Settings.Elemental == 5) then  -- Emnity Elemental Set
+
+			elseif (Settings.Elemental == 5) then -- Emnity
 				if (environ.Time > 18.00 or environ.Time < 6.00) then
-					gFunc.Equip('Neck', 'Fenrir\'s Torque');
+					gFunc.Equip('Neck', 'Fenrir\'s Torque'); -- Night Emnity -3
 				end
 			end
-			
-		end
-		if gcinclude.ObiCheck(action) >= 1 then
-			gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
+
+			-- Universal Conditional Overrides
+
+			-- Uggalepih Pendant (MPP <= 50%)
+			-- Skips overwriting if Fenrir's Torque was equipped above for nighttime Enmity
+			if (action.MppAftercast <= 50) and not (Settings.Elemental == 5 and (environ.Time > 18.00 or environ.Time < 6.00)) then
+				gFunc.Equip('Neck', 'Uggalepih Pendant');
+			end
+
+			-- Sorcerer's Tonban (+5% Day Element Damage Bonus)
+			if (environ.DayElement == action.Element) then
+				gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
+			end
+
+			-- Sorcerer's Ring / Ice Ring Logic
+			if (Settings.SorcRing == 2) or (player.HPP <= 75) then
+				gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
+				if (environ.DayElement == 'Ice' and action.MppAftercast <= 84 and Settings.MagicBurst ~= 2) then
+					gFunc.Equip('Ring1', 'Ice Ring');
+				end
+			else
+				if (environ.DayElement == 'Ice' and action.MppAftercast <= 84 and Settings.MagicBurst ~= 2) then
+					gFunc.Equip('Ring2', 'Ice Ring');
+				end
+			end
+
+			-- Magic Burst Swap
+			if (Settings.MagicBurst == 2) then
+				gFunc.EquipSet(sets.MagicBurst);
+			end
+
+			-- Elemental Obi (Day/Weather Alignment)
+			if (gcinclude.ObiCheck(action) >= 1) then
+				gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
+			end
 		end
 
     --[[-----------------------------------------------------------------------------------

@@ -157,6 +157,29 @@ local sets = {
         Legs = 'Mahatma Slops', -- INT +8
         Feet = 'Summoner\'s Pgch.',
     },
+	    --[[-----------------------------------------------------------------------------------
+        Equipsets: Idle MDT Water
+            Water Res:
+            MDT: -3%
+            MEVA:
+            INT:
+    --]]-----------------------------------------------------------------------------------
+    Idle_MDT_Water = {
+        Main = 'Jupiter\'s Staff', -- Water +20
+        Ammo = 'Fenrir\'s Stone', -- HP 30 or PEVA 10
+        Head = 'Green Ribbon +1', -- Water +10
+        Neck = 'Jeweled Collar', -- Water +10
+        Ear1 = 'Merman\'s Earring', -- MDT -2%
+        Ear2 = 'Merman\'s Earring', -- MDT -2%
+        Body = 'Yinyang Robe', -- Refresh 1
+        Hands = 'Garden Bangles', -- DEF 12, HP 30, VIT 2, Daytime Regen
+        Ring1 = 'Bomb Queen Ring', -- HP 75
+        Ring2 = 'Merman\'s Ring', -- MDT -4%
+        Back = 'Hexerei Cape', -- DT -3%
+        Waist = 'Penitent\'s Rope', --
+        Legs = 'Mahatma Slops', -- INT +8
+        Feet = 'Summoner\'s Pgch.',
+    },
         --[[-----------------------------------------------------------------------------------
         Equipsets: Idle MDT Tiamat
             Lightning Res:
@@ -568,6 +591,8 @@ profile.HandleDefault = function()
 				gFunc.EquipSet(sets.Idle_MDT_Fafnir);
 			elseif (environ.Area == "Attohwa Chasm") then
 				gFunc.EquipSet(sets.Idle_MDT_Tiamat);
+			elseif (environ.Area == "Jugner Forest") then
+				gFunc.EquipSet(sets.Idle_MDT_Water);
 			else
 				gFunc.EquipSet(sets.Idle_MDT);
 			end
