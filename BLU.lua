@@ -1579,7 +1579,7 @@ profile.HandleMidcast = function()
             if (Settings.UseStaff == 2 and action.Element == 'Light') then
                 gFunc.Equip('Main', gcinclude.ElementalStaff['Light']);
             end
-            if (gcinclude.ObiCheck(action) >= 1) then
+            if (action.Element and action.Element ~= 'None' and gcinclude.ObiCheck(action) >= 1) then
                 gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
             end
 

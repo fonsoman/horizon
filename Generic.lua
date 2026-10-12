@@ -64,6 +64,10 @@ gcinclude.CityZones = T{    'Lower Jeuno', 'Upper Jeuno', 'Ru\'Lude Gardens', 'P
 --]]-----------------------------------------------------------------------------------
 function gcinclude.ObiCheck(spell)
 
+    if (spell == nil or spell.Element == nil or spell.Element == 'None') then
+        return 0;
+    end
+
     local element = spell.Element;
     local zone = gData.GetEnvironment();
     local weight = 0;
@@ -82,25 +86,29 @@ function gcinclude.ObiCheck(spell)
         ['Dark'] = 'Light'
     };
     
+    if (not badEle[element] or zone == nil) then
+        return 0;
+    end
+
     --[[-----------------------------------------------------------------------------------
         Obi: Update weight based on Day
     --]]-----------------------------------------------------------------------------------
-    if (gcinclude.DayElementTable[zone.Day] == element) then
+    if (zone.Day and gcinclude.DayElementTable[zone.Day] == element) then
         weight = weight + 1;
-    elseif (gcinclude.DayElementTable[zone.Day] == badEle[element]) then
+    elseif (zone.Day and gcinclude.DayElementTable[zone.Day] == badEle[element]) then
         weight = weight - 1;
     end
     
     --[[-----------------------------------------------------------------------------------
         Obi: Update weight based on Weather
     --]]-----------------------------------------------------------------------------------
-    if string.find(zone.Weather, element) then
+    if (zone.Weather and string.find(zone.Weather, element)) then
         if string.find(zone.Weather, 'x2') then
             weight = weight + 2;
         else
             weight = weight + 1;
         end
-    elseif string.find(zone.Weather, badEle[element]) then
+    elseif (zone.Weather and badEle[element] and string.find(zone.Weather, badEle[element])) then
         if string.find(zone.Weather, 'x2') then
             weight = weight - 2;
         else
