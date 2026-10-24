@@ -1,0 +1,602 @@
+--[[-----------------------------------------------------------------------------------
+    Summoner (SMN) Luashitacast Profile - Standalone
+    Character: Nedsnark
+    Server: HorizonXI
+
+    Overview:
+    - Standalone file (does not require Generic.lua or common files)
+    - Designed to be simple, clean, and easy to customize
+    - Includes:
+        * Idle gear for Level 70, plus Level Caps: 60, 50, 40, 30, 20
+        * Level-aware Resting MP (hMP) gear (Dark Staff at 51+, Kukulcan's/Pilgrim's <= 50)
+        * Stoneskin gear with MND and Stone Gorget
+        * Blood Pact Delay & Damage/Ward gear (Physical & Magical)
+        * Automatic Elemental Staff swapping for each Avatar & Spirit (Level 51+)
+        * Cure & Fast Cast utilities
+-----------------------------------------------------------------------------------]]--
+
+local profile = {};
+
+--[[-----------------------------------------------------------------------------------
+    GEAR SETS
+    Update the item names below with whatever gear you currently own.
+    If you don't own an item for a slot, you can leave it blank '' or remove the line.
+-----------------------------------------------------------------------------------]]--
+local sets = {
+    --[[-------------------------------------------------------------------------------
+        Idle: Default gear worn when standing around uncapped (Level 70).
+        Earth Staff provides -20% Physical Damage Taken (PDT) for survival.
+    -------------------------------------------------------------------------------]]--
+    Idle = {
+        Main   = 'Earth Staff',         -- Terra's Staff (PDT -20%)
+        Ammo   = 'Fortune Egg',         -- MP +1%
+        Head   = 'Faerie Hairpin',      -- MP +55 (or Evoker's Horn)
+        Neck   = 'Justice Badge',       -- MND +3 (or Holy Phial)
+        Ear1   = 'Geist Earring',       -- MP +5, MND +1
+        Ear2   = 'Morion Earring',      -- MP +4, INT +1
+        Body   = 'Vermillion Cloak',    -- Refresh +1 (or Errant Hpl. / Royal Sovereign Robe)
+        Hands  = 'Carbuncle Mitts',     -- MP +13
+        Ring1  = 'Astral Ring',         -- MP +25 (or Tamas Ring)
+        Ring2  = 'Evoker\'s Ring',      -- Perp -1, Summoning Skill +10 (Level 70)
+        Back   = 'Astute Cape',         -- Summoning Skill +5 (or Skulker's / Black Cape +1)
+        Waist  = 'Hierarch Belt',       -- MP +48, hMP +2 (or Friar's Rope)
+        Legs   = 'Evoker\'s Spats',     -- MP +15, Summoning Skill +3
+        Feet   = 'Evoker\'s Pigaches',  -- MP +10 (or Rostrum Pumps)
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Idle_60: Level 60 Cap (Promyvion-Vahzl, Level 60 BCNMs, Level Sync 60)
+        - Can equip Level 51+ Elemental Staves (Earth Staff -20% PDT).
+        - Evoker's Horn (AF1 lvl 56), Evoker's Spats (AF1 lvl 60), Evoker's Pigaches (lvl 52).
+    -------------------------------------------------------------------------------]]--
+    Idle_60 = {
+        Main   = 'Earth Staff',         -- Terra's Staff (PDT -20%)
+        Ammo   = 'Fortune Egg',         -- MP +1%
+        Head   = 'Evoker\'s Horn',      -- Summoning Magic Skill +5 (or Gold Hairpin)
+        Neck   = 'Justice Badge',       -- MND +3 (or Holy Phial)
+        Ear1   = 'Geist Earring',       -- MP +5, MND +1
+        Ear2   = 'Morion Earring',      -- MP +4, INT +1
+        Body   = 'Vermillion Cloak',    -- Refresh +1 (or Evoker's Doublet / Royal Sovereign Robe)
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perp -2, MP +13
+        Ring1  = 'Tamas Ring',          -- MP +20 (or Astral Ring)
+        Ring2  = 'Ether Ring',          -- MP +30 (or Electrum Ring)
+        Back   = 'Black Cape +1',       -- INT/MND +3 (or Skulker's Cape)
+        Waist  = 'Penitent\'s Rope',    -- HP -20, INT/MND +5 (or Mercenary Captain's Belt)
+        Legs   = 'Evoker\'s Spats',     -- MP +15, Summoning Magic Skill +3 (or Wonder Braccae)
+        Feet   = 'Evoker\'s Pigaches',  -- MP +10, Perp -1 on matching day (or Seer's Pumps)
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Idle_50: Level 50 Cap (CoP Promyvions, Level 50 BCNMs, Level Sync 50)
+        - Cannot equip elemental staves (lvl 51+). Uses Kukulcan's Staff (MP +30, lvl 49)
+          or Solid Wand + shield.
+    -------------------------------------------------------------------------------]]--
+    Idle_50 = {
+        Main   = 'Kukulcan\'s Staff',   -- MP +30 (or Solid Wand)
+        Sub    = '',                    -- Beater's Aspis (if using 1H wand)
+        Ammo   = 'Sweet Sachet',        -- MP +5 (or Fortune Egg)
+        Head   = 'Gold Hairpin',        -- MP +30 (or Faerie Hairpin lvl 40: MP +55)
+        Neck   = 'Black Neckerchief',   -- MP +3 (or Justice Badge)
+        Ear1   = 'Geist Earring',       -- MP +5, MND +1
+        Ear2   = 'Morion Earring',      -- MP +4, INT +1
+        Body   = 'Ryl.Sqr. Robe',       -- MP +10 (or Austere Robe: Perp -1, BP Delay -2)
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perp -2, MP +13
+        Ring1  = 'Tamas Ring',          -- MP +20 (or Astral Ring)
+        Ring2  = 'Ether Ring',          -- MP +30
+        Back   = 'Skulker\'s Cape',     -- MP +10 (or Black Cape +1)
+        Waist  = 'Mrc.Cpt. Belt',       -- HP +5, MP +5 (or Friar's Rope)
+        Legs   = 'Wonder Braccae',      -- MP +8 (or Baron's Slops)
+        Feet   = 'Seer\'s Pumps',       -- MP +4
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Idle_40: Level 40 Cap (CoP Missions, Riverne, Level Sync 40)
+        - Austere Robe (lvl 40) provides Perp -1 & BP Delay -2.
+        - Faerie Hairpin (lvl 40) provides huge MP +55.
+    -------------------------------------------------------------------------------]]--
+    Idle_40 = {
+        Main   = 'Solid Wand',          -- MP +9, INT/MND +3 (or Yew Wand +1)
+        Sub    = 'Beater\'s Aspis',     -- DEF 3
+        Ammo   = 'Sweet Sachet',        -- MP +5 (or Fortune Egg)
+        Head   = 'Faerie Hairpin',      -- MP +55 (or Gold Hairpin: MP +30)
+        Neck   = 'Black Neckerchief',   -- MP +3 (or Justice Badge)
+        Ear1   = 'Morion Earring',      -- MP +4 (or Energy Earring: MP +2)
+        Ear2   = 'Energy Earring',      -- MP +2
+        Body   = 'Austere Robe',        -- Avatar perp -1, BP Delay -2 (or Seer's Tunic)
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perp -2, MP +13
+        Ring1  = 'Tamas Ring',          -- MP +20 (or Astral Ring: MP +25)
+        Ring2  = 'Ether Ring',          -- MP +30 (or Astral Ring: MP +25)
+        Back   = 'Black Cape +1',       -- INT/MND +3 (or Cotton Cape)
+        Waist  = 'Mrc.Cpt. Belt',       -- HP +5, MP +5 (or Friar's Rope)
+        Legs   = 'Wonder Braccae',      -- MP +8 (or Baron's Slops)
+        Feet   = 'Seer\'s Pumps',       -- MP +4
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Idle_30: Level 30 Cap (Promyvion Holla/Dem/Mea, Level Sync 30)
+        - High MP gear with Astral Rings, Gold Hairpin, Seer's Tunic.
+    -------------------------------------------------------------------------------]]--
+    Idle_30 = {
+        Main   = 'Yew Wand +1',         -- MP +7, INT/MND +2
+        Sub    = 'Beater\'s Aspis',     -- DEF 3
+        Ammo   = 'Fortune Egg',         -- MP +1% (or Morion Tathlum)
+        Head   = 'Gold Hairpin',        -- MP +30 (or Dodge Headband)
+        Neck   = 'Black Neckerchief',   -- MP +3 (or Justice Badge)
+        Ear1   = 'Energy Earring',      -- MP +2
+        Ear2   = 'Energy Earring',      -- MP +2
+        Body   = 'Seer\'s Tunic',       -- hMP +1, MP +8
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perp -2, MP +13
+        Ring1  = 'Astral Ring',         -- MP +25 (or Tamas Ring)
+        Ring2  = 'Astral Ring',         -- MP +25
+        Back   = 'Cotton Cape',         -- DEF 3 (or Nomad's Mantle)
+        Waist  = 'Mrc.Cpt. Belt',       -- HP +5, MP +5 (or Friar's Rope)
+        Legs   = 'Baron\'s Slops',      -- hMP +1
+        Feet   = 'Seer\'s Pumps',       -- MP +4
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Idle_20: Level 20 Cap (Giddeus/Palborough BCNMs, Level Sync 20)
+        - Basic survival and MP gear. Carbuncle Mitts become usable at level 20!
+    -------------------------------------------------------------------------------]]--
+    Idle_20 = {
+        Main   = 'Yew Wand +1',         -- MP +7, INT/MND +2
+        Sub    = 'She-Slime Shield',    -- DEF 2 (or Maple Shield)
+        Ammo   = 'Fortune Egg',         -- MP +1%
+        Head   = 'Lgn. Circlet',        -- MP +5 (or Dodge Headband)
+        Neck   = 'Justice Badge',       -- MND +3 (or Black Neckerchief)
+        Ear1   = 'Energy Earring',      -- MP +2
+        Ear2   = 'Energy Earring',      -- MP +2
+        Body   = 'Baron\'s Saio',       -- DEF 11 (or Black Tunic)
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perp -2, MP +13 (Lvl 20)
+        Ring1  = 'Astral Ring',         -- MP +25
+        Ring2  = 'Windurstian Ring',    -- MP +3 (or Astral Ring)
+        Back   = 'Cotton Cape',         -- DEF 3
+        Waist  = 'Friar\'s Rope',       -- MP +5
+        Legs   = 'Baron\'s Slops',      -- hMP +1 (Lvl 20)
+        Feet   = 'Light Soleas',        -- DEF 3
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Perp: Perpetuation reduction gear.
+        This gets equipped on top of your Idle set whenever an Avatar is summoned at 70.
+    -------------------------------------------------------------------------------]]--
+    Perp = {
+        Hands  = 'Carbuncle Mitts',     -- Carbuncle perpetuation -2
+        Ring2  = 'Evoker\'s Ring',      -- Avatar perpetuation -1 (Level 70)
+        -- Body  = 'Austere Robe',      -- Avatar perpetuation -1
+        -- Feet  = 'Evoker\'s Pigaches',-- Perp -1 on matching avatar day
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Resting: Worn when resting (/heal) at Level 51+ to recover MP quickly.
+        Pluto's / Dark Staff grants +10 MP recovered while resting (hMP).
+    -------------------------------------------------------------------------------]]--
+    Resting = {
+        Main   = 'Dark Staff',          -- Pluto's Staff (hMP +10)
+        Neck   = 'Checkered Scarf',     -- hMP +1
+        Ear1   = 'Relaxing Earring',    -- hMP +2
+        Ear2   = 'Boroka Earring',      -- hMP +1 (or Antivenom Earring)
+        Body   = 'Errant Hpl.',         -- hMP +5 (or Seer's Tunic)
+        Waist  = 'Hierarch Belt',       -- hMP +2
+        Legs   = 'Baron\'s Slops',      -- hMP +1
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Resting_50: Resting set for Level 50 cap and below.
+        Dark Staff cannot be equipped <= 50; uses Kukulcan's Staff (hMP +3) & Seer's.
+    -------------------------------------------------------------------------------]]--
+    Resting_50 = {
+        Main   = 'Kukulcan\'s Staff',   -- MP +30, hMP +3 (or Pilgrim's Wand hMP +2)
+        Sub    = '',
+        Ammo   = 'Fortune Egg',         -- MP +1%
+        Head   = 'Gold Hairpin',        -- MP +30
+        Neck   = 'Black Neckerchief',   -- MP +3
+        Ear1   = 'Geist Earring',       -- MP +5
+        Ear2   = 'Boroka Earring',      -- hMP +1
+        Body   = 'Seer\'s Tunic',       -- hMP +1, MP +8
+        Hands  = 'Carbuncle Mitts',     -- MP +13
+        Ring1  = 'Tamas Ring',          -- MP +20 (or Astral Ring)
+        Ring2  = 'Ether Ring',          -- MP +30
+        Back   = 'Skulker\'s Cape',     -- MP +10
+        Waist  = 'Friar\'s Rope',       -- MP +5
+        Legs   = 'Baron\'s Slops',      -- hMP +1
+        Feet   = 'Seer\'s Pumps',       -- MP +4
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Resting_20: Resting set for Level 20 cap.
+        Pilgrim's Wand grants +2 hMP at level 10!
+    -------------------------------------------------------------------------------]]--
+    Resting_20 = {
+        Main   = 'Pilgrim\'s Wand',     -- hMP +2 (Lvl 10) or Yew Wand +1
+        Sub    = 'She-Slime Shield',
+        Body   = 'Baron\'s Saio',
+        Waist  = 'Friar\'s Rope',       -- MP +5
+        Legs   = 'Baron\'s Slops',      -- hMP +1 (Lvl 20)
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Stoneskin: Maximizes MND to hit the 350 damage absorption cap on Stoneskin.
+        Stone Gorget raises the damage absorption cap by +30 HP.
+    -------------------------------------------------------------------------------]]--
+    Stoneskin = {
+        Main   = 'Water Staff',         -- Neptune's Staff (MND +4/+5) or Kirin's Pole (MND +10)
+        Neck   = 'Stone Gorget',        -- Enhances Stoneskin (+30 HP cap)
+        Ear1   = 'Geist Earring',       -- MND +1
+        Ear2   = 'Geist Earring',       -- MND +1
+        Body   = 'Errant Hpl.',         -- MND +10
+        Hands  = 'Devotee\'s Mitts',    -- MND +5
+        Ring1  = 'Saintly Ring',        -- MND +2 (or Tamas Ring MND +5)
+        Ring2  = 'Saintly Ring',        -- MND +2
+        Back   = 'Rainbow Cape',        -- MND +3 (or White Cape +1)
+        Waist  = 'Penitent\'s Rope',    -- MND +5
+        Legs   = 'Errant Slops',        -- MND +7
+        Feet   = 'Errant Pigaches',     -- MND +5
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Blood Pact - Delay:
+        Equipped the exact moment you activate a Blood Pact ability to reduce recast time.
+    -------------------------------------------------------------------------------]]--
+    BP_Delay = {
+        -- Head   = 'Summoner\'s Horn',  -- BP Delay -3 (Level 75)
+        Body   = 'Austere Robe',        -- BP Delay -2 (Lvl 40)
+        Hands  = 'Summoner\'s Brcr.',   -- BP Delay -2 (AF2) or Austere Cuffs (-1)
+        Legs   = 'Summoner\'s Spats',   -- BP Delay -2 (AF2) or Austere Slops (-1)
+        Feet   = 'Summoner\'s Pgch.',   -- BP Delay -2 (AF2)
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Blood Pact - General / Base:
+        Worn when your Avatar performs a Blood Pact.
+        Boosts Summoning Magic Skill and Pet stats.
+    -------------------------------------------------------------------------------]]--
+    BloodPact = {
+        Head   = 'Evoker\'s Horn',      -- Summoning Magic Skill +5 (AF1 Lvl 56)
+        Neck   = 'Summoning Torque',    -- Summoning Magic Skill +7
+        Ear1   = 'Summoning Earring',   -- Summoning Magic Skill +3
+        Body   = 'Evoker\'s Doublet',   -- Avatar Attack +10 (AF1 Lvl 58)
+        Hands  = 'Summoner\'s Brcr.',   -- Summoning Magic Skill +10 (AF2 Lvl 70)
+        Ring1  = 'Evoker\'s Ring',      -- Summoning Magic Skill +10 (Lvl 70)
+        Back   = 'Astute Cape',         -- Summoning Magic Skill +5
+        Legs   = 'Evoker\'s Spats',     -- Avatar Acc +5, Summoning Magic Skill +3 (AF1 Lvl 60)
+        Feet   = 'Summoner\'s Pgch.',   -- Avatar Attack +7
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Blood Pact - Physical:
+        For physical damage pacts (Predator Claws, Rush, Chaotic Strike, Eclipse Bite, etc.)
+        Inherits from BloodPact set; add extra Pet Acc / Pet Atk here.
+    -------------------------------------------------------------------------------]]--
+    BP_Physical = {
+        Head   = 'Shepherd\'s Bonnet',  -- Avatar Acc +5 (Lvl 50)
+        Body   = 'Evoker\'s Doublet',   -- Avatar Attack +10
+        Legs   = 'Evoker\'s Spats',     -- Avatar Acc +5
+        Feet   = 'Summoner\'s Pgch.',   -- Avatar Attack +7
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Blood Pact - Magical:
+        For elemental nukes (Wind Blade, Geocrush, Heavenly Strike, Meteorite, etc.)
+        Inherits from BloodPact set; add Pet Magic Atk / Summoning Skill here.
+    -------------------------------------------------------------------------------]]--
+    BP_Magical = {
+        Head   = 'Evoker\'s Horn',      -- Summoning Magic Skill +5
+        Body   = 'Austere Robe',        -- Avatar MAB +3 (Lvl 40)
+        Hands  = 'Summoner\'s Brcr.',   -- Summoning Magic Skill +10
+        Feet   = 'Summoner\'s Pgch.',   -- Avatar Attack / MAB
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Blood Pact - Ward & Debuffs:
+        For buffs (Aerial Armor, Earthen Ward, Shining Ruby) and enfeebles (Slowga, etc.)
+        High Summoning Magic Skill increases buff duration and enfeeble landing rate.
+    -------------------------------------------------------------------------------]]--
+    BP_Ward = {
+        Head   = 'Evoker\'s Horn',      -- Summoning Magic Skill +5
+        Neck   = 'Summoning Torque',    -- Summoning Magic Skill +7
+        Hands  = 'Summoner\'s Brcr.',   -- Summoning Magic Skill +10
+        Ring1  = 'Evoker\'s Ring',      -- Summoning Magic Skill +10
+        Back   = 'Astute Cape',         -- Summoning Magic Skill +5
+        Legs   = 'Evoker\'s Spats',     -- Summoning Magic Skill +3
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Staff for each Avatar (Level 51+):
+        Matching elemental staves reduce perpetuation cost by 2 MP/tick!
+        Update these to HQ staves (Vulcan's, Aquilo's, etc.) whenever you get them.
+    -------------------------------------------------------------------------------]]--
+    Staff_Carbuncle     = { Main = 'Light Staff', Hands = 'Carbuncle Mitts' },
+    Staff_Fenrir        = { Main = 'Dark Staff' },
+    Staff_Diabolos      = { Main = 'Dark Staff' },
+    Staff_Ifrit         = { Main = 'Fire Staff' },
+    Staff_Titan         = { Main = 'Earth Staff' },
+    Staff_Leviathan     = { Main = 'Water Staff' },
+    Staff_Garuda        = { Main = 'Wind Staff' },
+    Staff_Shiva         = { Main = 'Ice Staff' },
+    Staff_Ramuh         = { Main = 'Thunder Staff' },
+
+    -- Elemental Spirits
+    Staff_LightSpirit   = { Main = 'Light Staff' },
+    Staff_DarkSpirit    = { Main = 'Dark Staff' },
+    Staff_FireSpirit    = { Main = 'Fire Staff' },
+    Staff_EarthSpirit   = { Main = 'Earth Staff' },
+    Staff_WaterSpirit   = { Main = 'Water Staff' },
+    Staff_WindSpirit    = { Main = 'Wind Staff' },
+    Staff_IceSpirit     = { Main = 'Ice Staff' },
+    Staff_ThunderSpirit = { Main = 'Thunder Staff' },
+
+    --[[-------------------------------------------------------------------------------
+        Cure: Used when casting Cure spells (/WHM subjob).
+        Light / Apollo's Staff provides +10% Cure Potency at Level 51+.
+    -------------------------------------------------------------------------------]]--
+    Cure = {
+        Main   = 'Light Staff',         -- Apollo's Staff (+10% Cure Potency)
+        Neck   = 'Justice Badge',       -- MND +3
+        Ear1   = 'Geist Earring',       -- MND +1
+        Ear2   = 'Geist Earring',       -- MND +1
+        Body   = 'Errant Hpl.',         -- MND +10
+        Hands  = 'Devotee\'s Mitts',    -- MND +5
+        Legs   = 'Errant Slops',        -- MND +7
+        Feet   = 'Errant Pigaches',     -- MND +5
+    },
+
+    --[[-------------------------------------------------------------------------------
+        FastCast: Reduces spell casting time (precast).
+    -------------------------------------------------------------------------------]]--
+    FastCast = {
+        Feet   = 'Rostrum Pumps',       -- Fast Cast +3%
+        -- Ear1   = 'Loquac. Earring',  -- Fast Cast +2%
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Summoning: Equipped while casting an Avatar summoning spell.
+    -------------------------------------------------------------------------------]]--
+    Summoning = {
+        Hands  = 'Carbuncle\'s Cuffs',  -- Summoning spell cast time -1 sec
+        Feet   = 'Evoker\'s Boots',     -- Summoning spell cast time -1 sec
+    },
+
+    --[[-------------------------------------------------------------------------------
+        Sneak & Invisible: Items that extend Sneak/Invis duration.
+    -------------------------------------------------------------------------------]]--
+    SneakInvis = {
+        Back   = 'Skulker\'s Cape',
+        Hands  = 'Dream Mittens +1',
+        Feet   = 'Dream Boots +1',
+    },
+};
+
+profile.Sets = sets;
+
+--[[-----------------------------------------------------------------------------------
+    Blood Pact categorization tables
+-----------------------------------------------------------------------------------]]--
+local MagicBP = T{
+    'Meteorite', 'Stone II', 'Stone IV', 'Geocrush', 'Water II', 'Water IV', 'Grand Fall',
+    'Aero II', 'Aero IV', 'Wind Blade', 'Fire II', 'Fire IV', 'Meteor Strike', 'Burning Strike',
+    'Blizzard II', 'Blizzard IV', 'Heavenly Strike', 'Thunder II', 'Thunder IV', 'Thunderstorm',
+    'Thunderspark', 'Nether Blast'
+};
+
+local PhysBP = T{
+    'Poison Nails', 'Moonlit Charge', 'Somnolence', 'Punch', 'Rock Throw', 'Barracuda Dive',
+    'Claw', 'Axe Kick', 'Shock Strike', 'Camisado', 'Regal Scratch', 'Crescent Fang',
+    'Rock Buster', 'Tail Whip', 'Double Punch', 'Megalith Throw', 'Double Slap',
+    'Eclipse Bite', 'Flaming Crush', 'Mountain Buster', 'Spinning Dive', 'Predator Claws',
+    'Rush', 'Chaotic Strike'
+};
+
+local BuffBP = T{
+    'Shining Ruby', 'Aerial Armor', 'Frost Armor', 'Rolling Thunder', 'Crimson Howl',
+    'Lightning Armor', 'Ecliptic Growl', 'Glittering Ruby', 'Earthen Ward', 'Spring Water',
+    'Hastega', 'Noctoshield', 'Ecliptic Howl', 'Dream Shroud'
+};
+
+local DebuffBP = T{
+    'Lunar Cry', 'Luncar Cry', 'Mewing Lullaby', 'Nightmare', 'Lunar Roar', 'Slowga',
+    'Ultimate Terror', 'Sleepga', 'Eerie Eye'
+};
+
+--[[-----------------------------------------------------------------------------------
+    HELPER FUNCTIONS
+-----------------------------------------------------------------------------------]]--
+
+-- Returns the player's active level (takes Level Sync into account)
+local function GetCurrentLevel()
+    local player = gData.GetPlayer();
+    if (player.MainJobSync ~= nil and player.MainJobSync > 0) then
+        return player.MainJobSync;
+    end
+    return player.MainJobLevel or 70;
+end
+
+-- Returns the appropriate Idle set based on the active level cap
+local function GetIdleSet(level)
+    if (level >= 70) then
+        return sets.Idle;
+    elseif (level >= 60) then
+        return sets.Idle_60;
+    elseif (level >= 50) then
+        return sets.Idle_50;
+    elseif (level >= 40) then
+        return sets.Idle_40;
+    elseif (level >= 30) then
+        return sets.Idle_30;
+    else
+        return sets.Idle_20;
+    end
+end
+
+-- Equips the appropriate Blood Pact set based on the pact being used
+local function HandlePetAction(petAction)
+    if (petAction == nil) then return; end
+
+    -- Clean the Blood Pact name of any trailing whitespace or non-standard characters
+    local cleanName = string.gsub(petAction.Name, '[^%a%s%d%-]', '');
+    cleanName = string.match(cleanName, '^%s*(.-)%s*$') or petAction.Name;
+
+    if (MagicBP:contains(cleanName) or MagicBP:contains(petAction.Name)) then
+        gFunc.EquipSet(gFunc.Combine(sets.BloodPact, sets.BP_Magical));
+    elseif (PhysBP:contains(cleanName) or PhysBP:contains(petAction.Name)) then
+        gFunc.EquipSet(gFunc.Combine(sets.BloodPact, sets.BP_Physical));
+    elseif (BuffBP:contains(cleanName) or BuffBP:contains(petAction.Name) or
+            DebuffBP:contains(cleanName) or DebuffBP:contains(petAction.Name)) then
+        gFunc.EquipSet(gFunc.Combine(sets.BloodPact, sets.BP_Ward));
+    else
+        gFunc.EquipSet(sets.BloodPact);
+    end
+end
+
+--[[-----------------------------------------------------------------------------------
+    PROFILE EVENTS
+-----------------------------------------------------------------------------------]]--
+
+profile.OnLoad = function()
+    -- Allows using the in-game command `/lac addset <setname>` to capture current gear into a set
+    gSettings.AllowAddSet = true;
+end
+
+profile.OnUnload = function()
+end
+
+profile.HandleCommand = function(args)
+end
+
+--[[-----------------------------------------------------------------------------------
+    HandleDefault: Evaluated continuously when idle, resting, or when pet status changes
+-----------------------------------------------------------------------------------]]--
+profile.HandleDefault = function()
+    local player    = gData.GetPlayer();
+    local pet       = gData.GetPet();
+    local petAction = gData.GetPetAction();
+    local level     = GetCurrentLevel();
+
+    -- 1. If pet is currently performing a Blood Pact, keep Blood Pact gear on!
+    if (petAction ~= nil) then
+        HandlePetAction(petAction);
+        return;
+    end
+
+    -- 2. Resting (/heal): Equip level-appropriate Resting MP gear
+    if (player.Status == 'Resting') then
+        if (level <= 20 and sets.Resting_20 ~= nil) then
+            gFunc.EquipSet(sets.Resting_20);
+        elseif (level <= 50 and sets.Resting_50 ~= nil) then
+            gFunc.EquipSet(sets.Resting_50);
+        else
+            gFunc.EquipSet(sets.Resting);
+        end
+        return;
+    end
+
+    -- 3. Avatar is summoned:
+    if (pet ~= nil) then
+        -- Equip the appropriate Idle set for this level cap
+        gFunc.EquipSet(GetIdleSet(level));
+
+        -- Apply Perpetuation reduction gear appropriate for current level
+        if (level >= 70) then
+            gFunc.EquipSet(sets.Perp);
+        elseif (level >= 40) then
+            -- At 40+, Austere Robe (-1 perp) and Carbuncle Mitts (-2 Carby) are usable
+            gFunc.Equip('Hands', 'Carbuncle Mitts');
+        elseif (level >= 20) then
+            -- At 20+, Carbuncle Mitts (-2 Carby) are usable
+            gFunc.Equip('Hands', 'Carbuncle Mitts');
+        end
+
+        -- Elemental Staves are Level 51+. Only swap staves if level >= 51!
+        if (level >= 51) then
+            local staffSet = sets['Staff_' .. pet.Name] or sets[pet.Name];
+            if (staffSet ~= nil) then
+                gFunc.EquipSet(staffSet);
+            end
+        else
+            -- At level <= 50, keep wand/shield equipped from Idle, but ensure Carby Mitts on Carbuncle
+            if (pet.Name == 'Carbuncle') then
+                gFunc.Equip('Hands', 'Carbuncle Mitts');
+            end
+        end
+        return;
+    end
+
+    -- 4. No Avatar summoned: Standard Idle gear for current level
+    gFunc.EquipSet(GetIdleSet(level));
+end
+
+--[[-----------------------------------------------------------------------------------
+    HandleAbility: Called when you use a Job Ability (Blood Pact, etc.)
+-----------------------------------------------------------------------------------]]--
+profile.HandleAbility = function()
+    local action = gData.GetAction();
+
+    -- When you activate a Blood Pact, equip Delay gear to reduce the recast timer
+    if (action.Type ~= nil and string.find(action.Type, 'Blood Pact')) then
+        gFunc.EquipSet(sets.BP_Delay);
+    end
+end
+
+--[[-----------------------------------------------------------------------------------
+    HandleItem: Called when using items (Sneak/Invis tools, etc.)
+-----------------------------------------------------------------------------------]]--
+profile.HandleItem = function()
+    local action = gData.GetAction();
+    if (action.Name == 'Silent Oil' or action.Name == 'Prism Powder') then
+        gFunc.EquipSet(sets.SneakInvis);
+    end
+end
+
+--[[-----------------------------------------------------------------------------------
+    HandlePrecast: Called before a spell starts casting
+-----------------------------------------------------------------------------------]]--
+profile.HandlePrecast = function()
+    local action = gData.GetAction();
+
+    -- Fast Cast to speed up spell casting
+    if (action.Type == 'Spell') then
+        gFunc.EquipSet(sets.FastCast);
+    end
+end
+
+--[[-----------------------------------------------------------------------------------
+    HandleMidcast: Called during spellcasting or when pet executes an action
+-----------------------------------------------------------------------------------]]--
+profile.HandleMidcast = function()
+    local petAction = gData.GetPetAction();
+    local action    = gData.GetAction();
+    local level     = GetCurrentLevel();
+
+    -- If the pet is executing a Blood Pact, equip the Blood Pact gear!
+    if (petAction ~= nil) then
+        HandlePetAction(petAction);
+        return;
+    end
+
+    if (action == nil) then return; end
+
+    -- Stoneskin
+    if (action.Name == 'Stoneskin') then
+        gFunc.EquipSet(sets.Stoneskin);
+
+    -- Cure spells
+    elseif (string.find(action.Name, 'Cur')) then
+        gFunc.EquipSet(sets.Cure);
+
+    -- Avatar Summoning spells: equip summoning gear and the avatar's staff (if level >= 51)
+    elseif (action.Skill == 'Summoning') then
+        gFunc.EquipSet(sets.Summoning);
+        if (level >= 51) then
+            local staffSet = sets['Staff_' .. action.Name] or sets[action.Name];
+            if (staffSet ~= nil) then
+                gFunc.EquipSet(staffSet);
+            end
+        end
+
+    -- Sneak and Invisible spells
+    elseif (action.Name == 'Sneak' or action.Name == 'Invisible') then
+        gFunc.EquipSet(sets.SneakInvis);
+    end
+end
+
+return profile;
