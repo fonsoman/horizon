@@ -573,7 +573,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
-        Waist = 'Hierarch Belt', -- hMP 2 MP 48
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops',
         Feet = 'Rostrum Pumps',
     },
@@ -595,7 +595,7 @@ local sets = {
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.9', -- MP 5
         Back = 'Skulker\'s Cape',
-        Waist = 'Friar\'s Rope', -- MP 5
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops', -- hMP 1
         Feet = 'Seer\'s Pumps', -- MP 4
     },

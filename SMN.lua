@@ -222,7 +222,7 @@ local sets = {
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
         -- Back = '',
-        Waist = 'Hierarch Belt',
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops',
         -- Feet = ''
 	},
@@ -240,7 +240,7 @@ local sets = {
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Skulker\'s Cape',
-        Waist = 'Friar\'s Rope', -- MP 5
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops', -- hMP 1
         Feet = 'Seer\'s Pumps', -- MP 4
 	},

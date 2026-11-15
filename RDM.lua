@@ -469,7 +469,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Kshama Ring No.9', -- MP 5
         Back = 'Merciful Cape', -- MP 25
-        Waist = 'Hierarch Belt', -- hMP 2 MP 48
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops',
         Feet = 'Rostrum Pumps',
     },
@@ -491,7 +491,7 @@ local sets = {
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Kshama Ring No.9', -- MP 5
         Back = 'Skulker\'s Cape',
-        Waist = 'Friar\'s Rope', -- MP 5
+        Waist = 'Qiqirn Sash +1', -- hMP 3 MP 14
         Legs = 'Baron\'s Slops', -- hMP 1
         Feet = 'Seer\'s Pumps', -- MP 4
     },
@@ -507,13 +507,13 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Relaxing Earring', -- hMP 2
         Ear2 = 'Boroka Earring', -- hMP 1
-        Body = 'Sorcerer\'s Coat', -- Refresh 1, MP 12 DEF 41
+        Body = 'Errant Hpl.', -- MND 10
         Hands = 'Zenith Mitts', -- MP 50
         Ring1 = 'Tamas Ring',
         Ring2 = 'Ether Ring', -- MP 30
         Back = 'Merciful Cape', -- MP 25
         Waist = 'Hierarch Belt', -- hMP 2 MP 48
-        Legs = 'Wizard\'s Tonban',
+        Legs = 'Baron\'s Slops', -- hMP 1
         Feet = 'Rostrum Pumps',
 	},
     --[[-----------------------------------------------------------------------------------
