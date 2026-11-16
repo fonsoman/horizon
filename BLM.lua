@@ -1379,16 +1379,15 @@ profile.HandleMidcast = function()
 				gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
 			end
 
-			-- Sorcerer's Ring / Ice Ring Logic
+			-- Sorcerer's Ring / Ice Ring Logic (Only equip Ice rind when Ice Day, Magic Burst is false, and player has less than 800 MP)
+			local equipIceRing = (environ.DayElement == 'Ice' and Settings.MagicBurst ~= 2 and player.MP < 800);
 			if (Settings.SorcRing == 2) or (player.HPP <= 75) then
 				gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
-				if (environ.DayElement == 'Ice' and action.MppAftercast <= 84 and Settings.MagicBurst ~= 2) then
+				if (equipIceRing) then
 					gFunc.Equip('Ring1', 'Ice Ring');
 				end
-			else
-				if (environ.DayElement == 'Ice' and action.MppAftercast <= 84 and Settings.MagicBurst ~= 2) then
-					gFunc.Equip('Ring2', 'Ice Ring');
-				end
+			elseif (equipIceRing) then
+				gFunc.Equip('Ring2', 'Ice Ring');
 			end
 
 			-- Magic Burst Swap
