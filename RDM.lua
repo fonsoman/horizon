@@ -106,12 +106,12 @@ local sets = {
         Head = 'Republic Circlet', --
         Neck = 'Stone Gorget', --
         Ear1 = 'Geist Earring', -- MP 5, MND 1
-        Ear2 = 'Morion Earring', -- MP 4
+        Ear2 = 'Black Earring', -- MP 4
         Body = 'Ryl.Sqr. Robe', --
         Hands = 'Scentless Armlets', --
         Ring1 = 'Tamas Ring', -- MP 20
         Ring2 = 'Ether Ring', -- MP 30
-        Back = 'Black Cape +1', --
+        Back = 'Mist Silk Cape', --
         Waist = 'Mrc.Cpt. Belt', --
         Legs = 'Wonder Braccae', --
         Feet = 'Light Soleas', --
@@ -397,7 +397,7 @@ local sets = {
             TBD
     --]]-----------------------------------------------------------------------------------
     Healing = {
-        Main = 'Light Staff', -- Cure Pot 10%
+        -- Main = 'Light Staff', -- Cure Pot 10%
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- Emnity -5
@@ -436,7 +436,7 @@ local sets = {
         Equipsets: Stoneskin - Capped at 380
     --]]-----------------------------------------------------------------------------------
     Stoneskin = {
-        Main = 'Kirin\'s Pole', -- MND 10
+        -- Main = 'Kirin\'s Pole', -- MND 10
         -- Sub = 'Beater\'s Aspis',
         -- Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin', -- MP 55
@@ -947,7 +947,9 @@ profile.HandleMidcast = function()
         if	(gcinclude.IntDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Enfeeb_INT);
         end
-		gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
+		if (player.MainJobSync >= 51) then
+			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
+		end
 		if (conquest:GetOutsideControl()) then
 			gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
 		end
@@ -964,9 +966,10 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Elemental Magic') then
 		if (gcinclude.ElementalDebuffs:contains(action.Name)) then	
 			gFunc.EquipSet(sets.MaxINT);
-			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		else
 			gFunc.EquipSet(sets.Elemental_Standard);
+		end
+		if (player.MainJobSync >= 51) then
 			gFunc.Equip('Main', gcinclude.ElementalStaff[action.Element]);
 		end
 		if gcinclude.ObiCheck(action) >= 1 then
@@ -984,13 +987,15 @@ profile.HandleMidcast = function()
 		else
 			gFunc.EquipSet(sets.Dark);
 		end
-        gFunc.Equip('main', ElementalStaff[action.Element]);
-		if ((gData.GetAction().MppAftercast > 84) and (action.Name == 'Aspir')) then
-			gFunc.EquipSet(gFunc.Combine(sets.Idle_MP, sets.Dark_Essential));
-		end
-		if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
-			if (action.Name == 'Drain' or action.Name == 'Aspir') then
-				gFunc.Equip('Main', 'Diabolos\'s Pole');
+		if (player.MainJobSync >= 51) then
+			gFunc.Equip('main', ElementalStaff[action.Element]);
+			if ((gData.GetAction().MppAftercast > 84) and (action.Name == 'Aspir')) then
+				gFunc.EquipSet(gFunc.Combine(sets.Idle_MP, sets.Dark_Essential));
+			end
+			if (environ.WeatherElement == 'Dark' or environ.WeatherElement == 'Darkx2') then
+				if (action.Name == 'Drain' or action.Name == 'Aspir') then
+					gFunc.Equip('Main', 'Diabolos\'s Pole');
+				end
 			end
 		end
 		if (environ.DayElement == 'Dark' and gData.GetAction().MppAftercast <= 84) then
@@ -1005,6 +1010,9 @@ profile.HandleMidcast = function()
     --]]-----------------------------------------------------------------------------------
 	elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
 		gFunc.EquipSet(sets.Healing);
+		if (player.MainJobSync >= 51) then
+			gFunc.Equip('Main', 'Light Staff');
+		end
 			if gcinclude.ObiCheck(action) >= 1 then
 				gFunc.Equip('Waist', gcinclude.ElementalObi[action.Element]);
 			end
@@ -1018,6 +1026,9 @@ profile.HandleMidcast = function()
 	elseif (action.Skill == 'Enhancing Magic') then
 		if (action.Name == 'Stoneskin') then
 			gFunc.EquipSet(sets.Stoneskin);
+			if (player.MainJobSync >= 75) then
+				gFunc.Equip('Main', 'Kirin\'s Pole');
+			end
 		elseif (action.Name == 'Sneak') then
 			gFunc.EquipSet(sets.Sneak);
 		elseif (action.Name == 'Invisible') then
